@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyScreenSaver
 {
-    public partial class Form1 : Form
+    public partial class ShowScreenSaverForm : Form
     {
-        public Form1()
+        public ShowScreenSaverForm()
         {
             InitializeComponent();
         }

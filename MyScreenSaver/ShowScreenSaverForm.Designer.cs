@@ -1,6 +1,6 @@
 ﻿namespace MyScreenSaver
 {
-    partial class Form1
+    partial class ShowScreenSaverForm
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
