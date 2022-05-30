@@ -16,5 +16,10 @@ namespace MyScreenSaver
         {
             InitializeComponent();
         }
+
+        private void ShowScreenSaverForm_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

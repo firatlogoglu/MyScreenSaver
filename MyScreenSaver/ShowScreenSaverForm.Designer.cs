@@ -39,6 +39,7 @@
             this.Name = "ShowScreenSaverForm";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ShowScreenSaverForm_MouseDoubleClick);
             this.ResumeLayout(false);
 
         }
