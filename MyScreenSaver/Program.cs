@@ -18,11 +18,12 @@ namespace MyScreenSaver
             {
                 if (args.Length > 0)
                 {
-                    string arg = args[0].ToLowerInvariant();
+                    string arg = args[0].ToLowerInvariant().Trim().Substring(0, 2);
                     switch (arg)
                     {
                         case "/c":
-                            // Options (Seçenekler)
+                            // Options (Yapılandır/Seçenekler)
+                            ShowScreenSaverOptions();
                             break;
                         case "/p":
                             break;
@@ -36,7 +37,7 @@ namespace MyScreenSaver
                 }
                 else
                 {
-                    ShowScreenSaverFrm();
+                    ShowScreenSaverOptions();
                 }
             }
             catch (Exception ex)
@@ -52,6 +53,13 @@ namespace MyScreenSaver
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ShowScreenSaverForm());
+        }
+
+        static void ShowScreenSaverOptions()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new OptionsForm());
         }
     }
 }
