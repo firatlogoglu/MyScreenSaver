@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyScreenSaver.Properties {
+namespace MyScreenSaver {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MyScreenSaver.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Languages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Languages() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MyScreenSaver.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyScreenSaver.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyScreenSaver.Languages", typeof(Languages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,22 +61,47 @@ namespace MyScreenSaver.Properties {
         }
         
         /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        ///   en-GB benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
-        internal static System.Drawing.Bitmap Error {
+        internal static string EnglishCodeGB_UK {
             get {
-                object obj = ResourceManager.GetObject("Error", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("EnglishCodeGB_UK", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   (Simge) öğesine benzeyen System.Drawing.Icon türünde yerelleştirilmiş bir kaynak arar.
+        ///   en-US benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
-        internal static System.Drawing.Icon icon {
+        internal static string EnglishCodeUS {
             get {
-                object obj = ResourceManager.GetObject("icon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ResourceManager.GetString("EnglishCodeUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   English (United Kingdom) benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string EnglishUK {
+            get {
+                return ResourceManager.GetString("EnglishUK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   English (United States) benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string EnglishUS {
+            get {
+                return ResourceManager.GetString("EnglishUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Türkçe (Türkiye) benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string TurkishTR {
+            get {
+                return ResourceManager.GetString("TurkishTR", resourceCulture);
             }
         }
     }

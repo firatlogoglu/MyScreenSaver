@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MyScreenSaver.Properties;
+using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MyScreenSaver
@@ -14,37 +14,62 @@ namespace MyScreenSaver
         [STAThread]
         static void Main(string[] args)
         {
-            try
+            if (Settings.Default.Language == Languages.TurkishTR)
             {
-                if (args.Length > 0)
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("");
+            }
+            else if (Settings.Default.Language == Languages.EnglishUS)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Languages.EnglishCodeUS);
+            }
+            else if (Settings.Default.Language == Languages.EnglishUK)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Languages.EnglishCodeGB_UK);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("");
+            }
+
+            if (Settings.Default.PictureDir.Count == 0)
+            {
+                ShowScreenSaverOptions();
+            }
+            else
+            {
+                try
                 {
-                    string arg = args[0].ToLowerInvariant().Trim().Substring(0, 2);
-                    switch (arg)
+                    if (args.Length > 0)
                     {
-                        case "/c":
-                            // Options (Yapılandır/Seçenekler)
-                            ShowScreenSaverOptions();
-                            break;
-                        case "/p":
-                            break;
-                        case "/s":
-                            ShowScreenSaverFrm();
-                            break;
-                        default:
-                            MessageBox.Show("Geçersiz komut satırı argümanı(bağımsız değişkeni): " + arg, "Geçersiz Komut Satırı Argümanı(Bağımsız Değişkeni)", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
+                        string arg = args[0].ToLowerInvariant().Trim().Substring(0, 2);
+                        switch (arg)
+                        {
+                            case "/c":
+                                // Options (Yapılandır/Seçenekler)
+                                ShowScreenSaverOptions();
+                                break;
+                            case "/p":
+                                break;
+                            case "/s":
+                                ShowScreenSaverFrm();
+                                break;
+                            default:
+                                MessageBox.Show("Geçersiz komut satırı argümanı(bağımsız değişkeni): " + arg, "Geçersiz Komut Satırı Argümanı(Bağımsız Değişkeni)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        //ShowScreenSaverOptions();
+                        ShowScreenSaverFrm();
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    ShowScreenSaverOptions();
-                }
-            }
-            catch (Exception ex)
-            {
-                string msg = ex.Message;
+                    string msg = ex.Message;
 
-                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
         }
 
