@@ -31,7 +31,7 @@ namespace MyScreenSaver
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("");
             }
 
-            if (Settings.Default.PictureDir.Count == 0)
+            if (Settings.Default.PictureDir.Count <= 0 || Settings.Default.MusicDir.Count <= 0)
             {
                 ShowScreenSaverOptions();
             }

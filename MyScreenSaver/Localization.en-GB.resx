@@ -129,6 +129,12 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="ERROR_NoMusic" xml:space="preserve">
+    <value>No music.</value>
+  </data>
+  <data name="ERROR_NoPicture" xml:space="preserve">
+    <value>No picture.</value>
+  </data>
   <data name="ExitMouseDbClick" xml:space="preserve">
     <value>Exit on mouse double click</value>
   </data>
@@ -146,6 +152,15 @@
   </data>
   <data name="ListofImageFolders" xml:space="preserve">
     <value>List of Image Folders</value>
+  </data>
+  <data name="ListofMusicFolders" xml:space="preserve">
+    <value>List of Music Folders</value>
+  </data>
+  <data name="MusicPlayer" xml:space="preserve">
+    <value>Music Player</value>
+  </data>
+  <data name="MusicPlayerEnabled" xml:space="preserve">
+    <value>The Music Player is Enabled</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>

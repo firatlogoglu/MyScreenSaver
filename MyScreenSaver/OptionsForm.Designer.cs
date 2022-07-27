@@ -46,6 +46,21 @@
             this.btnAddPictureExtension = new System.Windows.Forms.Button();
             this.txtboxPictureExtension = new System.Windows.Forms.TextBox();
             this.grpBoxPictureSlideShow = new System.Windows.Forms.GroupBox();
+            this.grpBoxMusicPlayer = new System.Windows.Forms.GroupBox();
+            this.grpBoxMusicDirList = new System.Windows.Forms.GroupBox();
+            this.grpBoxMusicExtension = new System.Windows.Forms.GroupBox();
+            this.txtboxMusicExtension = new System.Windows.Forms.TextBox();
+            this.listboxMusicExtensions = new System.Windows.Forms.ListBox();
+            this.btnAllRemoveMusicExtension = new System.Windows.Forms.Button();
+            this.btnMusicExtensionDefault = new System.Windows.Forms.Button();
+            this.btnRemoveMusicExtension = new System.Windows.Forms.Button();
+            this.btnAddMusicExtension = new System.Windows.Forms.Button();
+            this.listboxMusicDirs = new System.Windows.Forms.ListBox();
+            this.btnAddMusic = new System.Windows.Forms.Button();
+            this.btnRemoveMusic = new System.Windows.Forms.Button();
+            this.btnDefaultMusic = new System.Windows.Forms.Button();
+            this.btnAllRemoveMusic = new System.Windows.Forms.Button();
+            this.chkBoxMusicPlayer = new System.Windows.Forms.CheckBox();
             this.grpBoxSlideShowAndTime = new System.Windows.Forms.GroupBox();
             this.chkBoxShowTime = new System.Windows.Forms.CheckBox();
             this.lblSec = new System.Windows.Forms.Label();
@@ -56,6 +71,9 @@
             this.btnRemovePictureExtension = new System.Windows.Forms.Button();
             this.grpBoxGeneralSettings = new System.Windows.Forms.GroupBox();
             this.grpBoxPictureSlideShow.SuspendLayout();
+            this.grpBoxMusicPlayer.SuspendLayout();
+            this.grpBoxMusicDirList.SuspendLayout();
+            this.grpBoxMusicExtension.SuspendLayout();
             this.grpBoxSlideShowAndTime.SuspendLayout();
             this.grpBoxPictureDirList.SuspendLayout();
             this.grpBoxPictureExtension.SuspendLayout();
@@ -97,12 +115,11 @@
             // 
             // listboxPictureDirs
             // 
-            this.listboxPictureDirs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listboxPictureDirs.FormattingEnabled = true;
             this.listboxPictureDirs.HorizontalScrollbar = true;
             this.listboxPictureDirs.Location = new System.Drawing.Point(6, 19);
             this.listboxPictureDirs.Name = "listboxPictureDirs";
-            this.listboxPictureDirs.Size = new System.Drawing.Size(487, 82);
+            this.listboxPictureDirs.Size = new System.Drawing.Size(491, 82);
             this.listboxPictureDirs.TabIndex = 3;
             // 
             // btnAdd
@@ -138,7 +155,7 @@
             // btnShow
             // 
             this.btnShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnShow.Location = new System.Drawing.Point(12, 411);
+            this.btnShow.Location = new System.Drawing.Point(12, 814);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 23);
             this.btnShow.TabIndex = 7;
@@ -187,7 +204,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(916, 411);
+            this.btnOK.Location = new System.Drawing.Point(921, 814);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 12;
@@ -224,26 +241,191 @@
             // grpBoxPictureSlideShow
             // 
             this.grpBoxPictureSlideShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxMusicPlayer);
+            this.grpBoxPictureSlideShow.Controls.Add(this.chkBoxMusicPlayer);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxSlideShowAndTime);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxPictureDirList);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxPictureExtension);
-            this.grpBoxPictureSlideShow.Location = new System.Drawing.Point(486, 12);
+            this.grpBoxPictureSlideShow.Location = new System.Drawing.Point(491, 12);
             this.grpBoxPictureSlideShow.Name = "grpBoxPictureSlideShow";
-            this.grpBoxPictureSlideShow.Size = new System.Drawing.Size(505, 392);
+            this.grpBoxPictureSlideShow.Size = new System.Drawing.Size(514, 753);
             this.grpBoxPictureSlideShow.TabIndex = 15;
             this.grpBoxPictureSlideShow.TabStop = false;
             this.grpBoxPictureSlideShow.Text = "Slayt Gösterisi";
             // 
+            // grpBoxMusicPlayer
+            // 
+            this.grpBoxMusicPlayer.Controls.Add(this.grpBoxMusicDirList);
+            this.grpBoxMusicPlayer.Location = new System.Drawing.Point(6, 392);
+            this.grpBoxMusicPlayer.Name = "grpBoxMusicPlayer";
+            this.grpBoxMusicPlayer.Size = new System.Drawing.Size(502, 319);
+            this.grpBoxMusicPlayer.TabIndex = 17;
+            this.grpBoxMusicPlayer.TabStop = false;
+            this.grpBoxMusicPlayer.Text = "Müzik Oynatıcısı";
+            // 
+            // grpBoxMusicDirList
+            // 
+            this.grpBoxMusicDirList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBoxMusicDirList.Controls.Add(this.grpBoxMusicExtension);
+            this.grpBoxMusicDirList.Controls.Add(this.listboxMusicDirs);
+            this.grpBoxMusicDirList.Controls.Add(this.btnAddMusic);
+            this.grpBoxMusicDirList.Controls.Add(this.btnRemoveMusic);
+            this.grpBoxMusicDirList.Controls.Add(this.btnDefaultMusic);
+            this.grpBoxMusicDirList.Controls.Add(this.btnAllRemoveMusic);
+            this.grpBoxMusicDirList.Location = new System.Drawing.Point(6, 19);
+            this.grpBoxMusicDirList.Name = "grpBoxMusicDirList";
+            this.grpBoxMusicDirList.Size = new System.Drawing.Size(490, 294);
+            this.grpBoxMusicDirList.TabIndex = 17;
+            this.grpBoxMusicDirList.TabStop = false;
+            this.grpBoxMusicDirList.Text = "Müzik Klasör Listesi";
+            // 
+            // grpBoxMusicExtension
+            // 
+            this.grpBoxMusicExtension.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBoxMusicExtension.Controls.Add(this.txtboxMusicExtension);
+            this.grpBoxMusicExtension.Controls.Add(this.listboxMusicExtensions);
+            this.grpBoxMusicExtension.Controls.Add(this.btnAllRemoveMusicExtension);
+            this.grpBoxMusicExtension.Controls.Add(this.btnMusicExtensionDefault);
+            this.grpBoxMusicExtension.Controls.Add(this.btnRemoveMusicExtension);
+            this.grpBoxMusicExtension.Controls.Add(this.btnAddMusicExtension);
+            this.grpBoxMusicExtension.Location = new System.Drawing.Point(5, 136);
+            this.grpBoxMusicExtension.Name = "grpBoxMusicExtension";
+            this.grpBoxMusicExtension.Size = new System.Drawing.Size(478, 146);
+            this.grpBoxMusicExtension.TabIndex = 19;
+            this.grpBoxMusicExtension.TabStop = false;
+            this.grpBoxMusicExtension.Text = "Dosya Türleri";
+            // 
+            // txtboxMusicExtension
+            // 
+            this.txtboxMusicExtension.Location = new System.Drawing.Point(6, 120);
+            this.txtboxMusicExtension.Name = "txtboxMusicExtension";
+            this.txtboxMusicExtension.Size = new System.Drawing.Size(100, 20);
+            this.txtboxMusicExtension.TabIndex = 14;
+            // 
+            // listboxMusicExtensions
+            // 
+            this.listboxMusicExtensions.FormattingEnabled = true;
+            this.listboxMusicExtensions.HorizontalScrollbar = true;
+            this.listboxMusicExtensions.Location = new System.Drawing.Point(6, 19);
+            this.listboxMusicExtensions.Name = "listboxMusicExtensions";
+            this.listboxMusicExtensions.Size = new System.Drawing.Size(466, 95);
+            this.listboxMusicExtensions.TabIndex = 13;
+            // 
+            // btnAllRemoveMusicExtension
+            // 
+            this.btnAllRemoveMusicExtension.Location = new System.Drawing.Point(274, 117);
+            this.btnAllRemoveMusicExtension.Name = "btnAllRemoveMusicExtension";
+            this.btnAllRemoveMusicExtension.Size = new System.Drawing.Size(90, 23);
+            this.btnAllRemoveMusicExtension.TabIndex = 5;
+            this.btnAllRemoveMusicExtension.Text = "Tümünü Kaldır";
+            this.btnAllRemoveMusicExtension.UseVisualStyleBackColor = true;
+            this.btnAllRemoveMusicExtension.Click += new System.EventHandler(this.btnAllRemoveMusicExtension_Click);
+            // 
+            // btnMusicExtensionDefault
+            // 
+            this.btnMusicExtensionDefault.Location = new System.Drawing.Point(397, 117);
+            this.btnMusicExtensionDefault.Name = "btnMusicExtensionDefault";
+            this.btnMusicExtensionDefault.Size = new System.Drawing.Size(75, 23);
+            this.btnMusicExtensionDefault.TabIndex = 6;
+            this.btnMusicExtensionDefault.Text = "Varsayılan";
+            this.btnMusicExtensionDefault.UseVisualStyleBackColor = true;
+            this.btnMusicExtensionDefault.Click += new System.EventHandler(this.btnMusicExtensionDefault_Click);
+            // 
+            // btnRemoveMusicExtension
+            // 
+            this.btnRemoveMusicExtension.Location = new System.Drawing.Point(193, 117);
+            this.btnRemoveMusicExtension.Name = "btnRemoveMusicExtension";
+            this.btnRemoveMusicExtension.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveMusicExtension.TabIndex = 5;
+            this.btnRemoveMusicExtension.Text = "Kaldır";
+            this.btnRemoveMusicExtension.UseVisualStyleBackColor = true;
+            this.btnRemoveMusicExtension.Click += new System.EventHandler(this.btnRemoveMusicExtension_Click);
+            // 
+            // btnAddMusicExtension
+            // 
+            this.btnAddMusicExtension.Location = new System.Drawing.Point(112, 118);
+            this.btnAddMusicExtension.Name = "btnAddMusicExtension";
+            this.btnAddMusicExtension.Size = new System.Drawing.Size(75, 23);
+            this.btnAddMusicExtension.TabIndex = 4;
+            this.btnAddMusicExtension.Text = "Ekle";
+            this.btnAddMusicExtension.UseVisualStyleBackColor = true;
+            this.btnAddMusicExtension.Click += new System.EventHandler(this.btnAddMusicExtension_Click);
+            // 
+            // listboxMusicDirs
+            // 
+            this.listboxMusicDirs.FormattingEnabled = true;
+            this.listboxMusicDirs.HorizontalScrollbar = true;
+            this.listboxMusicDirs.Location = new System.Drawing.Point(6, 19);
+            this.listboxMusicDirs.Name = "listboxMusicDirs";
+            this.listboxMusicDirs.Size = new System.Drawing.Size(475, 82);
+            this.listboxMusicDirs.TabIndex = 3;
+            // 
+            // btnAddMusic
+            // 
+            this.btnAddMusic.Location = new System.Drawing.Point(6, 107);
+            this.btnAddMusic.Name = "btnAddMusic";
+            this.btnAddMusic.Size = new System.Drawing.Size(75, 23);
+            this.btnAddMusic.TabIndex = 4;
+            this.btnAddMusic.Text = "Ekle";
+            this.btnAddMusic.UseVisualStyleBackColor = true;
+            this.btnAddMusic.Click += new System.EventHandler(this.btnAddMusic_Click);
+            // 
+            // btnRemoveMusic
+            // 
+            this.btnRemoveMusic.Location = new System.Drawing.Point(87, 106);
+            this.btnRemoveMusic.Name = "btnRemoveMusic";
+            this.btnRemoveMusic.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveMusic.TabIndex = 5;
+            this.btnRemoveMusic.Text = "Kaldır";
+            this.btnRemoveMusic.UseVisualStyleBackColor = true;
+            this.btnRemoveMusic.Click += new System.EventHandler(this.btnRemoveMusic_Click);
+            // 
+            // btnDefaultMusic
+            // 
+            this.btnDefaultMusic.Location = new System.Drawing.Point(406, 107);
+            this.btnDefaultMusic.Name = "btnDefaultMusic";
+            this.btnDefaultMusic.Size = new System.Drawing.Size(75, 23);
+            this.btnDefaultMusic.TabIndex = 6;
+            this.btnDefaultMusic.Text = "Varsayılan";
+            this.btnDefaultMusic.UseVisualStyleBackColor = true;
+            this.btnDefaultMusic.Click += new System.EventHandler(this.btnDefaultMusic_Click);
+            // 
+            // btnAllRemoveMusic
+            // 
+            this.btnAllRemoveMusic.Location = new System.Drawing.Point(168, 106);
+            this.btnAllRemoveMusic.Name = "btnAllRemoveMusic";
+            this.btnAllRemoveMusic.Size = new System.Drawing.Size(96, 23);
+            this.btnAllRemoveMusic.TabIndex = 8;
+            this.btnAllRemoveMusic.Text = "Tümünü Kaldır";
+            this.btnAllRemoveMusic.UseVisualStyleBackColor = true;
+            this.btnAllRemoveMusic.Click += new System.EventHandler(this.btnAllRemoveMusic_Click);
+            // 
+            // chkBoxMusicPlayer
+            // 
+            this.chkBoxMusicPlayer.AutoSize = true;
+            this.chkBoxMusicPlayer.Location = new System.Drawing.Point(6, 726);
+            this.chkBoxMusicPlayer.Name = "chkBoxMusicPlayer";
+            this.chkBoxMusicPlayer.Size = new System.Drawing.Size(129, 17);
+            this.chkBoxMusicPlayer.TabIndex = 18;
+            this.chkBoxMusicPlayer.Text = "Müzik Oynatıcısı Etkin";
+            this.chkBoxMusicPlayer.UseVisualStyleBackColor = true;
+            this.chkBoxMusicPlayer.CheckedChanged += new System.EventHandler(this.chkBoxMusicPlayer_CheckedChanged);
+            // 
             // grpBoxSlideShowAndTime
             // 
+            this.grpBoxSlideShowAndTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBoxSlideShowAndTime.Controls.Add(this.chkBoxShowTime);
             this.grpBoxSlideShowAndTime.Controls.Add(this.lblSec);
             this.grpBoxSlideShowAndTime.Controls.Add(this.lblTime);
             this.grpBoxSlideShowAndTime.Controls.Add(this.txtboxTime);
             this.grpBoxSlideShowAndTime.Controls.Add(this.chkBoxPictureAuto);
-            this.grpBoxSlideShowAndTime.Location = new System.Drawing.Point(8, 316);
+            this.grpBoxSlideShowAndTime.Location = new System.Drawing.Point(6, 326);
             this.grpBoxSlideShowAndTime.Name = "grpBoxSlideShowAndTime";
-            this.grpBoxSlideShowAndTime.Size = new System.Drawing.Size(491, 70);
+            this.grpBoxSlideShowAndTime.Size = new System.Drawing.Size(500, 79);
             this.grpBoxSlideShowAndTime.TabIndex = 16;
             this.grpBoxSlideShowAndTime.TabStop = false;
             this.grpBoxSlideShowAndTime.Text = "Süre";
@@ -270,6 +452,8 @@
             // 
             // grpBoxPictureDirList
             // 
+            this.grpBoxPictureDirList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBoxPictureDirList.Controls.Add(this.listboxPictureDirs);
             this.grpBoxPictureDirList.Controls.Add(this.btnAdd);
             this.grpBoxPictureDirList.Controls.Add(this.btnRemove);
@@ -277,14 +461,16 @@
             this.grpBoxPictureDirList.Controls.Add(this.btnAllRemove);
             this.grpBoxPictureDirList.Location = new System.Drawing.Point(6, 19);
             this.grpBoxPictureDirList.Name = "grpBoxPictureDirList";
-            this.grpBoxPictureDirList.Size = new System.Drawing.Size(497, 135);
+            this.grpBoxPictureDirList.Size = new System.Drawing.Size(502, 135);
             this.grpBoxPictureDirList.TabIndex = 16;
             this.grpBoxPictureDirList.TabStop = false;
             this.grpBoxPictureDirList.Text = "Resim Klasör Listesi";
             // 
             // grpBoxPictureExtension
             // 
-            this.grpBoxPictureExtension.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBoxPictureExtension.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBoxPictureExtension.Controls.Add(this.txtboxPictureExtension);
             this.grpBoxPictureExtension.Controls.Add(this.listboxPictureExtensions);
             this.grpBoxPictureExtension.Controls.Add(this.btnAllRemovePictureExtension);
@@ -293,7 +479,7 @@
             this.grpBoxPictureExtension.Controls.Add(this.btnAddPictureExtension);
             this.grpBoxPictureExtension.Location = new System.Drawing.Point(6, 160);
             this.grpBoxPictureExtension.Name = "grpBoxPictureExtension";
-            this.grpBoxPictureExtension.Size = new System.Drawing.Size(493, 150);
+            this.grpBoxPictureExtension.Size = new System.Drawing.Size(502, 159);
             this.grpBoxPictureExtension.TabIndex = 16;
             this.grpBoxPictureExtension.TabStop = false;
             this.grpBoxPictureExtension.Text = "Dosya Türleri";
@@ -335,7 +521,7 @@
             this.grpBoxGeneralSettings.Controls.Add(this.lbLang);
             this.grpBoxGeneralSettings.Location = new System.Drawing.Point(12, 12);
             this.grpBoxGeneralSettings.Name = "grpBoxGeneralSettings";
-            this.grpBoxGeneralSettings.Size = new System.Drawing.Size(468, 392);
+            this.grpBoxGeneralSettings.Size = new System.Drawing.Size(468, 768);
             this.grpBoxGeneralSettings.TabIndex = 16;
             this.grpBoxGeneralSettings.TabStop = false;
             this.grpBoxGeneralSettings.Text = "Genel Ayarlar";
@@ -345,7 +531,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1003, 446);
+            this.ClientSize = new System.Drawing.Size(1008, 849);
             this.Controls.Add(this.grpBoxGeneralSettings);
             this.Controls.Add(this.grpBoxPictureSlideShow);
             this.Controls.Add(this.btnOK);
@@ -355,6 +541,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ayarlar";
             this.grpBoxPictureSlideShow.ResumeLayout(false);
+            this.grpBoxPictureSlideShow.PerformLayout();
+            this.grpBoxMusicPlayer.ResumeLayout(false);
+            this.grpBoxMusicDirList.ResumeLayout(false);
+            this.grpBoxMusicExtension.ResumeLayout(false);
+            this.grpBoxMusicExtension.PerformLayout();
             this.grpBoxSlideShowAndTime.ResumeLayout(false);
             this.grpBoxSlideShowAndTime.PerformLayout();
             this.grpBoxPictureDirList.ResumeLayout(false);
@@ -394,5 +585,20 @@
         private System.Windows.Forms.GroupBox grpBoxGeneralSettings;
         private System.Windows.Forms.ComboBox cmbBoxLang;
         private System.Windows.Forms.CheckBox chkBoxShowTime;
+        private System.Windows.Forms.GroupBox grpBoxMusicPlayer;
+        private System.Windows.Forms.GroupBox grpBoxMusicDirList;
+        private System.Windows.Forms.ListBox listboxMusicDirs;
+        private System.Windows.Forms.Button btnAddMusic;
+        private System.Windows.Forms.Button btnRemoveMusic;
+        private System.Windows.Forms.Button btnDefaultMusic;
+        private System.Windows.Forms.Button btnAllRemoveMusic;
+        private System.Windows.Forms.CheckBox chkBoxMusicPlayer;
+        private System.Windows.Forms.GroupBox grpBoxMusicExtension;
+        private System.Windows.Forms.TextBox txtboxMusicExtension;
+        private System.Windows.Forms.ListBox listboxMusicExtensions;
+        private System.Windows.Forms.Button btnAllRemoveMusicExtension;
+        private System.Windows.Forms.Button btnMusicExtensionDefault;
+        private System.Windows.Forms.Button btnRemoveMusicExtension;
+        private System.Windows.Forms.Button btnAddMusicExtension;
     }
 }

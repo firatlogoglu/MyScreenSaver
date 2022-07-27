@@ -17,6 +17,8 @@ namespace MyScreenSaver
             GetSettings();
             GetPictureDirs();
             GetPictureExtensions();
+            GetMusicDirs();
+            GetMusicExtensions();
             Lang();
         }
 
@@ -27,8 +29,10 @@ namespace MyScreenSaver
             chkBoxMouseDbClick.Checked = Settings.Default.AppCloseMouseDbClick;
             chkBoxPictureAuto.Checked = Settings.Default.PictureAuto;
             chkBoxShowTime.Checked = Settings.Default.ShowTime;
+            chkBoxMusicPlayer.Checked = Settings.Default.MusicPlayer;
             txtboxTime.Enabled = Settings.Default.PictureAuto;
             txtboxTime.Text = Settings.Default.PictureTime.ToString();
+            grpBoxMusicPlayer.Enabled = Settings.Default.MusicPlayer;
         }
 
         private void GetLanguagesList()
@@ -68,6 +72,36 @@ namespace MyScreenSaver
             }
         }
 
+        private void GetMusicDirs()
+        {
+            try
+            {
+                foreach (var item in Settings.Default.MusicDir)
+                {
+                    listboxMusicDirs.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void GetMusicExtensions()
+        {
+            try
+            {
+                foreach (var item in Settings.Default.MusicExtensions)
+                {
+                    listboxMusicExtensions.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void Lang()
         {
             this.Text = Localization.Settings;
@@ -81,6 +115,9 @@ namespace MyScreenSaver
             grpBoxSlideShowAndTime.Text = Localization.TTime;
             grpBoxPictureExtension.Text = Localization.FileTypes;
             grpBoxPictureDirList.Text = Localization.ListofImageFolders;
+            grpBoxMusicPlayer.Text = Localization.MusicPlayer;
+            grpBoxMusicExtension.Text = Localization.FileTypes;
+            grpBoxMusicDirList.Text = Localization.ListofMusicFolders;
 
             btnAdd.Text = Localization.Add;
             btnRemove.Text = Localization.Remove;
@@ -92,12 +129,23 @@ namespace MyScreenSaver
             btnAllRemovePictureExtension.Text = Localization.AllRemove;
             btnPictureExtensionDefault.Text = Localization.Default;
 
+            btnAddMusic.Text = Localization.Add;
+            btnRemoveMusic.Text = Localization.Remove;
+            btnAllRemoveMusic.Text = Localization.AllRemove;
+            btnDefaultMusic.Text = Localization.Default;
+
+            btnAddMusicExtension.Text = Localization.Add;
+            btnRemoveMusicExtension.Text = Localization.Remove;
+            btnAllRemoveMusicExtension.Text = Localization.AllRemove;
+            btnMusicExtensionDefault.Text = Localization.Default;
+
             btnShow.Text = Localization.Show;
             btnOK.Text = Localization.OK;
 
             chkBoxMouseDbClick.Text = Localization.ExitMouseDbClick;
             chkBoxPictureAuto.Text = Localization.PictureAuto;
             chkBoxShowTime.Text = Localization.ShowTime;
+            chkBoxMusicPlayer.Text = Localization.MusicPlayerEnabled;
         }
 
         private void chkBoxMouseDbClick_CheckedChanged(object sender, EventArgs e)
@@ -237,6 +285,88 @@ namespace MyScreenSaver
             listboxPictureExtensions.Items.Clear();
             listboxPictureExtensions.Items.AddRange(ex);
             SettingsMethods.DefaultPictureExtension(ex);
+        }
+
+        private void btnDefaultMusic_Click(object sender, EventArgs e)
+        {
+            string defaultuser = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            listboxMusicDirs.Items.Clear();
+            listboxMusicDirs.Items.Add(defaultuser);
+            SettingsMethods.DefaultMusicDirs(defaultuser);
+        }
+
+        private void chkBoxMusicPlayer_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.ChkBoxMusicPlayer(chkBoxMusicPlayer.Checked);
+            grpBoxMusicPlayer.Enabled = Settings.Default.MusicPlayer;
+        }
+
+        private void btnAddMusic_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                listboxMusicDirs.Items.Add(folderBrowserDialog.SelectedPath);
+                SettingsMethods.AddMusicDirs(folderBrowserDialog.SelectedPath);
+            }
+        }
+
+        private void btnRemoveMusic_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SettingsMethods.RemoveMusicDir(listboxMusicDirs.SelectedIndex);
+                listboxMusicDirs.Items.RemoveAt(listboxMusicDirs.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAllRemoveMusic_Click(object sender, EventArgs e)
+        {
+            listboxMusicDirs.Items.Clear();
+            SettingsMethods.AllRemoveMusicDirs();
+        }
+
+        private void btnMusicExtensionDefault_Click(object sender, EventArgs e)
+        {
+            string[] ex = { "*.mp3*", "*.wav*", "*.midi*" };
+
+            listboxMusicExtensions.Items.Clear();
+            listboxMusicExtensions.Items.AddRange(ex);
+            SettingsMethods.DefaultMusicExtension(ex);
+        }
+
+        private void btnAddMusicExtension_Click(object sender, EventArgs e)
+        {
+            string ex = string.Format("*.{0}*", txtboxMusicExtension.Text);
+            if (!listboxMusicExtensions.Items.Contains(ex) && txtboxMusicExtension.Text != null && txtboxMusicExtension.Text != "")
+            {
+                listboxMusicExtensions.Items.Add(ex);
+                SettingsMethods.AddMusicExtension(ex);
+                txtboxMusicExtension.Text = null;
+            }
+        }
+
+        private void btnRemoveMusicExtension_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SettingsMethods.RemoveMusicExtension(listboxMusicExtensions.SelectedIndex);
+                listboxMusicExtensions.Items.RemoveAt(listboxMusicExtensions.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAllRemoveMusicExtension_Click(object sender, EventArgs e)
+        {
+            listboxMusicExtensions.Items.Clear();
+            SettingsMethods.AllRemoveMusicExtensions();
         }
     }
 }

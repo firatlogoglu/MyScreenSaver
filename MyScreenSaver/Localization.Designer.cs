@@ -19,7 +19,7 @@ namespace MyScreenSaver {
     // sınıfı tarafından otomatik olarak oluşturuldu.
     // Üye eklemek veya kaldırmak için .ResX dosyanızı düzenleyin ve sonra da ResGen
     // komutunu /str seçeneğiyle yeniden çalıştırın veya VS projenizi yeniden oluşturun.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Localization {
@@ -97,6 +97,24 @@ namespace MyScreenSaver {
         }
         
         /// <summary>
+        ///   Müzik Yok. benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string ERROR_NoMusic {
+            get {
+                return ResourceManager.GetString("ERROR_NoMusic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resim Yok. benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string ERROR_NoPicture {
+            get {
+                return ResourceManager.GetString("ERROR_NoPicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Fareyle çift tıklatıldığında çık benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string ExitMouseDbClick {
@@ -147,6 +165,33 @@ namespace MyScreenSaver {
         internal static string ListofImageFolders {
             get {
                 return ResourceManager.GetString("ListofImageFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Müzik Klasör Listesi benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string ListofMusicFolders {
+            get {
+                return ResourceManager.GetString("ListofMusicFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Müzik Oynatıcısı benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string MusicPlayer {
+            get {
+                return ResourceManager.GetString("MusicPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Müzik Oynatıcısı Etkin benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string MusicPlayerEnabled {
+            get {
+                return ResourceManager.GetString("MusicPlayerEnabled", resourceCulture);
             }
         }
         

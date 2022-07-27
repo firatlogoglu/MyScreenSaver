@@ -129,6 +129,12 @@
   <data name="Error" xml:space="preserve">
     <value>Hata</value>
   </data>
+  <data name="ERROR_NoMusic" xml:space="preserve">
+    <value>Müzik Yok.</value>
+  </data>
+  <data name="ERROR_NoPicture" xml:space="preserve">
+    <value>Resim Yok.</value>
+  </data>
   <data name="ExitMouseDbClick" xml:space="preserve">
     <value>Fareyle çift tıklatıldığında çık</value>
   </data>
@@ -146,6 +152,15 @@
   </data>
   <data name="ListofImageFolders" xml:space="preserve">
     <value>Resim Klasör Listesi</value>
+  </data>
+  <data name="ListofMusicFolders" xml:space="preserve">
+    <value>Müzik Klasör Listesi</value>
+  </data>
+  <data name="MusicPlayer" xml:space="preserve">
+    <value>Müzik Oynatıcısı</value>
+  </data>
+  <data name="MusicPlayerEnabled" xml:space="preserve">
+    <value>Müzik Oynatıcısı Etkin</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Tamam</value>

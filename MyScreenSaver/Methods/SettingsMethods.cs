@@ -84,6 +84,24 @@ namespace MyScreenSaver.Methods
             Settings.Default.Save();
         }
 
+        public static void AddMusicDirs(string selectedpath)
+        {
+            Settings.Default.MusicDir.Add(selectedpath);
+            Settings.Default.Save();
+        }
+
+        public static void RemoveMusicDir(int index)
+        {
+            Settings.Default.MusicDir.RemoveAt(index);
+            Settings.Default.Save();
+        }
+
+        public static void AllRemoveMusicDirs()
+        {
+            Settings.Default.MusicDir.Clear();
+            Settings.Default.Save();
+        }
+
         public static void AddPictureExtension(string extension)
         {
             Settings.Default.PictureExtensions.Add(extension);
@@ -106,6 +124,51 @@ namespace MyScreenSaver.Methods
         public static void AllRemovePictureExtensions()
         {
             Settings.Default.PictureExtensions.Clear();
+            Settings.Default.Save();
+        }
+
+        public static void ChkBoxMusicPlayer(bool chk)
+        {
+            if (chk)
+            {
+                Settings.Default.MusicPlayer = true;
+            }
+            else
+            {
+                Settings.Default.MusicPlayer = false;
+            }
+            Settings.Default.Save();
+        }
+
+        public static void DefaultMusicDirs(string defaultuser)
+        {
+            Settings.Default.MusicDir.Clear();
+            Settings.Default.MusicDir.Add(defaultuser);
+            Settings.Default.Save();
+        }
+
+        public static void AddMusicExtension(string extension)
+        {
+            Settings.Default.MusicExtensions.Add(extension);
+            Settings.Default.Save();
+        }
+
+        public static void DefaultMusicExtension(string[] extension)
+        {
+            Settings.Default.MusicExtensions.Clear();
+            Settings.Default.MusicExtensions.AddRange(extension);
+            Settings.Default.Save();
+        }
+
+        public static void RemoveMusicExtension(int index)
+        {
+            Settings.Default.MusicExtensions.RemoveAt(index);
+            Settings.Default.Save();
+        }
+
+        public static void AllRemoveMusicExtensions()
+        {
+            Settings.Default.MusicExtensions.Clear();
             Settings.Default.Save();
         }
     }
