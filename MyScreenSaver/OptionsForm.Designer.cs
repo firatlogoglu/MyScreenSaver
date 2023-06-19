@@ -70,6 +70,26 @@
             this.btnPictureExtensionDefault = new System.Windows.Forms.Button();
             this.btnRemovePictureExtension = new System.Windows.Forms.Button();
             this.grpBoxGeneralSettings = new System.Windows.Forms.GroupBox();
+            this.chkBoxShowClockAndDate = new System.Windows.Forms.CheckBox();
+            this.radioBtnVideoSlideshow = new System.Windows.Forms.RadioButton();
+            this.radioBtnImageSlideshow = new System.Windows.Forms.RadioButton();
+            this.grpBoxVideoSlideShow = new System.Windows.Forms.GroupBox();
+            this.grpBoxVideoDirList = new System.Windows.Forms.GroupBox();
+            this.listboxVideoDirs = new System.Windows.Forms.ListBox();
+            this.btnAddVideo = new System.Windows.Forms.Button();
+            this.btnRemoveVideo = new System.Windows.Forms.Button();
+            this.btnDefaultVideo = new System.Windows.Forms.Button();
+            this.btnAllRemoveVideo = new System.Windows.Forms.Button();
+            this.radioBtnVLC = new System.Windows.Forms.RadioButton();
+            this.grpBoxVideoExtension = new System.Windows.Forms.GroupBox();
+            this.txtboxVideoExtension = new System.Windows.Forms.TextBox();
+            this.listboxVideoExtensions = new System.Windows.Forms.ListBox();
+            this.btnAllRemoveVideoExtension = new System.Windows.Forms.Button();
+            this.btnVideoExtensionDefault = new System.Windows.Forms.Button();
+            this.btnRemoveVideoExtension = new System.Windows.Forms.Button();
+            this.btnAddVideoExtension = new System.Windows.Forms.Button();
+            this.radioBtnWMP = new System.Windows.Forms.RadioButton();
+            this.chkBoxRememberRemoveFileList = new System.Windows.Forms.CheckBox();
             this.grpBoxPictureSlideShow.SuspendLayout();
             this.grpBoxMusicPlayer.SuspendLayout();
             this.grpBoxMusicDirList.SuspendLayout();
@@ -78,6 +98,9 @@
             this.grpBoxPictureDirList.SuspendLayout();
             this.grpBoxPictureExtension.SuspendLayout();
             this.grpBoxGeneralSettings.SuspendLayout();
+            this.grpBoxVideoSlideShow.SuspendLayout();
+            this.grpBoxVideoDirList.SuspendLayout();
+            this.grpBoxVideoExtension.SuspendLayout();
             this.SuspendLayout();
             // 
             // chkBoxMouseDbClick
@@ -85,7 +108,7 @@
             this.chkBoxMouseDbClick.AutoSize = true;
             this.chkBoxMouseDbClick.Checked = true;
             this.chkBoxMouseDbClick.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkBoxMouseDbClick.Location = new System.Drawing.Point(6, 49);
+            this.chkBoxMouseDbClick.Location = new System.Drawing.Point(6, 60);
             this.chkBoxMouseDbClick.Name = "chkBoxMouseDbClick";
             this.chkBoxMouseDbClick.Size = new System.Drawing.Size(106, 17);
             this.chkBoxMouseDbClick.TabIndex = 0;
@@ -99,7 +122,7 @@
             this.cmbBoxLang.FormattingEnabled = true;
             this.cmbBoxLang.Location = new System.Drawing.Point(31, 22);
             this.cmbBoxLang.Name = "cmbBoxLang";
-            this.cmbBoxLang.Size = new System.Drawing.Size(395, 21);
+            this.cmbBoxLang.Size = new System.Drawing.Size(442, 21);
             this.cmbBoxLang.TabIndex = 1;
             this.cmbBoxLang.SelectedIndexChanged += new System.EventHandler(this.cmbBoxLang_SelectedIndexChanged);
             // 
@@ -154,8 +177,7 @@
             // 
             // btnShow
             // 
-            this.btnShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnShow.Location = new System.Drawing.Point(12, 814);
+            this.btnShow.Location = new System.Drawing.Point(12, 860);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 23);
             this.btnShow.TabIndex = 7;
@@ -203,8 +225,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(921, 814);
+            this.btnOK.Location = new System.Drawing.Point(983, 853);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 12;
@@ -240,13 +261,12 @@
             // 
             // grpBoxPictureSlideShow
             // 
-            this.grpBoxPictureSlideShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxMusicPlayer);
             this.grpBoxPictureSlideShow.Controls.Add(this.chkBoxMusicPlayer);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxSlideShowAndTime);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxPictureDirList);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxPictureExtension);
-            this.grpBoxPictureSlideShow.Location = new System.Drawing.Point(491, 12);
+            this.grpBoxPictureSlideShow.Location = new System.Drawing.Point(612, 12);
             this.grpBoxPictureSlideShow.Name = "grpBoxPictureSlideShow";
             this.grpBoxPictureSlideShow.Size = new System.Drawing.Size(514, 753);
             this.grpBoxPictureSlideShow.TabIndex = 15;
@@ -516,22 +536,248 @@
             // 
             // grpBoxGeneralSettings
             // 
+            this.grpBoxGeneralSettings.Controls.Add(this.chkBoxRememberRemoveFileList);
+            this.grpBoxGeneralSettings.Controls.Add(this.chkBoxShowClockAndDate);
+            this.grpBoxGeneralSettings.Controls.Add(this.radioBtnVideoSlideshow);
+            this.grpBoxGeneralSettings.Controls.Add(this.radioBtnImageSlideshow);
             this.grpBoxGeneralSettings.Controls.Add(this.cmbBoxLang);
             this.grpBoxGeneralSettings.Controls.Add(this.chkBoxMouseDbClick);
             this.grpBoxGeneralSettings.Controls.Add(this.lbLang);
             this.grpBoxGeneralSettings.Location = new System.Drawing.Point(12, 12);
             this.grpBoxGeneralSettings.Name = "grpBoxGeneralSettings";
-            this.grpBoxGeneralSettings.Size = new System.Drawing.Size(468, 768);
+            this.grpBoxGeneralSettings.Size = new System.Drawing.Size(514, 195);
             this.grpBoxGeneralSettings.TabIndex = 16;
             this.grpBoxGeneralSettings.TabStop = false;
             this.grpBoxGeneralSettings.Text = "Genel Ayarlar";
+            // 
+            // chkBoxShowClockAndDate
+            // 
+            this.chkBoxShowClockAndDate.AutoSize = true;
+            this.chkBoxShowClockAndDate.Location = new System.Drawing.Point(6, 92);
+            this.chkBoxShowClockAndDate.Name = "chkBoxShowClockAndDate";
+            this.chkBoxShowClockAndDate.Size = new System.Drawing.Size(128, 17);
+            this.chkBoxShowClockAndDate.TabIndex = 19;
+            this.chkBoxShowClockAndDate.Text = "Saati ve Tarihi Göster";
+            this.chkBoxShowClockAndDate.UseVisualStyleBackColor = true;
+            this.chkBoxShowClockAndDate.CheckedChanged += new System.EventHandler(this.chkBoxShowClockAndDate_CheckedChanged);
+            // 
+            // radioBtnVideoSlideshow
+            // 
+            this.radioBtnVideoSlideshow.AutoSize = true;
+            this.radioBtnVideoSlideshow.Location = new System.Drawing.Point(312, 60);
+            this.radioBtnVideoSlideshow.Name = "radioBtnVideoSlideshow";
+            this.radioBtnVideoSlideshow.Size = new System.Drawing.Size(121, 17);
+            this.radioBtnVideoSlideshow.TabIndex = 18;
+            this.radioBtnVideoSlideshow.TabStop = true;
+            this.radioBtnVideoSlideshow.Text = "Video Slayt Gösterisi";
+            this.radioBtnVideoSlideshow.UseVisualStyleBackColor = true;
+            this.radioBtnVideoSlideshow.CheckedChanged += new System.EventHandler(this.radioBtnVideoSlideshow_CheckedChanged);
+            // 
+            // radioBtnImageSlideshow
+            // 
+            this.radioBtnImageSlideshow.AutoSize = true;
+            this.radioBtnImageSlideshow.Location = new System.Drawing.Point(183, 59);
+            this.radioBtnImageSlideshow.Name = "radioBtnImageSlideshow";
+            this.radioBtnImageSlideshow.Size = new System.Drawing.Size(123, 17);
+            this.radioBtnImageSlideshow.TabIndex = 3;
+            this.radioBtnImageSlideshow.TabStop = true;
+            this.radioBtnImageSlideshow.Text = "Resim Slayt Gösterisi";
+            this.radioBtnImageSlideshow.UseVisualStyleBackColor = true;
+            this.radioBtnImageSlideshow.CheckedChanged += new System.EventHandler(this.radioBtnImageSlideshow_CheckedChanged);
+            // 
+            // grpBoxVideoSlideShow
+            // 
+            this.grpBoxVideoSlideShow.Controls.Add(this.grpBoxVideoDirList);
+            this.grpBoxVideoSlideShow.Controls.Add(this.radioBtnVLC);
+            this.grpBoxVideoSlideShow.Controls.Add(this.grpBoxVideoExtension);
+            this.grpBoxVideoSlideShow.Controls.Add(this.radioBtnWMP);
+            this.grpBoxVideoSlideShow.Location = new System.Drawing.Point(12, 213);
+            this.grpBoxVideoSlideShow.Name = "grpBoxVideoSlideShow";
+            this.grpBoxVideoSlideShow.Size = new System.Drawing.Size(514, 350);
+            this.grpBoxVideoSlideShow.TabIndex = 17;
+            this.grpBoxVideoSlideShow.TabStop = false;
+            this.grpBoxVideoSlideShow.Text = "Slayt Gösterisi";
+            // 
+            // grpBoxVideoDirList
+            // 
+            this.grpBoxVideoDirList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpBoxVideoDirList.Controls.Add(this.listboxVideoDirs);
+            this.grpBoxVideoDirList.Controls.Add(this.btnAddVideo);
+            this.grpBoxVideoDirList.Controls.Add(this.btnRemoveVideo);
+            this.grpBoxVideoDirList.Controls.Add(this.btnDefaultVideo);
+            this.grpBoxVideoDirList.Controls.Add(this.btnAllRemoveVideo);
+            this.grpBoxVideoDirList.Location = new System.Drawing.Point(6, 54);
+            this.grpBoxVideoDirList.Name = "grpBoxVideoDirList";
+            this.grpBoxVideoDirList.Size = new System.Drawing.Size(502, 135);
+            this.grpBoxVideoDirList.TabIndex = 16;
+            this.grpBoxVideoDirList.TabStop = false;
+            this.grpBoxVideoDirList.Text = "Video Klasör Listesi";
+            // 
+            // listboxVideoDirs
+            // 
+            this.listboxVideoDirs.FormattingEnabled = true;
+            this.listboxVideoDirs.HorizontalScrollbar = true;
+            this.listboxVideoDirs.Location = new System.Drawing.Point(6, 19);
+            this.listboxVideoDirs.Name = "listboxVideoDirs";
+            this.listboxVideoDirs.Size = new System.Drawing.Size(491, 82);
+            this.listboxVideoDirs.TabIndex = 3;
+            // 
+            // btnAddVideo
+            // 
+            this.btnAddVideo.Location = new System.Drawing.Point(6, 107);
+            this.btnAddVideo.Name = "btnAddVideo";
+            this.btnAddVideo.Size = new System.Drawing.Size(75, 23);
+            this.btnAddVideo.TabIndex = 4;
+            this.btnAddVideo.Text = "Ekle";
+            this.btnAddVideo.UseVisualStyleBackColor = true;
+            this.btnAddVideo.Click += new System.EventHandler(this.btnAddVideo_Click);
+            // 
+            // btnRemoveVideo
+            // 
+            this.btnRemoveVideo.Location = new System.Drawing.Point(87, 107);
+            this.btnRemoveVideo.Name = "btnRemoveVideo";
+            this.btnRemoveVideo.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveVideo.TabIndex = 5;
+            this.btnRemoveVideo.Text = "Kaldır";
+            this.btnRemoveVideo.UseVisualStyleBackColor = true;
+            this.btnRemoveVideo.Click += new System.EventHandler(this.btnRemoveVideo_Click);
+            // 
+            // btnDefaultVideo
+            // 
+            this.btnDefaultVideo.Location = new System.Drawing.Point(416, 107);
+            this.btnDefaultVideo.Name = "btnDefaultVideo";
+            this.btnDefaultVideo.Size = new System.Drawing.Size(75, 23);
+            this.btnDefaultVideo.TabIndex = 6;
+            this.btnDefaultVideo.Text = "Varsayılan";
+            this.btnDefaultVideo.UseVisualStyleBackColor = true;
+            this.btnDefaultVideo.Click += new System.EventHandler(this.btnDefaultVideo_Click);
+            // 
+            // btnAllRemoveVideo
+            // 
+            this.btnAllRemoveVideo.Location = new System.Drawing.Point(168, 107);
+            this.btnAllRemoveVideo.Name = "btnAllRemoveVideo";
+            this.btnAllRemoveVideo.Size = new System.Drawing.Size(96, 23);
+            this.btnAllRemoveVideo.TabIndex = 8;
+            this.btnAllRemoveVideo.Text = "Tümünü Kaldır";
+            this.btnAllRemoveVideo.UseVisualStyleBackColor = true;
+            this.btnAllRemoveVideo.Click += new System.EventHandler(this.btnAllRemoveVideo_Click);
+            // 
+            // radioBtnVLC
+            // 
+            this.radioBtnVLC.AutoSize = true;
+            this.radioBtnVLC.Location = new System.Drawing.Point(153, 21);
+            this.radioBtnVLC.Name = "radioBtnVLC";
+            this.radioBtnVLC.Size = new System.Drawing.Size(109, 17);
+            this.radioBtnVLC.TabIndex = 18;
+            this.radioBtnVLC.TabStop = true;
+            this.radioBtnVLC.Tag = "radioBtnWMP";
+            this.radioBtnVLC.Text = "VLC Media Player";
+            this.radioBtnVLC.UseVisualStyleBackColor = true;
+            this.radioBtnVLC.CheckedChanged += new System.EventHandler(this.radioBtnVLC_CheckedChanged);
+            // 
+            // grpBoxVideoExtension
+            // 
+            this.grpBoxVideoExtension.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpBoxVideoExtension.Controls.Add(this.txtboxVideoExtension);
+            this.grpBoxVideoExtension.Controls.Add(this.listboxVideoExtensions);
+            this.grpBoxVideoExtension.Controls.Add(this.btnAllRemoveVideoExtension);
+            this.grpBoxVideoExtension.Controls.Add(this.btnVideoExtensionDefault);
+            this.grpBoxVideoExtension.Controls.Add(this.btnRemoveVideoExtension);
+            this.grpBoxVideoExtension.Controls.Add(this.btnAddVideoExtension);
+            this.grpBoxVideoExtension.Location = new System.Drawing.Point(6, 195);
+            this.grpBoxVideoExtension.Name = "grpBoxVideoExtension";
+            this.grpBoxVideoExtension.Size = new System.Drawing.Size(502, 149);
+            this.grpBoxVideoExtension.TabIndex = 16;
+            this.grpBoxVideoExtension.TabStop = false;
+            this.grpBoxVideoExtension.Text = "Dosya Türleri";
+            // 
+            // txtboxVideoExtension
+            // 
+            this.txtboxVideoExtension.Location = new System.Drawing.Point(6, 120);
+            this.txtboxVideoExtension.Name = "txtboxVideoExtension";
+            this.txtboxVideoExtension.Size = new System.Drawing.Size(100, 20);
+            this.txtboxVideoExtension.TabIndex = 14;
+            // 
+            // listboxVideoExtensions
+            // 
+            this.listboxVideoExtensions.FormattingEnabled = true;
+            this.listboxVideoExtensions.HorizontalScrollbar = true;
+            this.listboxVideoExtensions.Location = new System.Drawing.Point(6, 19);
+            this.listboxVideoExtensions.Name = "listboxVideoExtensions";
+            this.listboxVideoExtensions.Size = new System.Drawing.Size(481, 95);
+            this.listboxVideoExtensions.TabIndex = 13;
+            // 
+            // btnAllRemoveVideoExtension
+            // 
+            this.btnAllRemoveVideoExtension.Location = new System.Drawing.Point(274, 117);
+            this.btnAllRemoveVideoExtension.Name = "btnAllRemoveVideoExtension";
+            this.btnAllRemoveVideoExtension.Size = new System.Drawing.Size(90, 23);
+            this.btnAllRemoveVideoExtension.TabIndex = 5;
+            this.btnAllRemoveVideoExtension.Text = "Tümünü Kaldır";
+            this.btnAllRemoveVideoExtension.UseVisualStyleBackColor = true;
+            this.btnAllRemoveVideoExtension.Click += new System.EventHandler(this.btnAllRemoveVideoExtension_Click);
+            // 
+            // btnVideoExtensionDefault
+            // 
+            this.btnVideoExtensionDefault.Location = new System.Drawing.Point(412, 117);
+            this.btnVideoExtensionDefault.Name = "btnVideoExtensionDefault";
+            this.btnVideoExtensionDefault.Size = new System.Drawing.Size(75, 23);
+            this.btnVideoExtensionDefault.TabIndex = 6;
+            this.btnVideoExtensionDefault.Text = "Varsayılan";
+            this.btnVideoExtensionDefault.UseVisualStyleBackColor = true;
+            this.btnVideoExtensionDefault.Click += new System.EventHandler(this.btnVideoExtensionDefault_Click);
+            // 
+            // btnRemoveVideoExtension
+            // 
+            this.btnRemoveVideoExtension.Location = new System.Drawing.Point(193, 117);
+            this.btnRemoveVideoExtension.Name = "btnRemoveVideoExtension";
+            this.btnRemoveVideoExtension.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveVideoExtension.TabIndex = 5;
+            this.btnRemoveVideoExtension.Text = "Kaldır";
+            this.btnRemoveVideoExtension.UseVisualStyleBackColor = true;
+            this.btnRemoveVideoExtension.Click += new System.EventHandler(this.btnRemoveVideoExtension_Click);
+            // 
+            // btnAddVideoExtension
+            // 
+            this.btnAddVideoExtension.Location = new System.Drawing.Point(112, 118);
+            this.btnAddVideoExtension.Name = "btnAddVideoExtension";
+            this.btnAddVideoExtension.Size = new System.Drawing.Size(75, 23);
+            this.btnAddVideoExtension.TabIndex = 4;
+            this.btnAddVideoExtension.Text = "Ekle";
+            this.btnAddVideoExtension.UseVisualStyleBackColor = true;
+            this.btnAddVideoExtension.Click += new System.EventHandler(this.btnAddVideoExtension_Click);
+            // 
+            // radioBtnWMP
+            // 
+            this.radioBtnWMP.AutoSize = true;
+            this.radioBtnWMP.Location = new System.Drawing.Point(9, 21);
+            this.radioBtnWMP.Name = "radioBtnWMP";
+            this.radioBtnWMP.Size = new System.Drawing.Size(133, 17);
+            this.radioBtnWMP.TabIndex = 3;
+            this.radioBtnWMP.TabStop = true;
+            this.radioBtnWMP.Tag = "radioBtnWMP";
+            this.radioBtnWMP.Text = "Windows Media Player";
+            this.radioBtnWMP.UseVisualStyleBackColor = true;
+            this.radioBtnWMP.CheckedChanged += new System.EventHandler(this.radioBtnWMP_CheckedChanged);
+            // 
+            // chkBoxRememberRemoveFileList
+            // 
+            this.chkBoxRememberRemoveFileList.AutoSize = true;
+            this.chkBoxRememberRemoveFileList.Location = new System.Drawing.Point(6, 115);
+            this.chkBoxRememberRemoveFileList.Name = "chkBoxRememberRemoveFileList";
+            this.chkBoxRememberRemoveFileList.Size = new System.Drawing.Size(237, 17);
+            this.chkBoxRememberRemoveFileList.TabIndex = 19;
+            this.chkBoxRememberRemoveFileList.Text = "Tüm listeden çıkarmaları \"Evet\" olarak hatırla";
+            this.chkBoxRememberRemoveFileList.UseVisualStyleBackColor = true;
+            this.chkBoxRememberRemoveFileList.CheckedChanged += new System.EventHandler(this.chkBoxRememberRemoveFileList_CheckedChanged);
             // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1008, 849);
+            this.ClientSize = new System.Drawing.Size(1541, 885);
+            this.Controls.Add(this.grpBoxVideoSlideShow);
             this.Controls.Add(this.grpBoxGeneralSettings);
             this.Controls.Add(this.grpBoxPictureSlideShow);
             this.Controls.Add(this.btnOK);
@@ -553,6 +799,11 @@
             this.grpBoxPictureExtension.PerformLayout();
             this.grpBoxGeneralSettings.ResumeLayout(false);
             this.grpBoxGeneralSettings.PerformLayout();
+            this.grpBoxVideoSlideShow.ResumeLayout(false);
+            this.grpBoxVideoSlideShow.PerformLayout();
+            this.grpBoxVideoDirList.ResumeLayout(false);
+            this.grpBoxVideoExtension.ResumeLayout(false);
+            this.grpBoxVideoExtension.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -600,5 +851,25 @@
         private System.Windows.Forms.Button btnMusicExtensionDefault;
         private System.Windows.Forms.Button btnRemoveMusicExtension;
         private System.Windows.Forms.Button btnAddMusicExtension;
+        private System.Windows.Forms.GroupBox grpBoxVideoSlideShow;
+        private System.Windows.Forms.GroupBox grpBoxVideoDirList;
+        private System.Windows.Forms.ListBox listboxVideoDirs;
+        private System.Windows.Forms.Button btnAddVideo;
+        private System.Windows.Forms.Button btnRemoveVideo;
+        private System.Windows.Forms.Button btnDefaultVideo;
+        private System.Windows.Forms.Button btnAllRemoveVideo;
+        private System.Windows.Forms.GroupBox grpBoxVideoExtension;
+        private System.Windows.Forms.TextBox txtboxVideoExtension;
+        private System.Windows.Forms.ListBox listboxVideoExtensions;
+        private System.Windows.Forms.Button btnAllRemoveVideoExtension;
+        private System.Windows.Forms.Button btnVideoExtensionDefault;
+        private System.Windows.Forms.Button btnRemoveVideoExtension;
+        private System.Windows.Forms.Button btnAddVideoExtension;
+        private System.Windows.Forms.RadioButton radioBtnVideoSlideshow;
+        private System.Windows.Forms.RadioButton radioBtnImageSlideshow;
+        private System.Windows.Forms.CheckBox chkBoxShowClockAndDate;
+        private System.Windows.Forms.RadioButton radioBtnVLC;
+        private System.Windows.Forms.RadioButton radioBtnWMP;
+        private System.Windows.Forms.CheckBox chkBoxRememberRemoveFileList;
     }
 }

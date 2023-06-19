@@ -146,5 +146,79 @@ namespace MyScreenSaver.Properties {
                 this["MusicExtensions"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ImageSlideshow {
+            get {
+                return ((bool)(this["ImageSlideshow"]));
+            }
+            set {
+                this["ImageSlideshow"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" />")]
+        public global::System.Collections.Specialized.StringCollection VideoDir {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["VideoDir"]));
+            }
+            set {
+                this["VideoDir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" />")]
+        public global::System.Collections.Specialized.StringCollection VideoExtensions {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["VideoExtensions"]));
+            }
+            set {
+                this["VideoExtensions"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ClockAndDate {
+            get {
+                return ((bool)(this["ClockAndDate"]));
+            }
+            set {
+                this["ClockAndDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool VideoAppWMP {
+            get {
+                return ((bool)(this["VideoAppWMP"]));
+            }
+            set {
+                this["VideoAppWMP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RememberRemoveFileList {
+            get {
+                return ((bool)(this["RememberRemoveFileList"]));
+            }
+            set {
+                this["RememberRemoveFileList"] = value;
+            }
+        }
     }
 }

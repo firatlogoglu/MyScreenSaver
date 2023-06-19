@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MyScreenSaver</RootNamespace>
     <AssemblyName>MyScreenSaver</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InternetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InternetForm.Designer.cs">
+      <DependentUpon>InternetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Languages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +92,7 @@
       <DependentUpon>Localization.resx</DependentUpon>
     </Compile>
     <Compile Include="Methods\SettingsMethods.cs" />
+    <Compile Include="Models\WMP\PlayStates.cs" />
     <Compile Include="OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +108,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideoPlayerWMPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoPlayerWMPForm.Designer.cs">
+      <DependentUpon>VideoPlayerWMPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideoPlayerVLCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoPlayerVLCForm.Designer.cs">
+      <DependentUpon>VideoPlayerVLCForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="InternetForm.resx">
+      <DependentUpon>InternetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Languages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Languages.Designer.cs</LastGenOutput>
@@ -132,6 +155,12 @@
     <EmbeddedResource Include="ShowScreenSaverForm.resx">
       <DependentUpon>ShowScreenSaverForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VideoPlayerWMPForm.resx">
+      <DependentUpon>VideoPlayerWMPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoPlayerVLCForm.resx">
+      <DependentUpon>VideoPlayerVLCForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -148,9 +177,7 @@
   <ItemGroup>
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
@@ -170,6 +197,23 @@
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxAXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="AxWMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>

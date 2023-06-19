@@ -156,6 +156,9 @@
   <data name="ListofMusicFolders" xml:space="preserve">
     <value>List of Music Folders</value>
   </data>
+  <data name="ListofVideoFolders" xml:space="preserve">
+    <value>List of Video Folders</value>
+  </data>
   <data name="MusicPlayer" xml:space="preserve">
     <value>Music Player</value>
   </data>
@@ -180,6 +183,9 @@
   <data name="Show" xml:space="preserve">
     <value>Show</value>
   </data>
+  <data name="ShowClockAndDate" xml:space="preserve">
+    <value>Show Clock And Date</value>
+  </data>
   <data name="ShowTime" xml:space="preserve">
     <value>Show Time</value>
   </data>
@@ -188,5 +194,14 @@
   </data>
   <data name="TTime" xml:space="preserve">
     <value>Time</value>
+  </data>
+  <data name="VideoSlideshow" xml:space="preserve">
+    <value>Video Slideshow</value>
+  </data>
+  <data name="VLC" xml:space="preserve">
+    <value>VLC Media Player</value>
+  </data>
+  <data name="WMP" xml:space="preserve">
+    <value>Windows Media Player</value>
   </data>
 </root>

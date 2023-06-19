@@ -38,9 +38,15 @@
             this.grpBoxMediaPlayer = new System.Windows.Forms.GroupBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.lblmusicBox = new System.Windows.Forms.Label();
+            this.timerClockAndDate = new System.Windows.Forms.Timer(this.components);
+            this.lblClock = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.listBoxMusicList = new System.Windows.Forms.ListBox();
+            this.listBoxImageList = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWinMediaPlayer)).BeginInit();
             this.grpBoxMediaPlayer.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblpictureBox
@@ -123,14 +129,70 @@
             this.lblmusicBox.Text = "...";
             this.lblmusicBox.Visible = false;
             // 
+            // timerClockAndDate
+            // 
+            this.timerClockAndDate.Tick += new System.EventHandler(this.timerClockAndDate_Tick);
+            // 
+            // lblClock
+            // 
+            this.lblClock.BackColor = System.Drawing.Color.Transparent;
+            this.lblClock.Enabled = false;
+            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblClock.ForeColor = System.Drawing.Color.Azure;
+            this.lblClock.Location = new System.Drawing.Point(303, 9);
+            this.lblClock.Name = "lblClock";
+            this.lblClock.Size = new System.Drawing.Size(158, 72);
+            this.lblClock.TabIndex = 0;
+            this.lblClock.Text = "00:00:0000\r\n00:00:00";
+            this.lblClock.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.listBoxMusicList);
+            this.panel1.Controls.Add(this.listBoxImageList);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Enabled = false;
+            this.panel1.Location = new System.Drawing.Point(461, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(339, 450);
+            this.panel1.TabIndex = 7;
+            this.panel1.Visible = false;
+            // 
+            // listBoxMusicList
+            // 
+            this.listBoxMusicList.FormattingEnabled = true;
+            this.listBoxMusicList.HorizontalScrollbar = true;
+            this.listBoxMusicList.Location = new System.Drawing.Point(152, 4);
+            this.listBoxMusicList.Name = "listBoxMusicList";
+            this.listBoxMusicList.ScrollAlwaysVisible = true;
+            this.listBoxMusicList.Size = new System.Drawing.Size(181, 446);
+            this.listBoxMusicList.TabIndex = 0;
+            this.listBoxMusicList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxMusicList_KeyDown);
+            this.listBoxMusicList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxMusicList_MouseDoubleClick);
+            // 
+            // listBoxImageList
+            // 
+            this.listBoxImageList.FormattingEnabled = true;
+            this.listBoxImageList.HorizontalScrollbar = true;
+            this.listBoxImageList.Location = new System.Drawing.Point(0, 4);
+            this.listBoxImageList.Name = "listBoxImageList";
+            this.listBoxImageList.ScrollAlwaysVisible = true;
+            this.listBoxImageList.Size = new System.Drawing.Size(146, 446);
+            this.listBoxImageList.TabIndex = 0;
+            this.listBoxImageList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxImageList_KeyDown);
+            this.listBoxImageList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxImageList_MouseDoubleClick);
+            // 
             // ShowScreenSaverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblClock);
             this.Controls.Add(this.lblmusicBox);
-            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblpictureBox);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.grpBoxMediaPlayer);
             this.Controls.Add(this.pictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -143,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWinMediaPlayer)).EndInit();
             this.grpBoxMediaPlayer.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +220,11 @@
         private System.Windows.Forms.GroupBox grpBoxMediaPlayer;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label lblmusicBox;
+        private System.Windows.Forms.Timer timerClockAndDate;
+        private System.Windows.Forms.Label lblClock;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox listBoxMusicList;
+        private System.Windows.Forms.ListBox listBoxImageList;
     }
 }
 

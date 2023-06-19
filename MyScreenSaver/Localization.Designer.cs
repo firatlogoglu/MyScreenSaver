@@ -178,6 +178,15 @@ namespace MyScreenSaver {
         }
         
         /// <summary>
+        ///   Video Klasör Listesi benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string ListofVideoFolders {
+            get {
+                return ResourceManager.GetString("ListofVideoFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Müzik Oynatıcısı benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string MusicPlayer {
@@ -250,6 +259,15 @@ namespace MyScreenSaver {
         }
         
         /// <summary>
+        ///   Saati ve Tarihi Göster benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string ShowClockAndDate {
+            get {
+                return ResourceManager.GetString("ShowClockAndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Süreyi Göster benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string ShowTime {
@@ -273,6 +291,33 @@ namespace MyScreenSaver {
         internal static string TTime {
             get {
                 return ResourceManager.GetString("TTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Video Slayt Gösterisi benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string VideoSlideshow {
+            get {
+                return ResourceManager.GetString("VideoSlideshow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   VLC Media Player benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string VLC {
+            get {
+                return ResourceManager.GetString("VLC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Windows Media Player benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string WMP {
+            get {
+                return ResourceManager.GetString("WMP", resourceCulture);
             }
         }
     }

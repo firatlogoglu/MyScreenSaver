@@ -44,6 +44,33 @@
 
 <h2>Settings/Ayarlar</h2>
 
+<table>
+  <tr>
+    <th>Steps/Adımlar</th>
+  </tr>
+  <tr>
+    <td>
+      1.) Yapılandır'ma üzerinden ayarlandığında ayarlara gösterim aşamasında farklı ayar dosyaları oluşturup kullanıyor. 
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2.) 1. Adımdaki sorunun gidermek için 1 dk ekran koruyucusunun devreye girmesini bekleyin.<br>
+      2.) Wait for the screensaver to activate for 1 minute to resolve the problem in step one.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      3.) İlk kez devreye gireceği için otomatik olarak Ayarlar sayfası açılacaktır.<br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      4.) Ayarlar sayfasını kendinize göre ayarlayabilirsiniz.<br>
+    </td>
+  </tr>
+</table>
+
 <div>
 <h2>License/Lisans</h2>
 <strong>MIT</strong>

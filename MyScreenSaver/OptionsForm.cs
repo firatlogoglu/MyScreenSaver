@@ -19,6 +19,8 @@ namespace MyScreenSaver
             GetPictureExtensions();
             GetMusicDirs();
             GetMusicExtensions();
+            GetVideoDirs();
+            GetVideoExtensions();
             Lang();
         }
 
@@ -28,11 +30,40 @@ namespace MyScreenSaver
             cmbBoxLangsec = true;
             chkBoxMouseDbClick.Checked = Settings.Default.AppCloseMouseDbClick;
             chkBoxPictureAuto.Checked = Settings.Default.PictureAuto;
-            chkBoxShowTime.Checked = Settings.Default.ShowTime;
+            chkBoxShowTime.Checked = Settings.Default.ShowTime;          
             chkBoxMusicPlayer.Checked = Settings.Default.MusicPlayer;
+            chkBoxShowClockAndDate.Checked = Settings.Default.ClockAndDate;
+            chkBoxRememberRemoveFileList.Checked = Settings.Default.RememberRemoveFileList;
+
             txtboxTime.Enabled = Settings.Default.PictureAuto;
             txtboxTime.Text = Settings.Default.PictureTime.ToString();
             grpBoxMusicPlayer.Enabled = Settings.Default.MusicPlayer;
+
+            if (Settings.Default.ImageSlideshow)
+            {
+                radioBtnImageSlideshow.Checked = true;
+                radioBtnVideoSlideshow.Checked = false;
+                grpBoxPictureSlideShow.Enabled = true;
+                grpBoxVideoSlideShow.Enabled = false;
+            }
+            else
+            {
+                radioBtnImageSlideshow.Checked = false;
+                radioBtnVideoSlideshow.Checked = true;
+                grpBoxPictureSlideShow.Enabled = false;
+                grpBoxVideoSlideShow.Enabled = true;
+            }
+
+            if (Settings.Default.VideoAppWMP)
+            {
+                radioBtnWMP.Checked = true;
+                radioBtnVLC.Checked = false;
+            }
+            else
+            {
+                radioBtnVLC.Checked = true;
+                radioBtnWMP.Checked = false;
+            }
         }
 
         private void GetLanguagesList()
@@ -102,6 +133,36 @@ namespace MyScreenSaver
             }
         }
 
+        private void GetVideoDirs()
+        {
+            try
+            {
+                foreach (var item in Settings.Default.VideoDir)
+                {
+                    listboxVideoDirs.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void GetVideoExtensions()
+        {
+            try
+            {
+                foreach (var item in Settings.Default.VideoExtensions)
+                {
+                    listboxVideoExtensions.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void Lang()
         {
             this.Text = Localization.Settings;
@@ -115,9 +176,14 @@ namespace MyScreenSaver
             grpBoxSlideShowAndTime.Text = Localization.TTime;
             grpBoxPictureExtension.Text = Localization.FileTypes;
             grpBoxPictureDirList.Text = Localization.ListofImageFolders;
+
             grpBoxMusicPlayer.Text = Localization.MusicPlayer;
             grpBoxMusicExtension.Text = Localization.FileTypes;
             grpBoxMusicDirList.Text = Localization.ListofMusicFolders;
+
+            grpBoxVideoSlideShow.Text = Localization.VideoSlideshow;
+            grpBoxVideoExtension.Text = Localization.FileTypes;
+            grpBoxVideoDirList.Text = Localization.ListofVideoFolders;
 
             btnAdd.Text = Localization.Add;
             btnRemove.Text = Localization.Remove;
@@ -146,6 +212,23 @@ namespace MyScreenSaver
             chkBoxPictureAuto.Text = Localization.PictureAuto;
             chkBoxShowTime.Text = Localization.ShowTime;
             chkBoxMusicPlayer.Text = Localization.MusicPlayerEnabled;
+            chkBoxShowClockAndDate.Text = Localization.ShowClockAndDate;
+
+            radioBtnImageSlideshow.Text = Localization.ImageSlideshow;
+            radioBtnVideoSlideshow.Text = Localization.VideoSlideshow;
+
+            radioBtnWMP.Text = Localization.WMP;
+            radioBtnVLC.Text = Localization.VLC;
+
+            btnAddVideo.Text = Localization.Add;
+            btnRemoveVideo.Text = Localization.Remove;
+            btnAllRemoveVideo.Text = Localization.AllRemove;
+            btnDefaultVideo.Text = Localization.Default;
+
+            btnAddVideoExtension.Text = Localization.Add;
+            btnRemoveVideoExtension.Text = Localization.Remove;
+            btnAllRemoveVideoExtension.Text = Localization.AllRemove;
+            btnVideoExtensionDefault.Text = Localization.Default;
         }
 
         private void chkBoxMouseDbClick_CheckedChanged(object sender, EventArgs e)
@@ -250,7 +333,7 @@ namespace MyScreenSaver
 
         private void chkBoxPictureAuto_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.ChkBoxPictureAuto(chkBoxPictureAuto.Checked);
+            SettingsMethods.SetPictureAuto(chkBoxPictureAuto.Checked);
             txtboxTime.Enabled = Settings.Default.PictureAuto;
         }
 
@@ -367,6 +450,133 @@ namespace MyScreenSaver
         {
             listboxMusicExtensions.Items.Clear();
             SettingsMethods.AllRemoveMusicExtensions();
+        }
+
+        private void radioBtnImageSlideshow_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.RadioBtnImageSlideshow(radioBtnImageSlideshow.Checked);
+            grpBoxPictureSlideShow.Enabled = true;
+            grpBoxVideoSlideShow.Enabled = false;
+        }
+
+        private void radioBtnVideoSlideshow_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.RadioBtnImageSlideshow(radioBtnImageSlideshow.Checked);
+            grpBoxPictureSlideShow.Enabled = false;
+            grpBoxVideoSlideShow.Enabled = true;
+        }
+
+        private void btnAddVideo_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                listboxVideoDirs.Items.Add(folderBrowserDialog.SelectedPath);
+                SettingsMethods.AddVideoDirs(folderBrowserDialog.SelectedPath);
+            }
+
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            //string filter = "Video Files";
+            //foreach (var item in listboxVideoExtensions.Items)
+            //{
+
+            //}
+            //filter += String.Format(" ({0})|{0}", "*.mkv");
+            //openFileDialog.Filter = filter;
+            ////"txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //if (openFileDialog.ShowDialog()==DialogResult.OK)
+            //{
+            //    listboxVideoDirs.Items.Add(openFileDialog.FileName);
+            //    SettingsMethods.AddVideoDirs(openFileDialog.FileName);
+            //}
+
+        }
+
+        private void btnRemoveVideo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SettingsMethods.RemoveVideoDir(listboxVideoDirs.SelectedIndex);
+                listboxVideoDirs.Items.RemoveAt(listboxVideoDirs.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAllRemoveVideo_Click(object sender, EventArgs e)
+        {
+            listboxVideoDirs.Items.Clear();
+            SettingsMethods.AllRemoveVideoDirs();
+        }
+
+        private void btnDefaultVideo_Click(object sender, EventArgs e)
+        {
+            string defaultuser = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+            listboxVideoDirs.Items.Clear();
+            listboxVideoDirs.Items.Add(defaultuser);
+            SettingsMethods.DefaultVideoDirs(defaultuser);
+        }
+
+        private void btnAddVideoExtension_Click(object sender, EventArgs e)
+        {
+            string ex = string.Format("*.{0}*", txtboxVideoExtension.Text);
+            if (!listboxVideoExtensions.Items.Contains(ex) && txtboxVideoExtension.Text != null && txtboxVideoExtension.Text != "")
+            {
+                listboxVideoExtensions.Items.Add(ex);
+                SettingsMethods.AddVideoExtension(ex);
+                txtboxVideoExtension.Text = null;
+            }
+        }
+
+        private void btnRemoveVideoExtension_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SettingsMethods.RemoveVideoExtension(listboxVideoExtensions.SelectedIndex);
+                listboxVideoExtensions.Items.RemoveAt(listboxVideoExtensions.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAllRemoveVideoExtension_Click(object sender, EventArgs e)
+        {
+            listboxVideoExtensions.Items.Clear();
+            SettingsMethods.AllRemoveVideoExtensions();
+        }
+
+        private void btnVideoExtensionDefault_Click(object sender, EventArgs e)
+        {
+            string[] ex = { "*.mp4*", "*.avi*", "*.mkv*", "*.wmv*", "*.mpg*", "*.mpeg*", "*.rm*", "*.rmvb*", };
+
+            listboxVideoExtensions.Items.Clear();
+            listboxVideoExtensions.Items.AddRange(ex);
+            SettingsMethods.DefaultVideoExtension(ex);
+        }
+
+        private void chkBoxShowClockAndDate_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.SetClockAndDate(chkBoxShowClockAndDate.Checked);
+        }
+
+        private void radioBtnWMP_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.RadioBtnWPA(radioBtnWMP.Checked);
+        }
+
+        private void radioBtnVLC_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.RadioBtnWPA(radioBtnWMP.Checked);
+        }
+
+        private void chkBoxRememberRemoveFileList_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.SetRememberRemoveFileList(chkBoxRememberRemoveFileList.Checked);
         }
     }
 }
