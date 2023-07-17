@@ -1,11 +1,161 @@
-﻿using MyScreenSaver.Properties;
+﻿using Microsoft.Win32;
+using MyScreenSaver.Languages;
+using MyScreenSaver.Properties;
+using System;
 using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MyScreenSaver.Methods
 {
     internal class SettingsMethods
     {
+        internal static void SetRegedit(string path)
+        {
+            Registry.CurrentUser.OpenSubKey("Control Panel", RegistryKeyPermissionCheck.ReadWriteSubTree).CreateSubKey("Desktop").SetValue("SCRNSAVE.EXE", path);
+        }
+
+        internal static string GetRegedit()
+        {
+            try
+            {
+                object reg = Registry.CurrentUser.OpenSubKey("Control Panel", RegistryKeyPermissionCheck.ReadWriteSubTree).OpenSubKey("Desktop").GetValue("SCRNSAVE.EXE");
+                if (null != reg)
+                {
+                    return reg.ToString();
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+                SetSCRNSAVE("");
+                return Registry.CurrentUser.OpenSubKey("Control Panel", RegistryKeyPermissionCheck.ReadWriteSubTree).OpenSubKey("Desktop").GetValue("SCRNSAVE.EXE").ToString();
+            }
+        }
+
+        /// <summary>
+        /// Edit/Set HKEY_CURRENT_USER\Control Panel\Desktop\SCRNSAVE.EXE
+        /// Default: HKEY_CURRENT_USER\Control Panel\Desktop\SCRNSAVE.EXE ...\MyScreenSaver.scr
+        /// </summary>
+        /// <param name="path"></param>
+        internal static void SetSCRNSAVE(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                path = Application.StartupPath + "\\" + "MyScreenSaver.scr";
+            }
+
+            #region desk.cpl
+            //System.Diagnostics.Process.Start("rundll32.exe", "desk.cpl,InstallScreenSaver " + path);
+            System.Diagnostics.Process.Start("control", "desk.cpl,,@screensaver");
+            #endregion
+
+            SetRegedit(path);
+        }
+
+        internal static void CheackSCRNSAVE()
+        {
+            string path = Application.StartupPath + "\\" + "MyScreenSaver.scr";
+            string ass = GetRegedit();
+
+            if (path != ass)
+            {
+                InstallSCR();
+            }
+        }
+
+        internal static void InstallSCR()
+        {
+            SetSCRNSAVE("");
+            SetCurrentUILanguage();
+        }
+
+        internal static string[] GetAllLanguageCodes()
+        {
+            string[] alllangcodes = new string[3];
+            alllangcodes[0] = AllLanguageCodes.TurkishCodeTR;
+            alllangcodes[1] = AllLanguageCodes.EnglishCodeUS;
+            alllangcodes[2] = AllLanguageCodes.EnglishCodeGB_UK;
+
+            return alllangcodes;
+        }
+
+        internal static string[] GetAllLanguageDisplayNames()
+        {
+            string[] alllangcodes = new string[3];
+            alllangcodes[0] = GetLanguageDisplayName(AllLanguageCodes.TurkishCodeTR);
+            alllangcodes[1] = GetLanguageDisplayName(AllLanguageCodes.EnglishCodeUS);
+            alllangcodes[2] = GetLanguageDisplayName(AllLanguageCodes.EnglishCodeGB_UK);
+
+            return alllangcodes;
+        }
+
+        internal static void SetLanguage(string languageCode)
+        {
+            Localization.Culture = new CultureInfo(languageCode);
+            Settings.Default.Language = GetLanguageDisplayName(languageCode);
+            Settings.Default.Save();
+            Application.Restart();
+        }
+
+        internal static void SetLanguage2(string languageCode)
+        {
+            Localization.Culture = new CultureInfo(languageCode);
+            Settings.Default.Language = GetLanguageDisplayName(languageCode);
+            Settings.Default.Save();
+            Application.Exit();
+        }
+
+
+        internal static void SetCurrentUILanguage()
+        {
+            string getuilangcode = GetCurrentUILanguageCode();
+
+            if (AllLanguageCodes.EnglishCodeGB_UK == getuilangcode)
+            {
+                SetLanguage2(getuilangcode);
+            }
+
+            if (AllLanguageCodes.EnglishCodeUS == getuilangcode)
+            {
+                SetLanguage2(getuilangcode);
+            }
+
+            if (AllLanguageCodes.TurkishCodeTR == getuilangcode)
+            {
+                SetLanguage2(getuilangcode);
+            }
+
+            if (AllLanguageCodes.EnglishCodeGB_UK != getuilangcode && AllLanguageCodes.EnglishCodeUS != getuilangcode && AllLanguageCodes.TurkishCodeTR != getuilangcode)
+            {
+                MessageBox.Show("There is no " + GetLanguageDisplayName(getuilangcode) + " language support in this software.");
+
+                SetLanguage2(AllLanguageCodes.EnglishCodeGB_UK);
+            }
+        }
+
+        internal static void GetLanguageApplication()
+        {
+            string defaultLanguage = Settings.Default.Language;
+
+            if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.TurkishCodeTR))
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.TurkishCodeTR);
+            }
+            else if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.EnglishCodeUS))
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.EnglishCodeUS);
+            }
+            else if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.EnglishCodeGB_UK))
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.EnglishCodeGB_UK);
+            }
+            else
+            {
+                SetCurrentUILanguage();
+            }
+        }
+
         internal static void SetAppCloseMouseDbClick(bool mouseDbClick)
         {
             if (mouseDbClick)
@@ -84,12 +234,39 @@ namespace MyScreenSaver.Methods
             Settings.Default.Save();
         }
 
-        internal static void SetLanguage(string languageName, string languageCode)
+        internal static void RadioBtnWPA2(bool chk)
         {
-            Localization.Culture = new CultureInfo(languageCode);
-            Settings.Default.Language = languageName;
+            if (chk)
+            {
+                Settings.Default.MusicAppWMP = true;
+            }
+            else
+            {
+                Settings.Default.MusicAppWMP = false;
+            }
             Settings.Default.Save();
-            Application.Restart();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="languageCode"></param>
+        /// <returns></returns>
+        internal static string GetLanguageDisplayName(string languageCode = null)
+        {
+            if (languageCode == "" || languageCode == null)
+            {
+                return new CultureInfo(GetCurrentUILanguageCode()).DisplayName;
+            }
+            else
+            {
+                return new CultureInfo(languageCode).DisplayName;
+            }
+        }
+
+        internal static string GetCurrentUILanguageCode()
+        {
+            return CultureInfo.CurrentUICulture.Name;
         }
 
         internal static void AddPictureDirs(string selectedpath)

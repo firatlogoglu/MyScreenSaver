@@ -123,11 +123,38 @@
   <data name="AllRemove" xml:space="preserve">
     <value>All Remove</value>
   </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>&amp;Check For Updates</value>
+  </data>
+  <data name="CurrentVersion" xml:space="preserve">
+    <value>Current Version:</value>
+  </data>
   <data name="Default" xml:space="preserve">
     <value>Default</value>
   </data>
+  <data name="Delete_File_List" xml:space="preserve">
+    <value> Do you want to remove the file from the list?</value>
+  </data>
+  <data name="DirectDownload" xml:space="preserve">
+    <value>&amp;Direct Download</value>
+  </data>
+  <data name="Downloaded" xml:space="preserve">
+    <value>Downloaded.</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Downloading...</value>
+  </data>
+  <data name="DownloadUpdates" xml:space="preserve">
+    <value>&amp;Download Updates</value>
+  </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="ERROR_2" xml:space="preserve">
+    <value>ERROR:</value>
+  </data>
+  <data name="ERROR_FILE" xml:space="preserve">
+    <value>\bERROR </value>
   </data>
   <data name="ERROR_NoMusic" xml:space="preserve">
     <value>No music.</value>
@@ -147,8 +174,23 @@
   <data name="ImageSlideshow" xml:space="preserve">
     <value>Image Slideshow</value>
   </data>
+  <data name="InstallUpdates" xml:space="preserve">
+    <value>&amp;Install Updates</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
+  </data>
+  <data name="LastVersion" xml:space="preserve">
+    <value>Last Version:</value>
+  </data>
+  <data name="LatestVersionNotDetected" xml:space="preserve">
+    <value>Latest Version Not Detected</value>
+  </data>
+  <data name="lblANewVersionAva" xml:space="preserve">
+    <value>A New Version is Available.</value>
+  </data>
+  <data name="lblANewVersionAva2" xml:space="preserve">
+    <value>Do you want to Update?</value>
   </data>
   <data name="ListofImageFolders" xml:space="preserve">
     <value>List of Image Folders</value>
@@ -165,14 +207,26 @@
   <data name="MusicPlayerEnabled" xml:space="preserve">
     <value>The Music Player is Enabled</value>
   </data>
+  <data name="NoNewVersion" xml:space="preserve">
+    <value>The version is up to date.</value>
+  </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="OpenUpdateManager" xml:space="preserve">
+    <value>&amp;Open Update Manager</value>
   </data>
   <data name="PictureAuto" xml:space="preserve">
     <value>Play images as a slideshow</value>
   </data>
+  <data name="RememberRemoveFileList" xml:space="preserve">
+    <value>Remember the deletions from the entire list as "Yes"</value>
+  </data>
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
+  </data>
+  <data name="RemoveFile" xml:space="preserve">
+    <value>Remove File</value>
   </data>
   <data name="seconds" xml:space="preserve">
     <value>seconds</value>
@@ -192,8 +246,14 @@
   <data name="Time" xml:space="preserve">
     <value>Time:</value>
   </data>
+  <data name="TotalSize" xml:space="preserve">
+    <value>Total Size:</value>
+  </data>
   <data name="TTime" xml:space="preserve">
     <value>Time</value>
+  </data>
+  <data name="UpdateManager" xml:space="preserve">
+    <value>Update Manager</value>
   </data>
   <data name="VideoSlideshow" xml:space="preserve">
     <value>Video Slideshow</value>

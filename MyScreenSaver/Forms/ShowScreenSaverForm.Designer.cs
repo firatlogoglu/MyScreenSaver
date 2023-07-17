@@ -41,12 +41,14 @@
             this.timerClockAndDate = new System.Windows.Forms.Timer(this.components);
             this.lblClock = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.axVLCPlugin = new AxAXVLC.AxVLCPlugin2();
             this.listBoxMusicList = new System.Windows.Forms.ListBox();
             this.listBoxImageList = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWinMediaPlayer)).BeginInit();
             this.grpBoxMediaPlayer.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin)).BeginInit();
             this.SuspendLayout();
             // 
             // lblpictureBox
@@ -148,6 +150,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.axVLCPlugin);
             this.panel1.Controls.Add(this.listBoxMusicList);
             this.panel1.Controls.Add(this.listBoxImageList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -157,6 +160,18 @@
             this.panel1.Size = new System.Drawing.Size(339, 450);
             this.panel1.TabIndex = 7;
             this.panel1.Visible = false;
+            // 
+            // axVLCPlugin
+            // 
+            this.axVLCPlugin.Enabled = true;
+            this.axVLCPlugin.Location = new System.Drawing.Point(321, 147);
+            this.axVLCPlugin.Name = "axVLCPlugin";
+            this.axVLCPlugin.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVLCPlugin.OcxState")));
+            this.axVLCPlugin.Size = new System.Drawing.Size(12, 240);
+            this.axVLCPlugin.TabIndex = 1;
+            this.axVLCPlugin.Visible = false;
+            this.axVLCPlugin.MediaPlayerPlaying += new System.EventHandler(this.axVLCPlugin_MediaPlayerPlaying);
+            this.axVLCPlugin.MediaPlayerStopped += new System.EventHandler(this.axVLCPlugin_MediaPlayerStopped);
             // 
             // listBoxMusicList
             // 
@@ -174,10 +189,10 @@
             // 
             this.listBoxImageList.FormattingEnabled = true;
             this.listBoxImageList.HorizontalScrollbar = true;
-            this.listBoxImageList.Location = new System.Drawing.Point(0, 4);
+            this.listBoxImageList.Location = new System.Drawing.Point(6, 4);
             this.listBoxImageList.Name = "listBoxImageList";
             this.listBoxImageList.ScrollAlwaysVisible = true;
-            this.listBoxImageList.Size = new System.Drawing.Size(146, 446);
+            this.listBoxImageList.Size = new System.Drawing.Size(140, 446);
             this.listBoxImageList.TabIndex = 0;
             this.listBoxImageList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxImageList_KeyDown);
             this.listBoxImageList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxImageList_MouseDoubleClick);
@@ -206,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWinMediaPlayer)).EndInit();
             this.grpBoxMediaPlayer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +241,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox listBoxMusicList;
         private System.Windows.Forms.ListBox listBoxImageList;
+        private AxAXVLC.AxVLCPlugin2 axVLCPlugin;
     }
 }
 

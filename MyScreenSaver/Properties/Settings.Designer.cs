@@ -37,7 +37,7 @@ namespace MyScreenSaver.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Türkçe (Türkiye)")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Language {
             get {
                 return ((string)(this["Language"]));
@@ -218,6 +218,18 @@ namespace MyScreenSaver.Properties {
             }
             set {
                 this["RememberRemoveFileList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MusicAppWMP {
+            get {
+                return ((bool)(this["MusicAppWMP"]));
+            }
+            set {
+                this["MusicAppWMP"] = value;
             }
         }
     }

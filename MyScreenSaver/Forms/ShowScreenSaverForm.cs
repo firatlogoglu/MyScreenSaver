@@ -1,4 +1,5 @@
-﻿using MyScreenSaver.Models.WMP;
+﻿using MyScreenSaver.Languages;
+using MyScreenSaver.Models.WMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,19 +20,12 @@ namespace MyScreenSaver
         private int tick;
         private int msplayerstatus;
         private bool msplayerstart;
-        
+        private bool playing;
 
         public ShowScreenSaverForm()
         {
             InitializeComponent();
             GetSettings();
-
-            //axWinMediaPlayer.settings.mute = true;
-            //grpBoxMediaPlayer.Enabled = false;
-
-            //this.BackColor = Color.White;
-            ////panel1.BackColor = Color.FromArgb(0, Color.Black);
-            //pictureBox.BackColor = Color.White;
         }
 
         private void ShowImageAndMusicLists()
@@ -157,17 +151,36 @@ namespace MyScreenSaver
                         {
                             musicfiles.Add(item2.FullName);
                             music_z = dosyalar.Count();
+
+                            if (!Properties.Settings.Default.MusicAppWMP)
+                            {
+                                string fi = "file:///";
+
+                                try
+                                {
+                                    axVLCPlugin.playlist.add(fi + item2.FullName);
+                                    axVLCPlugin.playlist.play();
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                    continue;
+                                }
+                            }
                         }
                     }
                     listBoxMusicList.DataSource = musicfiles;
 
-                    if (music_z != 0)
+                    if(Properties.Settings.Default.MusicAppWMP)
                     {
-                        LblmusicBox_Text(musicfiles[0]);
-                    }
-                    else
-                    {
-                        ErrorMusic(Localization.ERROR_NoMusic);
+                        if (music_z != 0)
+                        {
+                            LblmusicBox_Text(musicfiles[0]);
+                        }
+                        else
+                        {
+                            ErrorMusic(Localization.ERROR_NoMusic);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -305,7 +318,6 @@ namespace MyScreenSaver
         {
             OptionsForm options = new OptionsForm();
             options.ShowDialog();
-
             if (!Properties.Settings.Default.ImageSlideshow)
             {
                 Application.Restart();
@@ -314,7 +326,12 @@ namespace MyScreenSaver
             picturefiles.Clear();
             musicfiles.Clear();
             i = 0;
+            z = 0;
             music_i = 0;
+            music_z = 0;
+            axVLCPlugin.playlist.stop();
+            axVLCPlugin.playlist.items.clear();
+            axWinMediaPlayer.close();
             GetSettings();
             PictureAuto();
         }
@@ -431,9 +448,13 @@ namespace MyScreenSaver
             try
             {
                 lblmusicBox.Text = string.Format("{0} {1}/{2}", part, music_i + 1, musicfiles.Count);
-                axWinMediaPlayer.URL = part;
-                listBoxMusicList.SelectedIndex = music_i;
-                axWinMediaPlayer.Ctlcontrols.play();
+                if (Properties.Settings.Default.MusicAppWMP)
+                {
+                    axWinMediaPlayer.URL = part;
+                    listBoxMusicList.SelectedIndex = music_i;
+                    axWinMediaPlayer.Ctlcontrols.play();
+                }
+
             }
             catch (Exception ex)
             {
@@ -457,11 +478,18 @@ namespace MyScreenSaver
         {
             if (Properties.Settings.Default.MusicPlayer)
             {
-                if (msplayerstatus == 10)
+                if (Properties.Settings.Default.MusicAppWMP)
                 {
-                    axWinMediaPlayer.Ctlcontrols.play();
-                    timer2.Stop();
+                    if (msplayerstatus == (int)PlayStates.Ready)
+                    {
+                        axWinMediaPlayer.Ctlcontrols.play();
+                    }
                 }
+                else
+                {
+                    axVLCPlugin.playlist.play();
+                }
+                timer2.Stop();
             }
         }
 
@@ -471,10 +499,11 @@ namespace MyScreenSaver
             {
                 msplayerstatus = e.newState;
                 if (e.newState == ((int)PlayStates.MediaEnded) /*|| e.newState == 1*/)
-                {  
+                {
                     timer2.Start();
                     NextMusic();
                 }
+
             }
         }
         int sd = 1;
@@ -491,7 +520,7 @@ namespace MyScreenSaver
 
             if (sd == 50)
             {
-                lblClock.Location = new System.Drawing.Point(rd.Next(1, 1200), rd.Next(1, 1200));
+                lblClock.Location = new Point(rd.Next(1, 1200), rd.Next(1, 1200));
                 sd = 1;
             }
         }
@@ -520,28 +549,66 @@ namespace MyScreenSaver
             }
             else if (e.KeyData == Keys.MediaPlayPause && Properties.Settings.Default.MusicPlayer)
             {
-                if (msplayerstart)
+                if (Properties.Settings.Default.MusicAppWMP)
                 {
-                    axWinMediaPlayer.Ctlcontrols.pause();
-                    msplayerstart = false;
+                    if (msplayerstart)
+                    {
+                        axWinMediaPlayer.Ctlcontrols.pause();
+                        msplayerstart = false;
+                    }
+                    else
+                    {
+                        axWinMediaPlayer.Ctlcontrols.play();
+                        msplayerstart = true;
+                    }
                 }
                 else
                 {
-                    axWinMediaPlayer.Ctlcontrols.play();
-                    msplayerstart = true;
+                    if (playing)
+                    {
+                        axVLCPlugin.playlist.pause();
+                    }
+                    else
+                    {
+                        axVLCPlugin.playlist.play();
+                    }
                 }
+
             }
             else if (e.KeyData == Keys.MediaStop && Properties.Settings.Default.MusicPlayer)
             {
-                axWinMediaPlayer.Ctlcontrols.stop();
+                if (Properties.Settings.Default.MusicAppWMP)
+                {
+                    axWinMediaPlayer.Ctlcontrols.stop();
+                }
+                else
+                {
+                    axVLCPlugin.playlist.stop();
+                }
+
             }
             else if (e.KeyData == Keys.MediaNextTrack && Properties.Settings.Default.MusicPlayer)
             {
-                NextMusic();
+                if (Properties.Settings.Default.MusicAppWMP)
+                {
+                    NextMusic();
+                }
+                else
+                {
+                    axVLCPlugin.playlist.next();
+                }
+
             }
             else if (e.KeyData == Keys.MediaPreviousTrack && Properties.Settings.Default.MusicPlayer)
             {
-                PreviousMusic();
+                if (Properties.Settings.Default.MusicAppWMP)
+                {
+                    PreviousMusic();
+                }
+                else
+                {
+                    axVLCPlugin.playlist.prev();
+                }
             }
             else if (e.KeyData == Keys.L)
             {
@@ -563,7 +630,7 @@ namespace MyScreenSaver
         {
             if (z != 0)
             {
-                i = listBoxImageList.SelectedIndex-1;
+                i = listBoxImageList.SelectedIndex - 1;
                 NextPicture();
             }
             else
@@ -574,27 +641,57 @@ namespace MyScreenSaver
 
         private void listBoxMusicList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (music_z != 0)
+            if (Properties.Settings.Default.MusicAppWMP)
             {
-                music_i = listBoxMusicList.SelectedIndex-1;
-                NextMusic();
+                if (music_z != 0)
+                {
+                    music_i = listBoxMusicList.SelectedIndex - 1;
+                    NextMusic();
+                }
+                else
+                {
+                    ErrorMusic();
+                }
             }
             else
             {
-                ErrorMusic();
+                axVLCPlugin.playlist.playItem(listBoxMusicList.SelectedIndex);
             }
+
         }
 
-        //private void panel1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        //{
-        //    KeyEventArgs ky = new KeyEventArgs(e.KeyData);
+        private void axVLCPlugin_MediaPlayerPaused(object sender, EventArgs e)
+        {
+            playing = false;
+        }
 
-        //    KeyboardKeyDown(ky);
-        //}
+        private void axVLCPlugin_MediaPlayerStopped(object sender, EventArgs e)
+        {
+            playing = false;
+        }
 
-        //private void listBoxImageList_KeyUp(object sender, KeyEventArgs e)
-        //{        
-        //    MessageBox.Show(e.KeyData.ToString());
-        //}
+        private void axVLCPlugin_MediaPlayerPlaying(object sender, EventArgs e)
+        {
+            playing = true;
+            music_i = axVLCPlugin.playlist.currentItem;
+
+            try
+            {
+                if (music_i == -1)
+                {
+                    axVLCPlugin.playlist.playItem(music_z + 1);
+                }
+                else
+                {
+                    music_z = axVLCPlugin.playlist.currentItem;
+                }
+                lblmusicBox.Text = string.Format("{0} {1}/{2}", musicfiles[music_i], music_i + 1, musicfiles.Count);
+                listBoxMusicList.SelectedIndex = axVLCPlugin.playlist.currentItem;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

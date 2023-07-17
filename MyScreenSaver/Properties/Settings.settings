@@ -6,7 +6,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Türkçe (Türkiye)</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="PictureTime" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10</Value>
@@ -54,6 +54,9 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="RememberRemoveFileList" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MusicAppWMP" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>

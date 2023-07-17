@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyScreenSaver.Languages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -55,9 +56,9 @@ namespace MyScreenSaver
                             }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("ada");
+                        MessageBox.Show(ex.Message);
                         continue;
                     }
 

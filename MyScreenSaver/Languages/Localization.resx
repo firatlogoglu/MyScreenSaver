@@ -117,18 +117,151 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="axWindowsMediaPlayer.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAuQAAAAIB
-        AAAAAQAAAAAAAAAAAAAAAKQAAAAAAwAACAACAAAAAAAFAAAAAAAAAPA/AwAAAAAABQAAAAAAAAAAAAgA
-        AgAAAAAAAwABAAAACwD//wMAAAAAAAsA//8IAAIAAAAAAAMAMgAAAAsAAAAIAAoAAABmAHUAbABsAAAA
-        CwD//wsAAAALAP//CwD//wsAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAAIAAIAAAAAAAsAAACvUgAA
-        2ywAAAs=
-</value>
+  <data name="Add" xml:space="preserve">
+    <value>Ekle</value>
   </data>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="AllRemove" xml:space="preserve">
+    <value>Tümünü Kaldır</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Güncellemeleri Kontrol &amp;Et</value>
+  </data>
+  <data name="CurrentVersion" xml:space="preserve">
+    <value>Geçerli Sürüm:</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="Delete_File_List" xml:space="preserve">
+    <value> Dosyayı listeden çıkartmak istiyor musun?</value>
+  </data>
+  <data name="DirectDownload" xml:space="preserve">
+    <value>&amp;Doğrudan İndir</value>
+  </data>
+  <data name="Downloaded" xml:space="preserve">
+    <value>İndirildi.</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>İndiriliyor...</value>
+  </data>
+  <data name="DownloadUpdates" xml:space="preserve">
+    <value>Güncellemeleri &amp;İndir</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="ERROR_2" xml:space="preserve">
+    <value>HATA:</value>
+  </data>
+  <data name="ERROR_FILE" xml:space="preserve">
+    <value>\bHATA </value>
+  </data>
+  <data name="ERROR_NoMusic" xml:space="preserve">
+    <value>Müzik Yok.</value>
+  </data>
+  <data name="ERROR_NoPicture" xml:space="preserve">
+    <value>Resim Yok.</value>
+  </data>
+  <data name="ExitMouseDbClick" xml:space="preserve">
+    <value>Fareyle çift tıklatıldığında çık</value>
+  </data>
+  <data name="FileTypes" xml:space="preserve">
+    <value>Dosya Türleri</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Genel Ayarlar</value>
+  </data>
+  <data name="ImageSlideshow" xml:space="preserve">
+    <value>Resim Slayt Gösterisi</value>
+  </data>
+  <data name="InstallUpdates" xml:space="preserve">
+    <value>Güncellemeleri &amp;Kur</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="LastVersion" xml:space="preserve">
+    <value>Son Sürüm:</value>
+  </data>
+  <data name="LatestVersionNotDetected" xml:space="preserve">
+    <value>Son Sürüm Tespit edilemedi</value>
+  </data>
+  <data name="lblANewVersionAva" xml:space="preserve">
+    <value>Yeni Bir Sürüm Mevcut.</value>
+  </data>
+  <data name="lblANewVersionAva2" xml:space="preserve">
+    <value>Güncellemek istiyor musun?</value>
+  </data>
+  <data name="ListofImageFolders" xml:space="preserve">
+    <value>Resim Klasör Listesi</value>
+  </data>
+  <data name="ListofMusicFolders" xml:space="preserve">
+    <value>Müzik Klasör Listesi</value>
+  </data>
+  <data name="ListofVideoFolders" xml:space="preserve">
+    <value>Video Klasör Listesi</value>
+  </data>
+  <data name="MusicPlayer" xml:space="preserve">
+    <value>Müzik Oynatıcısı</value>
+  </data>
+  <data name="MusicPlayerEnabled" xml:space="preserve">
+    <value>Müzik Oynatıcısı Etkin</value>
+  </data>
+  <data name="NoNewVersion" xml:space="preserve">
+    <value>Sürüm güncel.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="OpenUpdateManager" xml:space="preserve">
+    <value>&amp;Güncelleme Yöneticisini Aç</value>
+  </data>
+  <data name="PictureAuto" xml:space="preserve">
+    <value>Resimleri slayt gösterisi olarak oynat</value>
+  </data>
+  <data name="RememberRemoveFileList" xml:space="preserve">
+    <value>Tüm listeden çıkarmaları "Evet" olarak hatırla</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="RemoveFile" xml:space="preserve">
+    <value>Dosyayı Kaldır</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>saniye</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Göster</value>
+  </data>
+  <data name="ShowClockAndDate" xml:space="preserve">
+    <value>Saati ve Tarihi Göster</value>
+  </data>
+  <data name="ShowTime" xml:space="preserve">
+    <value>Süreyi Göster</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Süre:</value>
+  </data>
+  <data name="TotalSize" xml:space="preserve">
+    <value>Toplam Boyut:</value>
+  </data>
+  <data name="TTime" xml:space="preserve">
+    <value>Süre</value>
+  </data>
+  <data name="UpdateManager" xml:space="preserve">
+    <value>Güncelleme Yöneticisi</value>
+  </data>
+  <data name="VideoSlideshow" xml:space="preserve">
+    <value>Video Slayt Gösterisi</value>
+  </data>
+  <data name="VLC" xml:space="preserve">
+    <value>VLC Media Player</value>
+  </data>
+  <data name="WMP" xml:space="preserve">
+    <value>Windows Media Player</value>
+  </data>
 </root>

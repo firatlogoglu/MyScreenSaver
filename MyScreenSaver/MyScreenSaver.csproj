@@ -51,6 +51,29 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MyScreenSaver.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,81 +88,81 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InternetForm.cs">
+    <Compile Include="Forms\UpdateManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InternetForm.Designer.cs">
-      <DependentUpon>InternetForm.cs</DependentUpon>
+    <Compile Include="Forms\UpdateManagerForm.Designer.cs">
+      <DependentUpon>UpdateManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Languages.Designer.cs">
+    <Compile Include="Languages\AllLanguageCodes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Languages.resx</DependentUpon>
+      <DependentUpon>AllLanguageCodes.resx</DependentUpon>
     </Compile>
-    <Compile Include="Localization.en-US.Designer.cs">
+    <Compile Include="Languages\Localization.en-US.Designer.cs">
       <DependentUpon>Localization.en-US.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Localization.en-GB.Designer.cs">
+    <Compile Include="Languages\Localization.en-GB.Designer.cs">
       <DependentUpon>Localization.en-GB.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Localization.Designer.cs">
+    <Compile Include="Languages\Localization.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.resx</DependentUpon>
     </Compile>
     <Compile Include="Methods\SettingsMethods.cs" />
     <Compile Include="Models\WMP\PlayStates.cs" />
-    <Compile Include="OptionsForm.cs">
+    <Compile Include="Forms\OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptionsForm.Designer.cs">
+    <Compile Include="Forms\OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="ShowScreenSaverForm.cs">
+    <Compile Include="Forms\ShowScreenSaverForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowScreenSaverForm.Designer.cs">
+    <Compile Include="Forms\ShowScreenSaverForm.Designer.cs">
       <DependentUpon>ShowScreenSaverForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VideoPlayerWMPForm.cs">
+    <Compile Include="Forms\VideoPlayerWMPForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VideoPlayerWMPForm.Designer.cs">
+    <Compile Include="Forms\VideoPlayerWMPForm.Designer.cs">
       <DependentUpon>VideoPlayerWMPForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VideoPlayerVLCForm.cs">
+    <Compile Include="Forms\VideoPlayerVLCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VideoPlayerVLCForm.Designer.cs">
+    <Compile Include="Forms\VideoPlayerVLCForm.Designer.cs">
       <DependentUpon>VideoPlayerVLCForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="InternetForm.resx">
-      <DependentUpon>InternetForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UpdateManagerForm.resx">
+      <DependentUpon>UpdateManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Languages.resx">
+    <EmbeddedResource Include="Languages\AllLanguageCodes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Languages.Designer.cs</LastGenOutput>
+      <LastGenOutput>AllLanguageCodes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Localization.en-US.resx">
+    <EmbeddedResource Include="Languages\Localization.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.en-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Localization.en-GB.resx">
+    <EmbeddedResource Include="Languages\Localization.en-GB.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.en-GB.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Localization.resx">
+    <EmbeddedResource Include="Languages\Localization.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="OptionsForm.resx">
+    <EmbeddedResource Include="Forms\OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -152,13 +175,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShowScreenSaverForm.resx">
+    <EmbeddedResource Include="Forms\ShowScreenSaverForm.resx">
       <DependentUpon>ShowScreenSaverForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VideoPlayerWMPForm.resx">
+    <EmbeddedResource Include="Forms\VideoPlayerWMPForm.resx">
       <DependentUpon>VideoPlayerWMPForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VideoPlayerVLCForm.resx">
+    <EmbeddedResource Include="Forms\VideoPlayerVLCForm.resx">
       <DependentUpon>VideoPlayerVLCForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -177,7 +200,6 @@
   <ItemGroup>
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
@@ -232,6 +254,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(TargetDir)\$(TargetName).exe" DestinationFiles="$(TargetDir)\$(TargetName).scr" SkipUnchangedFiles="true" />

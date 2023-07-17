@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("My Screen Saver")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Fırat Loğoğlu")]
 [assembly: AssemblyProduct("My Screen Saver")]
 [assembly: AssemblyCopyright("Fırat Loğoğlu ©  2022")]
 [assembly: AssemblyTrademark("")]

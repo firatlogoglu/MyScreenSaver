@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyScreenSaver {
+namespace MyScreenSaver.Languages {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MyScreenSaver {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Languages {
+    internal class AllLanguageCodes {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Languages() {
+        internal AllLanguageCodes() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MyScreenSaver {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyScreenSaver.Languages", typeof(Languages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyScreenSaver.Languages.AllLanguageCodes", typeof(AllLanguageCodes).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,29 +79,11 @@ namespace MyScreenSaver {
         }
         
         /// <summary>
-        ///   English (United Kingdom) benzeri yerelleştirilmiş bir dize arar.
+        ///   tr-TR benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
-        internal static string EnglishUK {
+        internal static string TurkishCodeTR {
             get {
-                return ResourceManager.GetString("EnglishUK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   English (United States) benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string EnglishUS {
-            get {
-                return ResourceManager.GetString("EnglishUS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Türkçe (Türkiye) benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string TurkishTR {
-            get {
-                return ResourceManager.GetString("TurkishTR", resourceCulture);
+                return ResourceManager.GetString("TurkishCodeTR", resourceCulture);
             }
         }
     }

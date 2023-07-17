@@ -1,4 +1,5 @@
-﻿using MyScreenSaver.Models.WMP;
+﻿using MyScreenSaver.Languages;
+using MyScreenSaver.Models.WMP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -298,7 +299,7 @@ namespace MyScreenSaver
                     NextVideo();
                 }
             }
-            else if(e.newState == (int)PlayStates.Transitioning )
+            else if (e.newState == (int)PlayStates.Transitioning)
             {
                 var assss = axWindowsMediaPlayer;
             }
@@ -357,7 +358,7 @@ namespace MyScreenSaver
             string errorFilePath = videofiles[i];
 
             lblVideoBox.ForeColor = System.Drawing.Color.Red;
-            lblVideoBox.Text = string.Format("HATA: {0} {1}/{2}", errorFilePath, i + 1, videofiles.Count);
+            lblVideoBox.Text = string.Format("{0}: {1} {2}/{3}", Localization.ERROR_2, errorFilePath, i + 1, videofiles.Count);
 
             DialogResult dialogResult = new DialogResult();
             int a = 0;
@@ -393,7 +394,7 @@ namespace MyScreenSaver
                 error = true;
                 lastErrorFilePath = errorFilePath;
 
-                dialogResult = MessageBox.Show(i + ".) " + videofiles[i] + " Dosyayı listeden çıkartmak istiyormusun?", "Sil", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
+                dialogResult = MessageBox.Show(i + ".) " + videofiles[i] + Localization.Delete_File_List, Localization.RemoveFile, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
 
             }
 
@@ -412,7 +413,7 @@ namespace MyScreenSaver
             {
                 axWindowsMediaPlayer.Error.clearErrorQueue();
                 listBoxVideoList.DataSource = null;
-                videofiles[i] = "\bHATA " + videofiles[i];
+                videofiles[i] = Localization.ERROR_FILE + videofiles[i];
                 listBoxVideoList.DataSource = videofiles;
                 videofiles[i] = errorFilePath;
 

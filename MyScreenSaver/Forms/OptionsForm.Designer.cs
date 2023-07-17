@@ -46,6 +46,8 @@
             this.btnAddPictureExtension = new System.Windows.Forms.Button();
             this.txtboxPictureExtension = new System.Windows.Forms.TextBox();
             this.grpBoxPictureSlideShow = new System.Windows.Forms.GroupBox();
+            this.radioBtnVLC2 = new System.Windows.Forms.RadioButton();
+            this.radioBtnWMP2 = new System.Windows.Forms.RadioButton();
             this.grpBoxMusicPlayer = new System.Windows.Forms.GroupBox();
             this.grpBoxMusicDirList = new System.Windows.Forms.GroupBox();
             this.grpBoxMusicExtension = new System.Windows.Forms.GroupBox();
@@ -70,6 +72,8 @@
             this.btnPictureExtensionDefault = new System.Windows.Forms.Button();
             this.btnRemovePictureExtension = new System.Windows.Forms.Button();
             this.grpBoxGeneralSettings = new System.Windows.Forms.GroupBox();
+            this.btnOpenUpdateManager = new System.Windows.Forms.Button();
+            this.chkBoxRememberRemoveFileList = new System.Windows.Forms.CheckBox();
             this.chkBoxShowClockAndDate = new System.Windows.Forms.CheckBox();
             this.radioBtnVideoSlideshow = new System.Windows.Forms.RadioButton();
             this.radioBtnImageSlideshow = new System.Windows.Forms.RadioButton();
@@ -89,7 +93,6 @@
             this.btnRemoveVideoExtension = new System.Windows.Forms.Button();
             this.btnAddVideoExtension = new System.Windows.Forms.Button();
             this.radioBtnWMP = new System.Windows.Forms.RadioButton();
-            this.chkBoxRememberRemoveFileList = new System.Windows.Forms.CheckBox();
             this.grpBoxPictureSlideShow.SuspendLayout();
             this.grpBoxMusicPlayer.SuspendLayout();
             this.grpBoxMusicDirList.SuspendLayout();
@@ -261,6 +264,8 @@
             // 
             // grpBoxPictureSlideShow
             // 
+            this.grpBoxPictureSlideShow.Controls.Add(this.radioBtnVLC2);
+            this.grpBoxPictureSlideShow.Controls.Add(this.radioBtnWMP2);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxMusicPlayer);
             this.grpBoxPictureSlideShow.Controls.Add(this.chkBoxMusicPlayer);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxSlideShowAndTime);
@@ -268,10 +273,36 @@
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxPictureExtension);
             this.grpBoxPictureSlideShow.Location = new System.Drawing.Point(612, 12);
             this.grpBoxPictureSlideShow.Name = "grpBoxPictureSlideShow";
-            this.grpBoxPictureSlideShow.Size = new System.Drawing.Size(514, 753);
+            this.grpBoxPictureSlideShow.Size = new System.Drawing.Size(514, 789);
             this.grpBoxPictureSlideShow.TabIndex = 15;
             this.grpBoxPictureSlideShow.TabStop = false;
             this.grpBoxPictureSlideShow.Text = "Slayt Gösterisi";
+            // 
+            // radioBtnVLC2
+            // 
+            this.radioBtnVLC2.AutoSize = true;
+            this.radioBtnVLC2.Location = new System.Drawing.Point(145, 758);
+            this.radioBtnVLC2.Name = "radioBtnVLC2";
+            this.radioBtnVLC2.Size = new System.Drawing.Size(109, 17);
+            this.radioBtnVLC2.TabIndex = 20;
+            this.radioBtnVLC2.TabStop = true;
+            this.radioBtnVLC2.Tag = "radioBtnWMP2";
+            this.radioBtnVLC2.Text = "VLC Media Player";
+            this.radioBtnVLC2.UseVisualStyleBackColor = true;
+            this.radioBtnVLC2.CheckedChanged += new System.EventHandler(this.radioBtnVLC2_CheckedChanged);
+            // 
+            // radioBtnWMP2
+            // 
+            this.radioBtnWMP2.AutoSize = true;
+            this.radioBtnWMP2.Location = new System.Drawing.Point(6, 758);
+            this.radioBtnWMP2.Name = "radioBtnWMP2";
+            this.radioBtnWMP2.Size = new System.Drawing.Size(133, 17);
+            this.radioBtnWMP2.TabIndex = 19;
+            this.radioBtnWMP2.TabStop = true;
+            this.radioBtnWMP2.Tag = "radioBtnWMP2";
+            this.radioBtnWMP2.Text = "Windows Media Player";
+            this.radioBtnWMP2.UseVisualStyleBackColor = true;
+            this.radioBtnWMP2.CheckedChanged += new System.EventHandler(this.radioBtnWMP2_CheckedChanged);
             // 
             // grpBoxMusicPlayer
             // 
@@ -445,7 +476,7 @@
             this.grpBoxSlideShowAndTime.Controls.Add(this.chkBoxPictureAuto);
             this.grpBoxSlideShowAndTime.Location = new System.Drawing.Point(6, 326);
             this.grpBoxSlideShowAndTime.Name = "grpBoxSlideShowAndTime";
-            this.grpBoxSlideShowAndTime.Size = new System.Drawing.Size(500, 79);
+            this.grpBoxSlideShowAndTime.Size = new System.Drawing.Size(500, 115);
             this.grpBoxSlideShowAndTime.TabIndex = 16;
             this.grpBoxSlideShowAndTime.TabStop = false;
             this.grpBoxSlideShowAndTime.Text = "Süre";
@@ -499,7 +530,7 @@
             this.grpBoxPictureExtension.Controls.Add(this.btnAddPictureExtension);
             this.grpBoxPictureExtension.Location = new System.Drawing.Point(6, 160);
             this.grpBoxPictureExtension.Name = "grpBoxPictureExtension";
-            this.grpBoxPictureExtension.Size = new System.Drawing.Size(502, 159);
+            this.grpBoxPictureExtension.Size = new System.Drawing.Size(502, 195);
             this.grpBoxPictureExtension.TabIndex = 16;
             this.grpBoxPictureExtension.TabStop = false;
             this.grpBoxPictureExtension.Text = "Dosya Türleri";
@@ -536,6 +567,7 @@
             // 
             // grpBoxGeneralSettings
             // 
+            this.grpBoxGeneralSettings.Controls.Add(this.btnOpenUpdateManager);
             this.grpBoxGeneralSettings.Controls.Add(this.chkBoxRememberRemoveFileList);
             this.grpBoxGeneralSettings.Controls.Add(this.chkBoxShowClockAndDate);
             this.grpBoxGeneralSettings.Controls.Add(this.radioBtnVideoSlideshow);
@@ -549,6 +581,28 @@
             this.grpBoxGeneralSettings.TabIndex = 16;
             this.grpBoxGeneralSettings.TabStop = false;
             this.grpBoxGeneralSettings.Text = "Genel Ayarlar";
+            // 
+            // btnOpenUpdateManager
+            // 
+            this.btnOpenUpdateManager.AutoSize = true;
+            this.btnOpenUpdateManager.Location = new System.Drawing.Point(6, 160);
+            this.btnOpenUpdateManager.Name = "btnOpenUpdateManager";
+            this.btnOpenUpdateManager.Size = new System.Drawing.Size(145, 23);
+            this.btnOpenUpdateManager.TabIndex = 20;
+            this.btnOpenUpdateManager.Text = "&Güncelleme Yöneticisini Aç";
+            this.btnOpenUpdateManager.UseVisualStyleBackColor = true;
+            this.btnOpenUpdateManager.Click += new System.EventHandler(this.btnOpenUpdateManager_Click);
+            // 
+            // chkBoxRememberRemoveFileList
+            // 
+            this.chkBoxRememberRemoveFileList.AutoSize = true;
+            this.chkBoxRememberRemoveFileList.Location = new System.Drawing.Point(6, 115);
+            this.chkBoxRememberRemoveFileList.Name = "chkBoxRememberRemoveFileList";
+            this.chkBoxRememberRemoveFileList.Size = new System.Drawing.Size(237, 17);
+            this.chkBoxRememberRemoveFileList.TabIndex = 19;
+            this.chkBoxRememberRemoveFileList.Text = "Tüm listeden çıkarmaları \"Evet\" olarak hatırla";
+            this.chkBoxRememberRemoveFileList.UseVisualStyleBackColor = true;
+            this.chkBoxRememberRemoveFileList.CheckedChanged += new System.EventHandler(this.chkBoxRememberRemoveFileList_CheckedChanged);
             // 
             // chkBoxShowClockAndDate
             // 
@@ -760,17 +814,6 @@
             this.radioBtnWMP.UseVisualStyleBackColor = true;
             this.radioBtnWMP.CheckedChanged += new System.EventHandler(this.radioBtnWMP_CheckedChanged);
             // 
-            // chkBoxRememberRemoveFileList
-            // 
-            this.chkBoxRememberRemoveFileList.AutoSize = true;
-            this.chkBoxRememberRemoveFileList.Location = new System.Drawing.Point(6, 115);
-            this.chkBoxRememberRemoveFileList.Name = "chkBoxRememberRemoveFileList";
-            this.chkBoxRememberRemoveFileList.Size = new System.Drawing.Size(237, 17);
-            this.chkBoxRememberRemoveFileList.TabIndex = 19;
-            this.chkBoxRememberRemoveFileList.Text = "Tüm listeden çıkarmaları \"Evet\" olarak hatırla";
-            this.chkBoxRememberRemoveFileList.UseVisualStyleBackColor = true;
-            this.chkBoxRememberRemoveFileList.CheckedChanged += new System.EventHandler(this.chkBoxRememberRemoveFileList_CheckedChanged);
-            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -871,5 +914,8 @@
         private System.Windows.Forms.RadioButton radioBtnVLC;
         private System.Windows.Forms.RadioButton radioBtnWMP;
         private System.Windows.Forms.CheckBox chkBoxRememberRemoveFileList;
+        private System.Windows.Forms.Button btnOpenUpdateManager;
+        private System.Windows.Forms.RadioButton radioBtnVLC2;
+        private System.Windows.Forms.RadioButton radioBtnWMP2;
     }
 }

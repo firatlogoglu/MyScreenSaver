@@ -1,4 +1,6 @@
-﻿using MyScreenSaver.Methods;
+﻿using MyScreenSaver.Forms;
+using MyScreenSaver.Languages;
+using MyScreenSaver.Methods;
 using MyScreenSaver.Properties;
 using System;
 using System.Drawing;
@@ -30,14 +32,26 @@ namespace MyScreenSaver
             cmbBoxLangsec = true;
             chkBoxMouseDbClick.Checked = Settings.Default.AppCloseMouseDbClick;
             chkBoxPictureAuto.Checked = Settings.Default.PictureAuto;
-            chkBoxShowTime.Checked = Settings.Default.ShowTime;          
+            chkBoxShowTime.Checked = Settings.Default.ShowTime;
             chkBoxMusicPlayer.Checked = Settings.Default.MusicPlayer;
             chkBoxShowClockAndDate.Checked = Settings.Default.ClockAndDate;
             chkBoxRememberRemoveFileList.Checked = Settings.Default.RememberRemoveFileList;
 
             txtboxTime.Enabled = Settings.Default.PictureAuto;
             txtboxTime.Text = Settings.Default.PictureTime.ToString();
-            grpBoxMusicPlayer.Enabled = Settings.Default.MusicPlayer;
+            if (Settings.Default.MusicPlayer)
+            {
+                grpBoxMusicPlayer.Enabled = true;
+                radioBtnWMP2.Enabled = true;
+                radioBtnVLC2.Enabled = true;
+            }
+            else
+            {
+                grpBoxMusicPlayer.Enabled = false;
+                radioBtnWMP2.Enabled = false;
+                radioBtnVLC2.Enabled = false;
+            }
+
 
             if (Settings.Default.ImageSlideshow)
             {
@@ -64,13 +78,23 @@ namespace MyScreenSaver
                 radioBtnVLC.Checked = true;
                 radioBtnWMP.Checked = false;
             }
+
+            if (Settings.Default.MusicAppWMP)
+            {
+                radioBtnWMP2.Checked = true;
+                radioBtnVLC2.Checked = false;
+            }
+            else
+            {
+                radioBtnVLC2.Checked = true;
+                radioBtnWMP2.Checked = false;
+            }
         }
 
         private void GetLanguagesList()
         {
-            cmbBoxLang.Items.Add(Languages.TurkishTR);
-            cmbBoxLang.Items.Add(Languages.EnglishUS);
-            cmbBoxLang.Items.Add(Languages.EnglishUK);
+            object[] ob = SettingsMethods.GetAllLanguageDisplayNames();
+            cmbBoxLang.Items.AddRange(ob);
         }
 
         private void GetPictureDirs()
@@ -171,6 +195,8 @@ namespace MyScreenSaver
             lblSec.Text = Localization.seconds;
             lblTime.Text = Localization.Time;
 
+            btnOpenUpdateManager.Text = Localization.OpenUpdateManager;
+
             grpBoxGeneralSettings.Text = Localization.GeneralSettings;
             grpBoxPictureSlideShow.Text = Localization.ImageSlideshow;
             grpBoxSlideShowAndTime.Text = Localization.TTime;
@@ -213,6 +239,7 @@ namespace MyScreenSaver
             chkBoxShowTime.Text = Localization.ShowTime;
             chkBoxMusicPlayer.Text = Localization.MusicPlayerEnabled;
             chkBoxShowClockAndDate.Text = Localization.ShowClockAndDate;
+            chkBoxRememberRemoveFileList.Text = Localization.RememberRemoveFileList;
 
             radioBtnImageSlideshow.Text = Localization.ImageSlideshow;
             radioBtnVideoSlideshow.Text = Localization.VideoSlideshow;
@@ -245,17 +272,21 @@ namespace MyScreenSaver
         {
             if (cmbBoxLangsec)
             {
-                if (cmbBoxLang.Text == Languages.TurkishTR)
+                if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.TurkishCodeTR))
                 {
-                    SettingsMethods.SetLanguage(Languages.TurkishTR, "");
+                    SettingsMethods.SetLanguage(AllLanguageCodes.TurkishCodeTR);
                 }
-                else if (cmbBoxLang.Text == Languages.EnglishUS)
+                else if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.EnglishCodeUS))
                 {
-                    SettingsMethods.SetLanguage(Languages.EnglishUS, Languages.EnglishCodeUS);
+                    SettingsMethods.SetLanguage(AllLanguageCodes.EnglishCodeUS);
                 }
-                else if (cmbBoxLang.Text == Languages.EnglishUK)
+                else if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.EnglishCodeGB_UK))
                 {
-                    SettingsMethods.SetLanguage(Languages.EnglishUK, Languages.EnglishCodeGB_UK);
+                    SettingsMethods.SetLanguage(AllLanguageCodes.EnglishCodeGB_UK);
+                }
+                else
+                {
+                    SettingsMethods.SetLanguage(AllLanguageCodes.EnglishCodeGB_UK);
                 }
             }
         }
@@ -382,6 +413,8 @@ namespace MyScreenSaver
         {
             SettingsMethods.ChkBoxMusicPlayer(chkBoxMusicPlayer.Checked);
             grpBoxMusicPlayer.Enabled = Settings.Default.MusicPlayer;
+            radioBtnWMP2.Enabled = Settings.Default.MusicPlayer;
+            radioBtnVLC2.Enabled = Settings.Default.MusicPlayer;
         }
 
         private void btnAddMusic_Click(object sender, EventArgs e)
@@ -469,7 +502,7 @@ namespace MyScreenSaver
         private void btnAddVideo_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            
+
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 listboxVideoDirs.Items.Add(folderBrowserDialog.SelectedPath);
@@ -577,6 +610,23 @@ namespace MyScreenSaver
         private void chkBoxRememberRemoveFileList_CheckedChanged(object sender, EventArgs e)
         {
             SettingsMethods.SetRememberRemoveFileList(chkBoxRememberRemoveFileList.Checked);
+        }
+
+
+        private void btnOpenUpdateManager_Click(object sender, EventArgs e)
+        {
+            UpdateManagerForm updateManagerForm = new UpdateManagerForm();
+            updateManagerForm.ShowDialog();
+        }
+
+        private void radioBtnWMP2_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.RadioBtnWPA2(radioBtnWMP2.Checked);
+        }
+
+        private void radioBtnVLC2_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsMethods.RadioBtnWPA2(radioBtnWMP2.Checked);
         }
     }
 }

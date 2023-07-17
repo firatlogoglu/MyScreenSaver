@@ -1,7 +1,7 @@
 ﻿
 namespace MyScreenSaver
 {
-    partial class VideoPlayerVLCForm
+    partial class VideoPlayerWMPForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,28 +29,14 @@ namespace MyScreenSaver
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoPlayerVLCForm));
-            this.axVLCPlugin = new AxAXVLC.AxVLCPlugin2();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoPlayerWMPForm));
             this.lblVideoBox = new System.Windows.Forms.Label();
             this.listBoxVideoList = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin)).BeginInit();
+            this.axWindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer)).BeginInit();
             this.SuspendLayout();
-            // 
-            // axVLCPlugin
-            // 
-            this.axVLCPlugin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axVLCPlugin.Enabled = true;
-            this.axVLCPlugin.Location = new System.Drawing.Point(0, 0);
-            this.axVLCPlugin.Name = "axVLCPlugin";
-            this.axVLCPlugin.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVLCPlugin.OcxState")));
-            this.axVLCPlugin.Size = new System.Drawing.Size(800, 450);
-            this.axVLCPlugin.TabIndex = 0;
-            this.axVLCPlugin.TabStop = false;
-            this.axVLCPlugin.MediaPlayerPlaying += new System.EventHandler(this.axVLCPlugin_MediaPlayerPlaying);
-            this.axVLCPlugin.MediaPlayerPaused += new System.EventHandler(this.axVLCPlugin_MediaPlayerPaused);
-            this.axVLCPlugin.MediaPlayerStopped += new System.EventHandler(this.axVLCPlugin_MediaPlayerStopped);
-            this.axVLCPlugin.DblClick += new System.EventHandler(this.axVLCPlugin_DblClick);
-            this.axVLCPlugin.KeyDownEvent += new AxAXVLC.DVLCEvents_KeyDownEventHandler(this.axVLCPlugin_KeyDownEvent);
             // 
             // lblVideoBox
             // 
@@ -79,29 +65,49 @@ namespace MyScreenSaver
             this.listBoxVideoList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxVideoList_KeyDown);
             this.listBoxVideoList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxVideoList_MouseDoubleClick);
             // 
-            // VideoPlayerVLCForm
+            // axWindowsMediaPlayer
+            // 
+            this.axWindowsMediaPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axWindowsMediaPlayer.Enabled = true;
+            this.axWindowsMediaPlayer.Location = new System.Drawing.Point(0, 0);
+            this.axWindowsMediaPlayer.Name = "axWindowsMediaPlayer";
+            this.axWindowsMediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer.OcxState")));
+            this.axWindowsMediaPlayer.Size = new System.Drawing.Size(800, 434);
+            this.axWindowsMediaPlayer.TabIndex = 3;
+            this.axWindowsMediaPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer_PlayStateChange);
+            this.axWindowsMediaPlayer.MediaError += new AxWMPLib._WMPOCXEvents_MediaErrorEventHandler(this.axWindowsMediaPlayer_MediaError);
+            this.axWindowsMediaPlayer.DoubleClickEvent += new AxWMPLib._WMPOCXEvents_DoubleClickEventHandler(this.axWindowsMediaPlayer_DoubleClickEvent);
+            this.axWindowsMediaPlayer.KeyDownEvent += new AxWMPLib._WMPOCXEvents_KeyDownEventHandler(this.axWindowsMediaPlayer_KeyDownEvent);
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // VideoPlayerWMPForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listBoxVideoList);
+            this.Controls.Add(this.axWindowsMediaPlayer);
             this.Controls.Add(this.lblVideoBox);
-            this.Controls.Add(this.axVLCPlugin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VideoPlayerVLCForm";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "VideoPlayerWMPForm";
             this.Text = "VideoPlayerForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.VideoPlayerWMPForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VideoPlayerForm_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private AxAXVLC.AxVLCPlugin2 axVLCPlugin;
         private System.Windows.Forms.Label lblVideoBox;
         private System.Windows.Forms.ListBox listBoxVideoList;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer;
+        private System.Windows.Forms.Timer timer;
     }
 }

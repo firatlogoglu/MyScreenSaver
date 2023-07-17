@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.2.32505.173
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyScreenSaver", "MyScreenSaver\MyScreenSaver.csproj", "{31732BAB-0D81-4EAA-99E9-C8C8BF592254}"
 EndProject
@@ -9,9 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Çözüm Öğeleri", "Çöz
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		bilgisayar-kurdu (Wix).url = bilgisayar-kurdu (Wix).url
+		firatlogoglu.github.io (Github).url = firatlogoglu.github.io (Github).url
 		LICENSE = LICENSE
+		MyScreenSaver (Github).url = MyScreenSaver (Github).url
+		NEWVERSION = NEWVERSION
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyScreenSaver.x86.Setup", "MyScreenSaver.Setup.x86\MyScreenSaver.Setup.x86.vdproj", "{9428BD99-516A-40B1-AC16-0C24CDD54E5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +29,10 @@ Global
 		{31732BAB-0D81-4EAA-99E9-C8C8BF592254}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31732BAB-0D81-4EAA-99E9-C8C8BF592254}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31732BAB-0D81-4EAA-99E9-C8C8BF592254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9428BD99-516A-40B1-AC16-0C24CDD54E5B}.Debug|Any CPU.ActiveCfg = Debug
+		{9428BD99-516A-40B1-AC16-0C24CDD54E5B}.Debug|Any CPU.Build.0 = Debug
+		{9428BD99-516A-40B1-AC16-0C24CDD54E5B}.Release|Any CPU.ActiveCfg = Release
+		{9428BD99-516A-40B1-AC16-0C24CDD54E5B}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
