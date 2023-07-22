@@ -254,7 +254,12 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\UpdateManager\UpdateManager.csproj">
+      <Project>{2a2c7a23-60e4-4cc8-bd84-8e3a46565953}</Project>
+      <Name>UpdateManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(TargetDir)\$(TargetName).exe" DestinationFiles="$(TargetDir)\$(TargetName).scr" SkipUnchangedFiles="true" />

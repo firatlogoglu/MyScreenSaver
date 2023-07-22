@@ -1,19 +1,19 @@
 ﻿using MyScreenSaver.Languages;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Net;
 using System.Windows.Forms;
+using UpdateManager;
 
 namespace MyScreenSaver.Forms
 {
     public partial class UpdateManagerForm : Form
     {
-        private WebClient webclient;
-        private readonly string urlVersion = "https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/NEWVERSION";
-        private string LastVersion;
+        private readonly string productVersion = Application.ProductVersion;
+        private readonly string startupPath = Application.StartupPath;
+        private readonly bool is64BitProcess = Environment.Is64BitProcess;
+        private string NewVersion;
         private string urlDownload;
-        private string fileName;
         private string path;
         private double FileSize;
         private double Percentage;
@@ -43,23 +43,17 @@ namespace MyScreenSaver.Forms
             try
             {
                 btnCheckUpdates.Enabled = false;
-                ServicePointManager.Expect100Continue = true;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                var newVersion = new WebClient().DownloadString(urlVersion);
-                var currentVersion = Application.ProductVersion;
-                newVersion = newVersion.Replace(".", "");
-                currentVersion = currentVersion.Replace(".", "");
-                if (Convert.ToInt32(newVersion) > Convert.ToInt32(currentVersion))
+                lnkLblDirectDownload.Enabled = false;
+                bool ass = UpdateManager.Update.Check(productVersion, is64BitProcess, "https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/NEWVERSION", "https://github.com/firatlogoglu/MyScreenSaver/releases/download/", "MyScreenSaver.Setup", startupPath, out string newVersion, out urlDownload, out path);
+
+                if (ass)
                 {
-                    btnCheckUpdates.Enabled = true;
-                    LastVersion = (new WebClient().DownloadString(urlVersion));
-                    urlDownload = string.Format("https://github.com/firatlogoglu/MyScreenSaver/releases/download/v{0}/MyScreenSaver.Setup_v{0}_x86.msi", LastVersion);
-                    fileName = string.Format("MyScreenSaver.Setup_v{0}_x86.msi", LastVersion);
-                    path = Application.StartupPath + "\\" + fileName;
+                    NewVersion = newVersion;
                     btnDownloadUpdates.Enabled = true;
-                    lblANewVersionAva.Text = Localization.lblANewVersionAva + "\n" + Localization.lblANewVersionAva2;
-                    lblNewVersion.Text = Localization.LastVersion + " " + (new WebClient().DownloadString(urlVersion));
+                    btnCheckUpdates.Enabled = true;
                     lnkLblDirectDownload.Enabled = true;
+                    lblANewVersionAva.Text = Localization.lblANewVersionAva + "\n" + Localization.lblANewVersionAva2;
+                    lblNewVersion.Text = Localization.LastVersion + " " + newVersion;
                 }
                 else
                 {
@@ -68,7 +62,9 @@ namespace MyScreenSaver.Forms
                     btnDownloadUpdates.Enabled = false;
                     lblANewVersionAva.Text = Localization.NoNewVersion;
                     lnkLblDirectDownload.Enabled = true;
+                    lblNewVersion.Text = Localization.LastVersion + " " + ProductVersion;
                 }
+
             }
             catch (Exception ex)
             {
@@ -89,12 +85,8 @@ namespace MyScreenSaver.Forms
         {
             btnCheckUpdates.Enabled = false;
             btnDownloadUpdates.Enabled = false;
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            webclient = new WebClient();
-            webclient.DownloadFileCompleted += WebDownloadFileCompleted;
-            webclient.DownloadProgressChanged += WebDownloadProgressChanged;
-            webclient.DownloadFileAsync(new Uri(urlDownload), path);
+
+            Download.DownloadUpdates(urlDownload, path, WebDownloadFileCompleted, WebDownloadProgressChanged);
         }
 
         private void WebDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -117,7 +109,7 @@ namespace MyScreenSaver.Forms
             }
             else
             {
-                lblStatus.Text = Localization.Downloaded + " " + "100%" + " " + Localization.TotalSize + $" {string.Format("{0:0.##} KB", FileSize / Percentage)}";
+                lblStatus.Text = Localization.Downloaded + " " + "100%" + " " + Localization.TotalSize + $" {string.Format("{0:0.##} KB", FileSize / Percentage)}" + "\n\n" + path;
                 btnDownloadUpdates.Enabled = false;
                 btnInstallUpdates.Enabled = true;
             }
@@ -127,13 +119,7 @@ namespace MyScreenSaver.Forms
         {
             try
             {
-                Process pr = new Process();
-                pr.StartInfo.FileName = path;
-                pr.StartInfo.Arguments = "";
-                pr.StartInfo.UseShellExecute = true;
-                pr.StartInfo.CreateNoWindow = false;
-
-                pr.Start();
+                Install.InstallUpdates(path);
             }
             catch (Exception ex)
             {
@@ -145,14 +131,7 @@ namespace MyScreenSaver.Forms
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(urlDownload))
-                {
-                    urlDownload = "https://github.com/firatlogoglu/MyScreenSaver/releases/latest";
-                }
-
-                Process pr = new Process();
-                pr.StartInfo.FileName = urlDownload;
-                pr.Start();
+                Download.DirectDownload("https://github.com/firatlogoglu/MyScreenSaver/releases/latest", urlDownload);
             }
             catch (Exception ex)
             {

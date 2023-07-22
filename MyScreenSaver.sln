@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Çözüm Öğeleri", "Çöz
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyScreenSaver.x86.Setup", "MyScreenSaver.Setup.x86\MyScreenSaver.Setup.x86.vdproj", "{9428BD99-516A-40B1-AC16-0C24CDD54E5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateManager", "UpdateManager\UpdateManager.csproj", "{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9428BD99-516A-40B1-AC16-0C24CDD54E5B}.Debug|Any CPU.Build.0 = Debug
 		{9428BD99-516A-40B1-AC16-0C24CDD54E5B}.Release|Any CPU.ActiveCfg = Release
 		{9428BD99-516A-40B1-AC16-0C24CDD54E5B}.Release|Any CPU.Build.0 = Release
+		{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

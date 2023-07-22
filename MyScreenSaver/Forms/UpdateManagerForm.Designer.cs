@@ -134,7 +134,7 @@ namespace MyScreenSaver.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 249);
+            this.ClientSize = new System.Drawing.Size(273, 270);
             this.Controls.Add(this.lnkLblDirectDownload);
             this.Controls.Add(this.btnCheckUpdates);
             this.Controls.Add(this.btnDownloadUpdates);
