@@ -123,29 +123,11 @@
   <data name="AllRemove" xml:space="preserve">
     <value>Tümünü Kaldır</value>
   </data>
-  <data name="CheckUpdates" xml:space="preserve">
-    <value>Güncellemeleri Kontrol &amp;Et</value>
-  </data>
-  <data name="CurrentVersion" xml:space="preserve">
-    <value>Geçerli Sürüm:</value>
-  </data>
   <data name="Default" xml:space="preserve">
     <value>Varsayılan</value>
   </data>
   <data name="Delete_File_List" xml:space="preserve">
     <value> Dosyayı listeden çıkartmak istiyor musun?</value>
-  </data>
-  <data name="DirectDownload" xml:space="preserve">
-    <value>&amp;Doğrudan İndir</value>
-  </data>
-  <data name="Downloaded" xml:space="preserve">
-    <value>İndirildi.</value>
-  </data>
-  <data name="Downloading" xml:space="preserve">
-    <value>İndiriliyor...</value>
-  </data>
-  <data name="DownloadUpdates" xml:space="preserve">
-    <value>Güncellemeleri &amp;İndir</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Hata</value>
@@ -174,23 +156,8 @@
   <data name="ImageSlideshow" xml:space="preserve">
     <value>Resim Slayt Gösterisi</value>
   </data>
-  <data name="InstallUpdates" xml:space="preserve">
-    <value>Güncellemeleri &amp;Kur</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Dil</value>
-  </data>
-  <data name="LastVersion" xml:space="preserve">
-    <value>Son Sürüm:</value>
-  </data>
-  <data name="LatestVersionNotDetected" xml:space="preserve">
-    <value>Son Sürüm Tespit edilemedi</value>
-  </data>
-  <data name="lblANewVersionAva" xml:space="preserve">
-    <value>Yeni Bir Sürüm Mevcut.</value>
-  </data>
-  <data name="lblANewVersionAva2" xml:space="preserve">
-    <value>Güncellemek istiyor musun?</value>
   </data>
   <data name="ListofImageFolders" xml:space="preserve">
     <value>Resim Klasör Listesi</value>
@@ -206,9 +173,6 @@
   </data>
   <data name="MusicPlayerEnabled" xml:space="preserve">
     <value>Müzik Oynatıcısı Etkin</value>
-  </data>
-  <data name="NoNewVersion" xml:space="preserve">
-    <value>Sürüm güncel.</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Tamam</value>
@@ -246,14 +210,8 @@
   <data name="Time" xml:space="preserve">
     <value>Süre:</value>
   </data>
-  <data name="TotalSize" xml:space="preserve">
-    <value>Toplam Boyut:</value>
-  </data>
   <data name="TTime" xml:space="preserve">
     <value>Süre</value>
-  </data>
-  <data name="UpdateManager" xml:space="preserve">
-    <value>Güncelleme Yöneticisi</value>
   </data>
   <data name="VideoSlideshow" xml:space="preserve">
     <value>Video Slayt Gösterisi</value>

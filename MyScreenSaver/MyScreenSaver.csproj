@@ -88,12 +88,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\UpdateManagerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UpdateManagerForm.Designer.cs">
-      <DependentUpon>UpdateManagerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Languages\AllLanguageCodes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,9 +137,6 @@
     <Compile Include="Forms\VideoPlayerVLCForm.Designer.cs">
       <DependentUpon>VideoPlayerVLCForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\UpdateManagerForm.resx">
-      <DependentUpon>UpdateManagerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Languages\AllLanguageCodes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AllLanguageCodes.Designer.cs</LastGenOutput>

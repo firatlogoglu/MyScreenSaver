@@ -1,5 +1,4 @@
-﻿using MyScreenSaver.Forms;
-using MyScreenSaver.Languages;
+﻿using MyScreenSaver.Languages;
 using MyScreenSaver.Methods;
 using MyScreenSaver.Properties;
 using System;
@@ -615,7 +614,7 @@ namespace MyScreenSaver
 
         private void btnOpenUpdateManager_Click(object sender, EventArgs e)
         {
-            UpdateManagerForm updateManagerForm = new UpdateManagerForm();
+            UpdateManager.UpdateManagerForm updateManagerForm = new UpdateManager.UpdateManagerForm("https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/NEWVERSION", "https://github.com/firatlogoglu/MyScreenSaver/releases/");
             updateManagerForm.ShowDialog();
         }
 

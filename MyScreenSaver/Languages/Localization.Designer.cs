@@ -79,24 +79,6 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
-        ///   Güncellemeleri Kontrol &amp;Et benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string CheckUpdates {
-            get {
-                return ResourceManager.GetString("CheckUpdates", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Geçerli Sürüm: benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string CurrentVersion {
-            get {
-                return ResourceManager.GetString("CurrentVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Varsayılan benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Default {
@@ -111,42 +93,6 @@ namespace MyScreenSaver.Languages {
         internal static string Delete_File_List {
             get {
                 return ResourceManager.GetString("Delete_File_List", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   &amp;Doğrudan İndir benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string DirectDownload {
-            get {
-                return ResourceManager.GetString("DirectDownload", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   İndirildi. benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string Downloaded {
-            get {
-                return ResourceManager.GetString("Downloaded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   İndiriliyor... benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string Downloading {
-            get {
-                return ResourceManager.GetString("Downloading", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Güncellemeleri &amp;İndir benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string DownloadUpdates {
-            get {
-                return ResourceManager.GetString("DownloadUpdates", resourceCulture);
             }
         }
         
@@ -232,56 +178,11 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
-        ///   Güncellemeleri &amp;Kur benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string InstallUpdates {
-            get {
-                return ResourceManager.GetString("InstallUpdates", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Dil benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Son Sürüm: benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string LastVersion {
-            get {
-                return ResourceManager.GetString("LastVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Son Sürüm Tespit edilemedi benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string LatestVersionNotDetected {
-            get {
-                return ResourceManager.GetString("LatestVersionNotDetected", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Yeni Bir Sürüm Mevcut. benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string lblANewVersionAva {
-            get {
-                return ResourceManager.GetString("lblANewVersionAva", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Güncellemek istiyor musun? benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string lblANewVersionAva2 {
-            get {
-                return ResourceManager.GetString("lblANewVersionAva2", resourceCulture);
             }
         }
         
@@ -327,15 +228,6 @@ namespace MyScreenSaver.Languages {
         internal static string MusicPlayerEnabled {
             get {
                 return ResourceManager.GetString("MusicPlayerEnabled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sürüm güncel. benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string NoNewVersion {
-            get {
-                return ResourceManager.GetString("NoNewVersion", resourceCulture);
             }
         }
         
@@ -448,29 +340,11 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
-        ///   Toplam Boyut: benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string TotalSize {
-            get {
-                return ResourceManager.GetString("TotalSize", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Süre benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string TTime {
             get {
                 return ResourceManager.GetString("TTime", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Güncelleme Yöneticisi benzeri yerelleştirilmiş bir dize arar.
-        /// </summary>
-        internal static string UpdateManager {
-            get {
-                return ResourceManager.GetString("UpdateManager", resourceCulture);
             }
         }
         
