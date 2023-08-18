@@ -1,7 +1,7 @@
 ﻿using MyScreenSaver.Languages;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MyScreenSaver
@@ -9,7 +9,7 @@ namespace MyScreenSaver
     public partial class VideoPlayerVLCForm : Form
     {
         private List<string> videofiles = new List<string>();
-        private List<string> video_extensions = new List<string>();
+        private static List<string> video_extensions = new List<string>();
         private bool playing;
         public VideoPlayerVLCForm()
         {
@@ -39,23 +39,21 @@ namespace MyScreenSaver
                 {
                     try
                     {
-                        var dosyalar = video_extensions.SelectMany(ext => new System.IO.DirectoryInfo(item).GetFiles(ext, System.IO.SearchOption.AllDirectories));
+                        videofiles.AddRange(SearchForVideoFiles(item));
 
-
-                        foreach (var item2 in dosyalar)
+                        try
                         {
-                            try
+                            foreach (var item2 in videofiles)
                             {
-                                axVLCPlugin.playlist.add(fi + item2.FullName);
-                                videofiles.Add(item2.FullName);
-                            }
-                            catch (Exception)
-                            {
-
-                                continue;
+                                axVLCPlugin.playlist.add(fi + item2);
                             }
                         }
+                        catch (Exception)
+                        {
+                            continue;
+                        }
                     }
+
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
@@ -70,6 +68,40 @@ namespace MyScreenSaver
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        static List<string> SearchForVideoFiles(string directory)
+        {
+            var videoFiles = new List<string>();
+
+            try
+            {
+                foreach (string ext in video_extensions)
+                {
+                    foreach (string filePath in Directory.GetFiles(directory, ext))
+                    {
+                        videoFiles.Add(filePath);
+                    }
+                }
+
+                foreach (string subDirectory in Directory.GetDirectories(directory))
+                {
+                    try
+                    {
+                        videoFiles.AddRange(SearchForVideoFiles(subDirectory));
+                    }
+                    catch (UnauthorizedAccessException)
+                    {
+                        // MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // MessageBox.Show(ex.Message);
+            }
+
+            return videoFiles;
         }
 
         private void ShowOptionsForm()

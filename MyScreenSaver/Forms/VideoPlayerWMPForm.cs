@@ -2,7 +2,7 @@
 using MyScreenSaver.Models.WMP;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MyScreenSaver
@@ -10,7 +10,8 @@ namespace MyScreenSaver
     public partial class VideoPlayerWMPForm : Form
     {
         private List<string> videofiles = new List<string>();
-        private List<string> video_extensions = new List<string>();
+        private static List<string> video_extensions = new List<string>();
+
         private int i;
         private bool playing;
         private int msplayerstatus;
@@ -27,8 +28,6 @@ namespace MyScreenSaver
             this.Text = Localization.VideoSlideshow;
             listBoxVideoList.Location = new System.Drawing.Point(1600, 0);
             listBoxVideoList.Enabled = false;
-            //axVLCPlugin.Toolbar = false;
-            //axVLCPlugin.CtlVisible = false;
             axWindowsMediaPlayer.Ctlenabled = true;
             listBoxVideoList.Visible = false;
 
@@ -39,28 +38,13 @@ namespace MyScreenSaver
                     video_extensions.Add(item);
                 }
 
-                //string fi = "file:///";
                 foreach (var item in Properties.Settings.Default.VideoDir)
                 {
-                    var dosyalar = video_extensions.SelectMany(ext => new System.IO.DirectoryInfo(item).GetFiles(ext, System.IO.SearchOption.AllDirectories));
-                    foreach (var item2 in dosyalar)
-                    {
-                        //try
-                        //{
-
-                        //}
-                        //catch (Exception)
-                        //{
-
-                        //    throw;
-                        //}
-                        videofiles.Add(item2.FullName);
-                    }
+                    videofiles.AddRange(SearchForVideoFiles(item));
                 }
 
                 listBoxVideoList.DataSource = videofiles;
                 axWindowsMediaPlayer.URL = videofiles[0];
-                //PlayVideo();
             }
             catch (Exception ex)
             {
@@ -85,6 +69,40 @@ namespace MyScreenSaver
                 listBoxVideoList.DataSource = null;
                 GetSettings();
             }
+        }
+
+        static List<string> SearchForVideoFiles(string directory)
+        {
+            var videoFiles = new List<string>();
+
+            try
+            {
+                foreach (string ext in video_extensions)
+                {
+                    foreach (string filePath in Directory.GetFiles(directory, ext))
+                    {
+                        videoFiles.Add(filePath);
+                    }
+                }
+
+                foreach (string subDirectory in Directory.GetDirectories(directory))
+                {
+                    try
+                    {
+                        videoFiles.AddRange(SearchForVideoFiles(subDirectory));
+                    }
+                    catch (UnauthorizedAccessException)
+                    {
+                        // MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // MessageBox.Show(ex.Message);
+            }
+
+            return videoFiles;
         }
 
         private void ShowVideoList()

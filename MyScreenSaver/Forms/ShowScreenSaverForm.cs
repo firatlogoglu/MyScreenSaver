@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 namespace MyScreenSaver
@@ -12,6 +13,10 @@ namespace MyScreenSaver
     {
         private List<string> picturefiles = new List<string>();
         private List<string> musicfiles = new List<string>();
+
+        private static List<string> picture_extensions = new List<string>();
+        private static List<string> music_extensions = new List<string>();
+
         private bool pause = false;
         private int i = 0;
         private int z = 0;
@@ -77,8 +82,6 @@ namespace MyScreenSaver
         private void GetSettings()
         {
             this.Text = Localization.ImageSlideshow;
-            List<string> picture_extensions = new List<string>();
-            List<string> music_extensions = new List<string>();
             lblTime.Visible = Properties.Settings.Default.ShowTime;
 
             try
@@ -90,16 +93,10 @@ namespace MyScreenSaver
 
                 foreach (var item in Properties.Settings.Default.PictureDir)
                 {
-                    var dosyalar = picture_extensions.SelectMany(ext => new System.IO.DirectoryInfo(item).GetFiles(ext, System.IO.SearchOption.AllDirectories));
-                    foreach (var item2 in dosyalar)
-                    {
-                        //if (!item2.FullName.Contains("Sys"))
-                        //{
-                        picturefiles.Add(item2.FullName);
-                        //}
-                    }
-                    z = dosyalar.Count();
+                    picturefiles.AddRange(SearchForPictureFiles(item));
                 }
+
+                z = picturefiles.Count();
                 listBoxImageList.DataSource = picturefiles;
             }
             catch (Exception ex)
@@ -146,32 +143,32 @@ namespace MyScreenSaver
 
                     foreach (var item in Properties.Settings.Default.MusicDir)
                     {
-                        var dosyalar = music_extensions.SelectMany(ext => new System.IO.DirectoryInfo(item).GetFiles(ext, System.IO.SearchOption.AllDirectories));
-                        foreach (var item2 in dosyalar)
+                        musicfiles.AddRange(SearchForMusicFiles(item));
+                        music_z = musicfiles.Count();
+
+                        if (!Properties.Settings.Default.MusicAppWMP)
                         {
-                            musicfiles.Add(item2.FullName);
-                            music_z = dosyalar.Count();
+                            string fi = "file:///";
 
-                            if (!Properties.Settings.Default.MusicAppWMP)
+                            try
                             {
-                                string fi = "file:///";
-
-                                try
+                                foreach (var it in musicfiles)
                                 {
-                                    axVLCPlugin.playlist.add(fi + item2.FullName);
+                                    axVLCPlugin.playlist.add(fi + it);
                                     axVLCPlugin.playlist.play();
                                 }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                    continue;
-                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                                continue;
                             }
                         }
                     }
+
                     listBoxMusicList.DataSource = musicfiles;
 
-                    if(Properties.Settings.Default.MusicAppWMP)
+                    if (Properties.Settings.Default.MusicAppWMP)
                     {
                         if (music_z != 0)
                         {
@@ -206,6 +203,74 @@ namespace MyScreenSaver
                 lblClock.Visible = true;
                 timerClockAndDate.Start();
             }
+        }
+
+        static List<string> SearchForPictureFiles(string directory)
+        {
+            var pictureFiles = new List<string>();
+
+            try
+            {
+                foreach (string ext in picture_extensions)
+                {
+                    foreach (string filePath in Directory.GetFiles(directory, ext))
+                    {
+                        pictureFiles.Add(filePath);
+                    }
+                }
+
+                foreach (string subDirectory in Directory.GetDirectories(directory))
+                {
+                    try
+                    {
+                        pictureFiles.AddRange(SearchForPictureFiles(subDirectory));
+                    }
+                    catch (UnauthorizedAccessException ex)
+                    {
+                        // MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // MessageBox.Show(ex.Message);
+            }
+
+            return pictureFiles;
+        }
+
+        static List<string> SearchForMusicFiles(string directory)
+        {
+            var musicFiles = new List<string>();
+
+            try
+            {
+                foreach (string ext in music_extensions)
+                {
+                    foreach (string filePath in Directory.GetFiles(directory, ext))
+                    {
+                        musicFiles.Add(filePath);
+                    }
+                }
+
+                foreach (string subDirectory in Directory.GetDirectories(directory))
+                {
+                    try
+                    {
+                        musicFiles.AddRange(SearchForMusicFiles(subDirectory));
+                    }
+                    catch (UnauthorizedAccessException)
+                    {
+                        // MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // MessageBox.Show(ex.Message);
+            }
+
+            return musicFiles;
         }
 
         private void PreviousPicture()
@@ -324,7 +389,9 @@ namespace MyScreenSaver
             }
             listBoxImageList.DataSource = listBoxMusicList.DataSource = null;
             picturefiles.Clear();
+            picture_extensions.Clear();
             musicfiles.Clear();
+            music_extensions.Clear();
             i = 0;
             z = 0;
             music_i = 0;
