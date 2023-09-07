@@ -169,8 +169,10 @@
             this.axVLCPlugin.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVLCPlugin.OcxState")));
             this.axVLCPlugin.Size = new System.Drawing.Size(12, 240);
             this.axVLCPlugin.TabIndex = 1;
+            this.axVLCPlugin.TabStop = false;
             this.axVLCPlugin.Visible = false;
             this.axVLCPlugin.MediaPlayerPlaying += new System.EventHandler(this.axVLCPlugin_MediaPlayerPlaying);
+            this.axVLCPlugin.MediaPlayerPaused += new System.EventHandler(this.axVLCPlugin_MediaPlayerPaused);
             this.axVLCPlugin.MediaPlayerStopped += new System.EventHandler(this.axVLCPlugin_MediaPlayerStopped);
             // 
             // listBoxMusicList

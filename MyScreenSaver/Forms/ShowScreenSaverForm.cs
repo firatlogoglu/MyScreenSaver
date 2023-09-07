@@ -22,6 +22,7 @@ namespace MyScreenSaver
         private int z = 0;
         private int music_i = 0;
         private int music_z = 0;
+        private int vlc_music_z = 0;
         private int tick;
         private int msplayerstatus;
         private bool msplayerstart;
@@ -155,8 +156,17 @@ namespace MyScreenSaver
                                 foreach (var it in musicfiles)
                                 {
                                     axVLCPlugin.playlist.add(fi + it);
-                                    axVLCPlugin.playlist.play();
                                 }
+
+                                if (Properties.Settings.Default.VLC_URL != null)
+                                {
+                                    foreach (var url in Properties.Settings.Default.VLC_URL)
+                                    {
+                                        musicfiles.Add(url);
+                                        axVLCPlugin.playlist.add(url);
+                                    }
+                                }
+                                axVLCPlugin.playlist.play();
                             }
                             catch (Exception ex)
                             {
@@ -396,6 +406,7 @@ namespace MyScreenSaver
             z = 0;
             music_i = 0;
             music_z = 0;
+            vlc_music_z = 0;
             axVLCPlugin.playlist.stop();
             axVLCPlugin.playlist.items.clear();
             axWinMediaPlayer.close();
@@ -521,7 +532,6 @@ namespace MyScreenSaver
                     listBoxMusicList.SelectedIndex = music_i;
                     axWinMediaPlayer.Ctlcontrols.play();
                 }
-
             }
             catch (Exception ex)
             {
@@ -570,7 +580,6 @@ namespace MyScreenSaver
                     timer2.Start();
                     NextMusic();
                 }
-
             }
         }
         int sd = 1;
@@ -744,16 +753,19 @@ namespace MyScreenSaver
 
             try
             {
-                if (music_i == -1)
+                if(string.IsNullOrEmpty(axVLCPlugin.mediaDescription.url))
                 {
-                    axVLCPlugin.playlist.playItem(music_z + 1);
+                    if (music_i == -1)
+                    {
+                        axVLCPlugin.playlist.playItem(vlc_music_z + 1);
+                    }
+                    else
+                    {
+                        vlc_music_z = axVLCPlugin.playlist.currentItem;
+                    }
+                    lblmusicBox.Text = string.Format("{0} {1}/{2}", musicfiles[music_i], music_i + 1, musicfiles.Count);
+                    listBoxMusicList.SelectedIndex = axVLCPlugin.playlist.currentItem;
                 }
-                else
-                {
-                    music_z = axVLCPlugin.playlist.currentItem;
-                }
-                lblmusicBox.Text = string.Format("{0} {1}/{2}", musicfiles[music_i], music_i + 1, musicfiles.Count);
-                listBoxMusicList.SelectedIndex = axVLCPlugin.playlist.currentItem;
             }
             catch (Exception ex)
             {

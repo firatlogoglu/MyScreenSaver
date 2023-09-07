@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,7 +60,6 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -69,10 +68,9 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -87,10 +85,9 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -112,132 +109,9 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="AllRemove" xml:space="preserve">
-    <value>All Remove</value>
-  </data>
-  <data name="Default" xml:space="preserve">
-    <value>Default</value>
-  </data>
-  <data name="Delete_File_List" xml:space="preserve">
-    <value> Do you want to remove the file from the list?</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="ERROR_2" xml:space="preserve">
-    <value>ERROR:</value>
-  </data>
-  <data name="ERROR_FILE" xml:space="preserve">
-    <value>\bERROR </value>
-  </data>
-  <data name="ERROR_NoMusic" xml:space="preserve">
-    <value>No music.</value>
-  </data>
-  <data name="ERROR_NoPicture" xml:space="preserve">
-    <value>No picture.</value>
-  </data>
-  <data name="ExitMouseDbClick" xml:space="preserve">
-    <value>Exit on mouse double click</value>
-  </data>
-  <data name="FileTypes" xml:space="preserve">
-    <value>File Types</value>
-  </data>
-  <data name="FixVLC" xml:space="preserve">
-    <value>Fix VLC</value>
-  </data>
-  <data name="GeneralSettings" xml:space="preserve">
-    <value>General Settings</value>
-  </data>
-  <data name="ImageSlideshow" xml:space="preserve">
-    <value>Image Slideshow</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="ListofImageFolders" xml:space="preserve">
-    <value>List of Image Folders</value>
-  </data>
-  <data name="ListofMusicFolders" xml:space="preserve">
-    <value>List of Music Folders</value>
-  </data>
-  <data name="ListofVideoFolders" xml:space="preserve">
-    <value>List of Video Folders</value>
-  </data>
-  <data name="Loading" xml:space="preserve">
-    <value>Loading...</value>
-  </data>
-  <data name="MusicPlayer" xml:space="preserve">
-    <value>Music Player</value>
-  </data>
-  <data name="MusicPlayerEnabled" xml:space="preserve">
-    <value>The Music Player is Enabled</value>
-  </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="OpenUpdateManager" xml:space="preserve">
-    <value>&amp;Open Update Manager</value>
-  </data>
-  <data name="PictureAuto" xml:space="preserve">
-    <value>Play images as a slideshow</value>
-  </data>
-  <data name="RememberRemoveFileList" xml:space="preserve">
-    <value>Remember the deletions from the entire list as "Yes"</value>
-  </data>
-  <data name="Remove" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="RemoveFile" xml:space="preserve">
-    <value>Remove File</value>
-  </data>
-  <data name="seconds" xml:space="preserve">
-    <value>seconds</value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="Show" xml:space="preserve">
-    <value>Show</value>
-  </data>
-  <data name="ShowClockAndDate" xml:space="preserve">
-    <value>Show Clock And Date</value>
-  </data>
-  <data name="ShowTime" xml:space="preserve">
-    <value>Show Time</value>
-  </data>
-  <data name="Time" xml:space="preserve">
-    <value>Time:</value>
-  </data>
-  <data name="TTime" xml:space="preserve">
-    <value>Time</value>
-  </data>
-  <data name="URL" xml:space="preserve">
-    <value>URL:</value>
-  </data>
-  <data name="VideoSlideshow" xml:space="preserve">
-    <value>Video Slideshow</value>
-  </data>
-  <data name="VLC" xml:space="preserve">
-    <value>VLC Media Player</value>
-  </data>
-  <data name="VLCURLList" xml:space="preserve">
-    <value>VLC URL List</value>
-  </data>
-  <data name="VLC_SupportedWebsites" xml:space="preserve">
-    <value>Supported Websites:</value>
-  </data>
-  <data name="WMP" xml:space="preserve">
-    <value>Windows Media Player</value>
-  </data>
 </root>

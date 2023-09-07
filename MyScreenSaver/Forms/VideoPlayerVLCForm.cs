@@ -10,6 +10,7 @@ namespace MyScreenSaver
     {
         private List<string> videofiles = new List<string>();
         private static List<string> video_extensions = new List<string>();
+        private int z = 0;
         private bool playing;
         public VideoPlayerVLCForm()
         {
@@ -24,6 +25,8 @@ namespace MyScreenSaver
             listBoxVideoList.Enabled = false;
             axVLCPlugin.Toolbar = false;
             axVLCPlugin.CtlVisible = false;
+            axVLCPlugin.AutoPlay = true;
+            axVLCPlugin.Show();
             listBoxVideoList.Visible = false;
 
             try
@@ -59,8 +62,17 @@ namespace MyScreenSaver
                         MessageBox.Show(ex.Message);
                         continue;
                     }
-
                 }
+
+                if(Properties.Settings.Default.VLC_URL != null)
+                {
+                    foreach (var item in Properties.Settings.Default.VLC_URL)
+                    {
+                        videofiles.Add(item);
+                        axVLCPlugin.playlist.add(item);
+                    }
+                }
+
                 PlayVideo();
                 listBoxVideoList.DataSource = videofiles;
             }
@@ -115,6 +127,7 @@ namespace MyScreenSaver
             }
             else
             {
+                z = 0;
                 videofiles.Clear();
                 video_extensions.Clear();
                 axVLCPlugin.playlist.stop();
@@ -214,7 +227,6 @@ namespace MyScreenSaver
             //}
         }
 
-        private int z = 0;
         private void axVLCPlugin_MediaPlayerPlaying(object sender, EventArgs e)
         {
             playing = true;
@@ -222,16 +234,19 @@ namespace MyScreenSaver
 
             try
             {
-                if (i == -1)
+                if(string.IsNullOrEmpty(axVLCPlugin.mediaDescription.url))
                 {
-                    axVLCPlugin.playlist.playItem(z + 1);
+                    if (i == -1)
+                    {
+                        axVLCPlugin.playlist.playItem(z + 1);
+                    }
+                    else
+                    {
+                        z = axVLCPlugin.playlist.currentItem;
+                    }
+                    lblVideoBox.Text =string.Format("{0} {1}/{2}", videofiles[i], i + 1, videofiles.Count);
+                    listBoxVideoList.SelectedIndex = axVLCPlugin.playlist.currentItem;
                 }
-                else
-                {
-                    z = axVLCPlugin.playlist.currentItem;
-                }
-                lblVideoBox.Text = string.Format("{0} {1}/{2}", videofiles[i], i + 1, videofiles.Count);
-                listBoxVideoList.SelectedIndex = axVLCPlugin.playlist.currentItem;
             }
             catch (Exception ex)
             {

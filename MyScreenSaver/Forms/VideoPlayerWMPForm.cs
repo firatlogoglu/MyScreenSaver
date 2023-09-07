@@ -63,8 +63,10 @@ namespace MyScreenSaver
             }
             else
             {
+                i = 0;
                 videofiles.Clear();
                 video_extensions.Clear();
+                lblVideoBox.Text = Localization.Loading;
                 axWindowsMediaPlayer.Ctlcontrols.stop();
                 listBoxVideoList.DataSource = null;
                 GetSettings();
@@ -143,8 +145,6 @@ namespace MyScreenSaver
         private void StopVideo()
         {
             axWindowsMediaPlayer.Ctlcontrols.stop();
-
-            var assss = axWindowsMediaPlayer;
         }
 
         private void NextVideo()

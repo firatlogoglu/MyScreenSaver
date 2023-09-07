@@ -10,7 +10,7 @@ namespace MyScreenSaver
     public partial class OptionsForm : Form
     {
         private bool cmbBoxLangsec;
-
+        private bool getFirstSettings = true;
         public OptionsForm()
         {
             InitializeComponent();
@@ -22,6 +22,7 @@ namespace MyScreenSaver
             GetMusicExtensions();
             GetVideoDirs();
             GetVideoExtensions();
+            GetVLC_URLS();
             Lang();
         }
 
@@ -51,7 +52,6 @@ namespace MyScreenSaver
                 radioBtnVLC2.Enabled = false;
             }
 
-
             if (Settings.Default.ImageSlideshow)
             {
                 radioBtnImageSlideshow.Checked = true;
@@ -63,6 +63,7 @@ namespace MyScreenSaver
             {
                 radioBtnImageSlideshow.Checked = false;
                 radioBtnVideoSlideshow.Checked = true;
+
                 grpBoxPictureSlideShow.Enabled = false;
                 grpBoxVideoSlideShow.Enabled = true;
             }
@@ -88,6 +89,30 @@ namespace MyScreenSaver
                 radioBtnVLC2.Checked = true;
                 radioBtnWMP2.Checked = false;
             }
+
+            if (Settings.Default.ImageSlideshow)
+            {
+                if (!Settings.Default.MusicAppWMP)
+                {
+                    grpBoxURLforVLC.Enabled = true;
+                }
+                else
+                {
+                    grpBoxURLforVLC.Enabled = false;
+                }
+            }
+            else
+            {
+                if (!Settings.Default.VideoAppWMP)
+                {
+                    grpBoxURLforVLC.Enabled = true;
+                }
+                else
+                {
+                    grpBoxURLforVLC.Enabled = false;
+                }
+            }
+            getFirstSettings = false;
         }
 
         private void GetLanguagesList()
@@ -186,6 +211,21 @@ namespace MyScreenSaver
             }
         }
 
+        private void GetVLC_URLS()
+        {
+            try
+            {
+                foreach (var item in Settings.Default.VLC_URL)
+                {
+                    listboxURLforVLC.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void Lang()
         {
             this.Text = Localization.Settings;
@@ -193,7 +233,6 @@ namespace MyScreenSaver
             lbLang.Text = Localization.Language;
             lblSec.Text = Localization.seconds;
             lblTime.Text = Localization.Time;
-
             btnOpenUpdateManager.Text = Localization.OpenUpdateManager;
 
             grpBoxGeneralSettings.Text = Localization.GeneralSettings;
@@ -255,16 +294,30 @@ namespace MyScreenSaver
             btnRemoveVideoExtension.Text = Localization.Remove;
             btnAllRemoveVideoExtension.Text = Localization.AllRemove;
             btnVideoExtensionDefault.Text = Localization.Default;
+
+            grpBoxURLforVLC.Text = Localization.VLCURLList;
+            lblLVC_URL.Text = Localization.URL;
+            btnYoutubeSt.Text = Localization.FixVLC;
+            btnAddURLforVLC.Text = Localization.Add;
+            btnEditURLforVLC.Text = Localization.Edit;
+            btnRemoveURLforVLC.Text = Localization.Remove;
+            btnAllRemoveURLforVLC.Text = Localization.AllRemove;
         }
 
         private void chkBoxMouseDbClick_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.SetAppCloseMouseDbClick(chkBoxMouseDbClick.Checked);
+            if (!getFirstSettings)
+            {
+                SettingsMethods.SetAppCloseMouseDbClick(chkBoxMouseDbClick.Checked);
+            }
         }
 
         private void chkBoxShowTime_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.ChkBoxShowTime(chkBoxShowTime.Checked);
+            if (!getFirstSettings)
+            {
+                SettingsMethods.ChkBoxShowTime(chkBoxShowTime.Checked);
+            }
         }
 
         private void cmbBoxLang_SelectedIndexChanged(object sender, EventArgs e)
@@ -345,8 +398,24 @@ namespace MyScreenSaver
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            ShowScreenSaverForm screenSaverForm = new ShowScreenSaverForm();
-            screenSaverForm.Show();
+            if (radioBtnImageSlideshow.Checked)
+            {
+                ShowScreenSaverForm screenSaverForm = new ShowScreenSaverForm();
+                screenSaverForm.Show();
+            }
+            else
+            {
+                if (radioBtnWMP.Checked)
+                {
+                    VideoPlayerWMPForm videoPlayerWMPForm = new VideoPlayerWMPForm();
+                    videoPlayerWMPForm.Show();
+                }
+                else
+                {
+                    VideoPlayerVLCForm videoPlayerVLCForm = new VideoPlayerVLCForm();
+                    videoPlayerVLCForm.Show();
+                }
+            }
         }
 
         private void txtboxTime_TextChanged(object sender, EventArgs e)
@@ -363,8 +432,11 @@ namespace MyScreenSaver
 
         private void chkBoxPictureAuto_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.SetPictureAuto(chkBoxPictureAuto.Checked);
-            txtboxTime.Enabled = Settings.Default.PictureAuto;
+            if (!getFirstSettings)
+            {
+                SettingsMethods.SetPictureAuto(chkBoxPictureAuto.Checked);
+                txtboxTime.Enabled = Settings.Default.PictureAuto;
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -410,10 +482,22 @@ namespace MyScreenSaver
 
         private void chkBoxMusicPlayer_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.ChkBoxMusicPlayer(chkBoxMusicPlayer.Checked);
-            grpBoxMusicPlayer.Enabled = Settings.Default.MusicPlayer;
-            radioBtnWMP2.Enabled = Settings.Default.MusicPlayer;
-            radioBtnVLC2.Enabled = Settings.Default.MusicPlayer;
+            if (!getFirstSettings)
+            {
+                SettingsMethods.ChkBoxMusicPlayer(chkBoxMusicPlayer.Checked);
+                grpBoxMusicPlayer.Enabled = Settings.Default.MusicPlayer;
+                radioBtnWMP2.Enabled = Settings.Default.MusicPlayer;
+                radioBtnVLC2.Enabled = Settings.Default.MusicPlayer;
+
+                if (chkBoxMusicPlayer.Checked && chkBoxMusicPlayer.Enabled)
+                {
+                    grpBoxURLforVLC.Enabled = radioBtnVLC2.Checked;
+                }
+                else
+                {
+                    grpBoxURLforVLC.Enabled = false;
+                }
+            }
         }
 
         private void btnAddMusic_Click(object sender, EventArgs e)
@@ -486,16 +570,32 @@ namespace MyScreenSaver
 
         private void radioBtnImageSlideshow_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.RadioBtnImageSlideshow(radioBtnImageSlideshow.Checked);
-            grpBoxPictureSlideShow.Enabled = true;
-            grpBoxVideoSlideShow.Enabled = false;
+            if (!getFirstSettings)
+            {
+                SettingsMethods.RadioBtnImageSlideshow(radioBtnImageSlideshow.Checked);
+                grpBoxPictureSlideShow.Enabled = true;
+                grpBoxVideoSlideShow.Enabled = false;
+
+                if (grpBoxPictureSlideShow.Enabled)
+                {
+                    grpBoxURLforVLC.Enabled = radioBtnVLC2.Checked;
+                }
+            }
         }
 
         private void radioBtnVideoSlideshow_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.RadioBtnImageSlideshow(radioBtnImageSlideshow.Checked);
-            grpBoxPictureSlideShow.Enabled = false;
-            grpBoxVideoSlideShow.Enabled = true;
+            if (!getFirstSettings)
+            {
+                SettingsMethods.RadioBtnImageSlideshow(radioBtnImageSlideshow.Checked);
+                grpBoxPictureSlideShow.Enabled = false;
+                grpBoxVideoSlideShow.Enabled = true;
+
+                if (grpBoxVideoSlideShow.Enabled)
+                {
+                    grpBoxURLforVLC.Enabled = radioBtnVLC.Checked;
+                }
+            }
         }
 
         private void btnAddVideo_Click(object sender, EventArgs e)
@@ -507,22 +607,6 @@ namespace MyScreenSaver
                 listboxVideoDirs.Items.Add(folderBrowserDialog.SelectedPath);
                 SettingsMethods.AddVideoDirs(folderBrowserDialog.SelectedPath);
             }
-
-            //OpenFileDialog openFileDialog = new OpenFileDialog();
-            //string filter = "Video Files";
-            //foreach (var item in listboxVideoExtensions.Items)
-            //{
-
-            //}
-            //filter += String.Format(" ({0})|{0}", "*.mkv");
-            //openFileDialog.Filter = filter;
-            ////"txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            //if (openFileDialog.ShowDialog()==DialogResult.OK)
-            //{
-            //    listboxVideoDirs.Items.Add(openFileDialog.FileName);
-            //    SettingsMethods.AddVideoDirs(openFileDialog.FileName);
-            //}
-
         }
 
         private void btnRemoveVideo_Click(object sender, EventArgs e)
@@ -593,22 +677,36 @@ namespace MyScreenSaver
 
         private void chkBoxShowClockAndDate_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.SetClockAndDate(chkBoxShowClockAndDate.Checked);
+            if (!getFirstSettings)
+            {
+                SettingsMethods.SetClockAndDate(chkBoxShowClockAndDate.Checked);
+            }
         }
 
         private void radioBtnWMP_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.RadioBtnWPA(radioBtnWMP.Checked);
+            if (!getFirstSettings)
+            {
+                SettingsMethods.RadioBtnWPA(radioBtnWMP.Checked);
+                grpBoxURLforVLC.Enabled = !radioBtnWMP.Checked;
+            }
         }
 
         private void radioBtnVLC_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.RadioBtnWPA(radioBtnWMP.Checked);
+            if (!getFirstSettings)
+            {
+                SettingsMethods.RadioBtnWPA(radioBtnWMP.Checked);
+                grpBoxURLforVLC.Enabled = radioBtnVLC.Checked;
+            }
         }
 
         private void chkBoxRememberRemoveFileList_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.SetRememberRemoveFileList(chkBoxRememberRemoveFileList.Checked);
+            if (!getFirstSettings)
+            {
+                SettingsMethods.SetRememberRemoveFileList(chkBoxRememberRemoveFileList.Checked);
+            }
         }
 
 
@@ -620,12 +718,118 @@ namespace MyScreenSaver
 
         private void radioBtnWMP2_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.RadioBtnWPA2(radioBtnWMP2.Checked);
+            if (!getFirstSettings)
+            {
+                SettingsMethods.RadioBtnWPA2(radioBtnWMP2.Checked);
+
+                if (grpBoxMusicPlayer.Enabled)
+                {
+                    grpBoxURLforVLC.Enabled = !radioBtnWMP2.Checked;
+                }
+            }
         }
 
         private void radioBtnVLC2_CheckedChanged(object sender, EventArgs e)
         {
-            SettingsMethods.RadioBtnWPA2(radioBtnWMP2.Checked);
+            if (!getFirstSettings)
+            {
+                SettingsMethods.RadioBtnWPA2(radioBtnWMP2.Checked);
+
+                if (grpBoxMusicPlayer.Enabled)
+                {
+                    grpBoxURLforVLC.Enabled = radioBtnVLC2.Checked;
+                }
+            }
+        }
+
+        private void btnYoutubeSt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SettingsMethods.VlcYoutubeSt();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAddURLforVLC_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtboxURLforVLC.Text))
+            {
+                string url = txtboxURLforVLC.Text;
+                listboxURLforVLC.Items.Add(url);
+                SettingsMethods.AddVLC_URL(url);
+            }
+            else
+            {
+                MessageBox.Show("Text Box is empty");
+            }
+        }
+
+        private void btnRemoveURLforVLC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SettingsMethods.RemoveVLC_URL(listboxURLforVLC.SelectedIndex);
+                listboxURLforVLC.Items.RemoveAt(listboxURLforVLC.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAllRemoveURLforVLC_Click(object sender, EventArgs e)
+        {
+            listboxURLforVLC.Items.Clear();
+            SettingsMethods.AllRemoveVLC_URLS();
+        }
+
+        private void txtboxURLforVLC_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipIcon = ToolTipIcon.Info;
+            toolTip.UseAnimation = true;
+            toolTip.UseFading = true;
+            toolTip.AutoPopDelay = 10000;
+            toolTip.ToolTipTitle = Localization.VLC_SupportedWebsites;
+            toolTip.SetToolTip(txtboxURLforVLC, "youtube.com\ndailymotion.com\nsoundcloud.com");
+        }
+
+        private void listboxURLforVLC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtboxURLforVLC.Text = listboxURLforVLC.SelectedItem.ToString();
+            }
+            catch (Exception ex)
+            {
+                if (ex.HResult == -2147467261)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnEditURLforVLC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = listboxURLforVLC.SelectedIndex;
+                listboxURLforVLC.Items.RemoveAt(i);
+                SettingsMethods.UpdateVLC_URL(i, txtboxURLforVLC.Text);
+                listboxURLforVLC.Items.Insert(i, txtboxURLforVLC.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

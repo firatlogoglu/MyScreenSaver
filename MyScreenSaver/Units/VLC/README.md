@@ -1,0 +1,1 @@
+[https://github.com/videolan/vlc/blob/master/share/lua/playlist/youtube.lua](https://raw.githubusercontent.com/videolan/vlc/master/share/lua/playlist/youtube.lua)

@@ -97,6 +97,15 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
+        ///   Düzenle benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Hata benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Error {
@@ -160,6 +169,15 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
+        ///   VLC&apos;yi Düzelt benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string FixVLC {
+            get {
+                return ResourceManager.GetString("FixVLC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Genel Ayarlar benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string GeneralSettings {
@@ -210,6 +228,15 @@ namespace MyScreenSaver.Languages {
         internal static string ListofVideoFolders {
             get {
                 return ResourceManager.GetString("ListofVideoFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Yükleniyor... benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
             }
         }
         
@@ -349,6 +376,15 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
+        ///   URL: benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string URL {
+            get {
+                return ResourceManager.GetString("URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Video Slayt Gösterisi benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string VideoSlideshow {
@@ -363,6 +399,24 @@ namespace MyScreenSaver.Languages {
         internal static string VLC {
             get {
                 return ResourceManager.GetString("VLC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Desteklenen Web Siteler: benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string VLC_SupportedWebsites {
+            get {
+                return ResourceManager.GetString("VLC_SupportedWebsites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   VLC URL Listesi benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string VLCURLList {
+            get {
+                return ResourceManager.GetString("VLCURLList", resourceCulture);
             }
         }
         

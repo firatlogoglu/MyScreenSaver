@@ -67,6 +67,7 @@ namespace MyScreenSaver
             // listBoxVideoList
             // 
             this.listBoxVideoList.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.listBoxVideoList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxVideoList.Dock = System.Windows.Forms.DockStyle.Right;
             this.listBoxVideoList.FormattingEnabled = true;
             this.listBoxVideoList.HorizontalScrollbar = true;
@@ -76,6 +77,8 @@ namespace MyScreenSaver
             this.listBoxVideoList.ScrollAlwaysVisible = true;
             this.listBoxVideoList.Size = new System.Drawing.Size(315, 434);
             this.listBoxVideoList.TabIndex = 2;
+            this.listBoxVideoList.TabStop = false;
+            this.listBoxVideoList.UseTabStops = false;
             this.listBoxVideoList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxVideoList_KeyDown);
             this.listBoxVideoList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxVideoList_MouseDoubleClick);
             // 

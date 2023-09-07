@@ -21,6 +21,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyScreenSaver.x86.Setup", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateManager", "UpdateManager\UpdateManager.csproj", "{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyScreenSaver.FixVLC_Administrator", "MyScreenSaver.FixVLC_Administrator\MyScreenSaver.FixVLC_Administrator.csproj", "{B511D058-9BE9-4C6C-BAB8-C7409F938140}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A2C7A23-60E4-4CC8-BD84-8E3A46565953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B511D058-9BE9-4C6C-BAB8-C7409F938140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B511D058-9BE9-4C6C-BAB8-C7409F938140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B511D058-9BE9-4C6C-BAB8-C7409F938140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B511D058-9BE9-4C6C-BAB8-C7409F938140}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
