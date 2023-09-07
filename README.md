@@ -7,7 +7,7 @@
 <table>
   <tr>
     <td>
-      <strong>Latest Release: v1.0.0</strong>
+      <strong>Latest Release: v1.0.5</strong>
     </td>
     <td>
       <a href="https://github.com/firatlogoglu/MyScreenSaver/releases/latest">[ Download for Microsoft Windows ]</a><br />
