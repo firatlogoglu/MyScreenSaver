@@ -5,7 +5,7 @@
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:MyScreenSaver.x86.Setup"
 "LanguageId" = "3:0"
-"CodePage" = "3:1252"
+"CodePage" = "3:1254"
 "UILanguageId" = "3:0"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
@@ -13,6 +13,12 @@
 "SccProvider" = "8:"
     "Hierarchy"
     {
+        "Entry"
+        {
+        "MsmKey" = "8:_137AD846D190C45C064C1B05B4B6F7AA"
+        "OwnerKey" = "8:_FB42499CE34C438D86E7CFD257EF178D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
         "Entry"
         {
         "MsmKey" = "8:_16463F46D19A4C329FECF75D8736BB20"
@@ -136,6 +142,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_FB42499CE34C438D86E7CFD257EF178D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_578214F3B283445694E17F8F6F136098"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -172,7 +184,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FB42499CE34C438D86E7CFD257EF178D"
+        "OwnerKey" = "8:_137AD846D190C45C064C1B05B4B6F7AA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -276,6 +288,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_137AD846D190C45C064C1B05B4B6F7AA"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MyScreenSaver.FixVLC_Administrator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_137AD846D190C45C064C1B05B4B6F7AA"
+                    {
+                    "Name" = "8:MyScreenSaver.FixVLC_Administrator.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MyScreenSaver.FixVLC_Administrator.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E568AD305EEF4AED8589C0DFB5FF4046"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_16463F46D19A4C329FECF75D8736BB20"
             {
             "SourcePath" = "8:..\\bilgisayar-kurdu (Wix).url"
@@ -727,7 +770,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MyScreenSaver"
         "ProductCode" = "8:{6AD7699A-F6DA-478F-9432-5A52F13B0815}"
-        "PackageCode" = "8:{1515B41C-330F-425D-8CE8-BA5D0FDB0E97}"
+        "PackageCode" = "8:{6E88E56C-D9EF-4526-975D-641D729AB9AB}"
         "UpgradeCode" = "8:{3822ECF3-48AA-492C-B21E-149B58180735}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
