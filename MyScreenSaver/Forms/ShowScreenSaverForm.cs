@@ -31,7 +31,6 @@ namespace MyScreenSaver
         public ShowScreenSaverForm()
         {
             InitializeComponent();
-            GetSettings();
         }
 
         private void ShowImageAndMusicLists()
@@ -771,6 +770,11 @@ namespace MyScreenSaver
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ShowScreenSaverForm_Load(object sender, EventArgs e)
+        {
+            GetSettings();
         }
     }
 }

@@ -72,10 +72,10 @@ namespace MyScreenSaver
             this.listBoxVideoList.FormattingEnabled = true;
             this.listBoxVideoList.HorizontalScrollbar = true;
             this.listBoxVideoList.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.listBoxVideoList.Location = new System.Drawing.Point(485, 0);
+            this.listBoxVideoList.Location = new System.Drawing.Point(167, 0);
             this.listBoxVideoList.Name = "listBoxVideoList";
             this.listBoxVideoList.ScrollAlwaysVisible = true;
-            this.listBoxVideoList.Size = new System.Drawing.Size(315, 434);
+            this.listBoxVideoList.Size = new System.Drawing.Size(633, 434);
             this.listBoxVideoList.TabIndex = 2;
             this.listBoxVideoList.TabStop = false;
             this.listBoxVideoList.UseTabStops = false;

@@ -217,6 +217,7 @@
             this.Name = "ShowScreenSaverForm";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ShowScreenSaverForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShowScreenSaverForm_KeyDown);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ShowScreenSaverForm_MouseDoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
