@@ -117,19 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EnglishCodeGB_UK" xml:space="preserve">
-    <value>en-GB</value>
+  <data name="Add" xml:space="preserve">
+    <value>Hinzufügen</value>
   </data>
-  <data name="EnglishCodeUS" xml:space="preserve">
-    <value>en-US</value>
+  <data name="AllRemove" xml:space="preserve">
+    <value>Alle Entfernen</value>
   </data>
-  <data name="GermanCodeTR" xml:space="preserve">
-    <value>de-DE</value>
+  <data name="Default" xml:space="preserve">
+    <value>Standard</value>
   </data>
-  <data name="RussianCodeRU_RU" xml:space="preserve">
-    <value>ru-RU</value>
+  <data name="Delete_File_List" xml:space="preserve">
+    <value> Möchten Sie die Datei aus der Liste entfernen?</value>
   </data>
-  <data name="TurkishCodeTR" xml:space="preserve">
-    <value>tr-TR</value>
+  <data name="Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="ERROR_2" xml:space="preserve">
+    <value>FEHLER:</value>
+  </data>
+  <data name="ERROR_FILE" xml:space="preserve">
+    <value>\bFEHLER </value>
+  </data>
+  <data name="ERROR_NoMusic" xml:space="preserve">
+    <value>Keine Musik.</value>
+  </data>
+  <data name="ERROR_NoPicture" xml:space="preserve">
+    <value>Kein Bild.</value>
+  </data>
+  <data name="ExitMouseDbClick" xml:space="preserve">
+    <value>Beenden durch Doppelklick mit der Maus</value>
+  </data>
+  <data name="FileTypes" xml:space="preserve">
+    <value>Dateitypen</value>
+  </data>
+  <data name="FixVLC" xml:space="preserve">
+    <value>VLC reparieren</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Allgemeine Einstellungen</value>
+  </data>
+  <data name="ImageSlideshow" xml:space="preserve">
+    <value>Bild-Slideshow</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Sprache:</value>
+  </data>
+  <data name="ListofImageFolders" xml:space="preserve">
+    <value>Liste der Bildordner</value>
+  </data>
+  <data name="ListofMusicFolders" xml:space="preserve">
+    <value>Liste der Musikordner</value>
+  </data>
+  <data name="ListofVideoFolders" xml:space="preserve">
+    <value>Liste der Videoordner</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Laden...</value>
+  </data>
+  <data name="MusicPlayer" xml:space="preserve">
+    <value>Musikplayer</value>
+  </data>
+  <data name="MusicPlayerEnabled" xml:space="preserve">
+    <value>Der Musik-Player ist aktiviert</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OpenUpdateManager" xml:space="preserve">
+    <value>Update-Manager öffnen</value>
+  </data>
+  <data name="PictureAuto" xml:space="preserve">
+    <value>Bilder als Diashow abspielen</value>
+  </data>
+  <data name="RememberRemoveFileList" xml:space="preserve">
+    <value>Erinnern Sie sich an die Entfernungen aus der gesamten Liste als "Ja"</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="RemoveFile" xml:space="preserve">
+    <value>Datei entfernen</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>sek.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Anzeigen</value>
+  </data>
+  <data name="ShowClockAndDate" xml:space="preserve">
+    <value>Uhrzeit und Datum anzeigen</value>
+  </data>
+  <data name="ShowTime" xml:space="preserve">
+    <value>Zeit anzeigen</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Zeit:</value>
+  </data>
+  <data name="TTime" xml:space="preserve">
+    <value>Zeit</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="VideoSlideshow" xml:space="preserve">
+    <value>Video-Diashow</value>
+  </data>
+  <data name="VLC" xml:space="preserve">
+    <value>VLC Media Player</value>
+  </data>
+  <data name="VLCURLList" xml:space="preserve">
+    <value>VLC-URL-Liste</value>
+  </data>
+  <data name="VLC_SupportedWebsites" xml:space="preserve">
+    <value>Unterstützte Websites:</value>
+  </data>
+  <data name="WMP" xml:space="preserve">
+    <value>Windows Media Player</value>
   </data>
 </root>

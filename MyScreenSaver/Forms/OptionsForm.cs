@@ -345,6 +345,10 @@ namespace MyScreenSaver
                 {
                     SettingsMethods.SetLanguage(AllLanguageCodes.RussianCodeRU_RU);
                 }
+                else if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.GermanCodeTR))
+                {
+                    SettingsMethods.SetLanguage(AllLanguageCodes.GermanCodeTR);
+                }
                 else
                 {
                     SettingsMethods.SetLanguage(AllLanguageCodes.EnglishCodeGB_UK);

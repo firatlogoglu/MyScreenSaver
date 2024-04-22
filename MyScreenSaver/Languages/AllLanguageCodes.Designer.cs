@@ -79,6 +79,15 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
+        ///   de-DE benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string GermanCodeTR {
+            get {
+                return ResourceManager.GetString("GermanCodeTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   ru-RU benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string RussianCodeRU_RU {

@@ -127,7 +127,7 @@
     <value>По умолчанию</value>
   </data>
   <data name="Delete_File_List" xml:space="preserve">
-    <value> Do you want to remove the file from the list?</value>
+    <value> Ты хочешь исключить файл из списка?</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Правка</value>

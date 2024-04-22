@@ -74,21 +74,24 @@ namespace MyScreenSaver.Methods
 
         internal static string[] GetAllLanguageCodes()
         {
-            string[] alllangcodes = new string[4];
+            string[] alllangcodes = new string[5];
             alllangcodes[0] = AllLanguageCodes.TurkishCodeTR;
             alllangcodes[1] = AllLanguageCodes.EnglishCodeUS;
             alllangcodes[2] = AllLanguageCodes.EnglishCodeGB_UK;
             alllangcodes[3] = AllLanguageCodes.RussianCodeRU_RU;
+            alllangcodes[4] = AllLanguageCodes.GermanCodeTR;
+
             return alllangcodes;
         }
 
         internal static string[] GetAllLanguageDisplayNames()
         {
-            string[] alllangcodes = new string[4];
+            string[] alllangcodes = new string[5];
             alllangcodes[0] = GetLanguageDisplayName(AllLanguageCodes.TurkishCodeTR);
             alllangcodes[1] = GetLanguageDisplayName(AllLanguageCodes.EnglishCodeUS);
             alllangcodes[2] = GetLanguageDisplayName(AllLanguageCodes.EnglishCodeGB_UK);
             alllangcodes[3] = GetLanguageDisplayName(AllLanguageCodes.RussianCodeRU_RU);
+            alllangcodes[4] = GetLanguageDisplayName(AllLanguageCodes.GermanCodeTR);
 
             return alllangcodes;
         }
@@ -134,7 +137,12 @@ namespace MyScreenSaver.Methods
                 SetLanguage2(getuilangcode);
             }
 
-            if (AllLanguageCodes.EnglishCodeGB_UK != getuilangcode && AllLanguageCodes.EnglishCodeUS != getuilangcode && AllLanguageCodes.TurkishCodeTR != getuilangcode && AllLanguageCodes.RussianCodeRU_RU != getuilangcode)
+            if (AllLanguageCodes.GermanCodeTR == getuilangcode)
+            {
+                SetLanguage2(getuilangcode);
+            }
+
+            if (AllLanguageCodes.EnglishCodeGB_UK != getuilangcode && AllLanguageCodes.EnglishCodeUS != getuilangcode && AllLanguageCodes.TurkishCodeTR != getuilangcode && AllLanguageCodes.RussianCodeRU_RU != getuilangcode && AllLanguageCodes.GermanCodeTR != getuilangcode)
             {
                 MessageBox.Show("There is no " + GetLanguageDisplayName(getuilangcode) + " language support in this software.");
 
@@ -161,6 +169,10 @@ namespace MyScreenSaver.Methods
             else if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.RussianCodeRU_RU))
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.RussianCodeRU_RU);
+            }
+            else if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.GermanCodeTR))
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.GermanCodeTR);
             }
             else
             {

@@ -520,7 +520,7 @@
             this.grpBoxSlideShowAndTime.Controls.Add(this.chkBoxPictureAuto);
             this.grpBoxSlideShowAndTime.Location = new System.Drawing.Point(6, 322);
             this.grpBoxSlideShowAndTime.Name = "grpBoxSlideShowAndTime";
-            this.grpBoxSlideShowAndTime.Size = new System.Drawing.Size(556, 78);
+            this.grpBoxSlideShowAndTime.Size = new System.Drawing.Size(556, 68);
             this.grpBoxSlideShowAndTime.TabIndex = 46;
             this.grpBoxSlideShowAndTime.TabStop = false;
             this.grpBoxSlideShowAndTime.Text = "Süre";
