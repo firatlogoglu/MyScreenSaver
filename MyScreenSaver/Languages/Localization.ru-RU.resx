@@ -118,124 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Add" xml:space="preserve">
-    <value>Add</value>
+    <value>Добавлять</value>
   </data>
   <data name="AllRemove" xml:space="preserve">
-    <value>All Remove</value>
+    <value>Все Удалить</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Default</value>
+    <value>По умолчанию</value>
   </data>
   <data name="Delete_File_List" xml:space="preserve">
     <value> Do you want to remove the file from the list?</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Правка</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка</value>
   </data>
   <data name="ERROR_2" xml:space="preserve">
-    <value>ERROR:</value>
+    <value>ОШИБКА:</value>
   </data>
   <data name="ERROR_FILE" xml:space="preserve">
-    <value>\bERROR </value>
+    <value>\bОШИБКА</value>
   </data>
   <data name="ERROR_NoMusic" xml:space="preserve">
-    <value>No music.</value>
+    <value>Музыки нет.</value>
   </data>
   <data name="ERROR_NoPicture" xml:space="preserve">
-    <value>No picture.</value>
+    <value>Нет картинки.</value>
   </data>
   <data name="ExitMouseDbClick" xml:space="preserve">
-    <value>Exit on mouse double click</value>
+    <value>Выход при двойном щелчке мыши</value>
   </data>
   <data name="FileTypes" xml:space="preserve">
-    <value>File Types</value>
+    <value>Типы файлов</value>
   </data>
   <data name="FixVLC" xml:space="preserve">
-    <value>Fix VLC</value>
+    <value>Исправить VLC</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
-    <value>General Settings</value>
+    <value>общие настройки</value>
   </data>
   <data name="ImageSlideshow" xml:space="preserve">
-    <value>Image Slideshow</value>
+    <value>Слайд-шоу изображений</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language:</value>
+    <value>Язык:</value>
   </data>
   <data name="ListofImageFolders" xml:space="preserve">
-    <value>List of Image Folders</value>
+    <value>Список папок изображений</value>
   </data>
   <data name="ListofMusicFolders" xml:space="preserve">
-    <value>List of Music Folders</value>
+    <value>Список музыкальных папок</value>
   </data>
   <data name="ListofVideoFolders" xml:space="preserve">
-    <value>List of Video Folders</value>
+    <value>Список папок с видео</value>
   </data>
   <data name="Loading" xml:space="preserve">
-    <value>Loading...</value>
+    <value>Загрузка...</value>
   </data>
   <data name="MusicPlayer" xml:space="preserve">
-    <value>Music Player</value>
+    <value>Музыкальный плеер</value>
   </data>
   <data name="MusicPlayerEnabled" xml:space="preserve">
-    <value>The Music Player is Enabled</value>
+    <value>Музыкальный проигрыватель включен</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="OpenUpdateManager" xml:space="preserve">
-    <value>&amp;Open Update Manager</value>
+    <value>Открыть менеджер обновлений</value>
   </data>
   <data name="PictureAuto" xml:space="preserve">
-    <value>Play images as a slideshow</value>
+    <value>Воспроизведение изображений в виде слайд-шоу</value>
   </data>
   <data name="RememberRemoveFileList" xml:space="preserve">
-    <value>Remember the deletions from the entire list as "Yes"</value>
+    <value>Учтите удаления из всего списка как "Да"</value>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Удалить</value>
   </data>
   <data name="RemoveFile" xml:space="preserve">
-    <value>Remove File</value>
+    <value>Удалить файл</value>
   </data>
   <data name="seconds" xml:space="preserve">
-    <value>seconds</value>
+    <value>сек</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Настройки</value>
   </data>
   <data name="Show" xml:space="preserve">
-    <value>Show</value>
+    <value>Показать</value>
   </data>
   <data name="ShowClockAndDate" xml:space="preserve">
-    <value>Show Clock And Date</value>
+    <value>Показать часы и дату</value>
   </data>
   <data name="ShowTime" xml:space="preserve">
-    <value>Show Time</value>
+    <value>Время показа</value>
   </data>
   <data name="Time" xml:space="preserve">
-    <value>Time:</value>
+    <value>Время:</value>
   </data>
   <data name="TTime" xml:space="preserve">
-    <value>Time</value>
+    <value>Время</value>
   </data>
   <data name="URL" xml:space="preserve">
     <value>URL:</value>
   </data>
   <data name="VideoSlideshow" xml:space="preserve">
-    <value>Video Slideshow</value>
+    <value>Видео слайд-шоу</value>
   </data>
   <data name="VLC" xml:space="preserve">
     <value>VLC Media Player</value>
   </data>
   <data name="VLCURLList" xml:space="preserve">
-    <value>VLC URL List</value>
+    <value>Список URL VLC</value>
   </data>
   <data name="VLC_SupportedWebsites" xml:space="preserve">
-    <value>Supported Websites:</value>
+    <value>Поддерживаемые веб-сайты:</value>
   </data>
   <data name="WMP" xml:space="preserve">
     <value>Windows Media Player</value>

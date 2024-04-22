@@ -163,7 +163,7 @@
     <value>Resim Slayt Gösterisi</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Dil</value>
+    <value>Dil:</value>
   </data>
   <data name="ListofImageFolders" xml:space="preserve">
     <value>Resim Klasör Listesi</value>

@@ -196,7 +196,7 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
-        ///   Dil benzeri yerelleştirilmiş bir dize arar.
+        ///   Dil: benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Language {
             get {

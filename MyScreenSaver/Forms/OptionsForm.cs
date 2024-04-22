@@ -302,6 +302,11 @@ namespace MyScreenSaver
             btnEditURLforVLC.Text = Localization.Edit;
             btnRemoveURLforVLC.Text = Localization.Remove;
             btnAllRemoveURLforVLC.Text = Localization.AllRemove;
+
+            cmbBoxLang.Location = new Point(lbLang.Size.Width + 8, cmbBoxLang.Location.Y);
+            radioBtnImageSlideshow.Left = chkBoxMouseDbClick.Right + 12;
+            radioBtnVideoSlideshow.Left = radioBtnImageSlideshow.Right + 12;
+            btnYoutubeSt.Left = btnOpenUpdateManager.Size.Width + 12;
         }
 
         private void chkBoxMouseDbClick_CheckedChanged(object sender, EventArgs e)
@@ -336,16 +341,15 @@ namespace MyScreenSaver
                 {
                     SettingsMethods.SetLanguage(AllLanguageCodes.EnglishCodeGB_UK);
                 }
+                else if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.RussianCodeRU_RU))
+                {
+                    SettingsMethods.SetLanguage(AllLanguageCodes.RussianCodeRU_RU);
+                }
                 else
                 {
                     SettingsMethods.SetLanguage(AllLanguageCodes.EnglishCodeGB_UK);
                 }
             }
-        }
-
-        private void lbLang_SizeChanged(object sender, EventArgs e)
-        {
-            cmbBoxLang.Location = new Point(lbLang.Size.Width + 8, cmbBoxLang.Location.Y);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

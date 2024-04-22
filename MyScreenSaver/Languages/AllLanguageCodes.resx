@@ -123,6 +123,9 @@
   <data name="EnglishCodeUS" xml:space="preserve">
     <value>en-US</value>
   </data>
+  <data name="RussianCodeRU_RU" xml:space="preserve">
+    <value>ru-RU</value>
+  </data>
   <data name="TurkishCodeTR" xml:space="preserve">
     <value>tr-TR</value>
   </data>

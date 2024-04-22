@@ -74,20 +74,21 @@ namespace MyScreenSaver.Methods
 
         internal static string[] GetAllLanguageCodes()
         {
-            string[] alllangcodes = new string[3];
+            string[] alllangcodes = new string[4];
             alllangcodes[0] = AllLanguageCodes.TurkishCodeTR;
             alllangcodes[1] = AllLanguageCodes.EnglishCodeUS;
             alllangcodes[2] = AllLanguageCodes.EnglishCodeGB_UK;
-
+            alllangcodes[3] = AllLanguageCodes.RussianCodeRU_RU;
             return alllangcodes;
         }
 
         internal static string[] GetAllLanguageDisplayNames()
         {
-            string[] alllangcodes = new string[3];
+            string[] alllangcodes = new string[4];
             alllangcodes[0] = GetLanguageDisplayName(AllLanguageCodes.TurkishCodeTR);
             alllangcodes[1] = GetLanguageDisplayName(AllLanguageCodes.EnglishCodeUS);
             alllangcodes[2] = GetLanguageDisplayName(AllLanguageCodes.EnglishCodeGB_UK);
+            alllangcodes[3] = GetLanguageDisplayName(AllLanguageCodes.RussianCodeRU_RU);
 
             return alllangcodes;
         }
@@ -128,7 +129,12 @@ namespace MyScreenSaver.Methods
                 SetLanguage2(getuilangcode);
             }
 
-            if (AllLanguageCodes.EnglishCodeGB_UK != getuilangcode && AllLanguageCodes.EnglishCodeUS != getuilangcode && AllLanguageCodes.TurkishCodeTR != getuilangcode)
+            if (AllLanguageCodes.RussianCodeRU_RU == getuilangcode)
+            {
+                SetLanguage2(getuilangcode);
+            }
+
+            if (AllLanguageCodes.EnglishCodeGB_UK != getuilangcode && AllLanguageCodes.EnglishCodeUS != getuilangcode && AllLanguageCodes.TurkishCodeTR != getuilangcode && AllLanguageCodes.RussianCodeRU_RU != getuilangcode)
             {
                 MessageBox.Show("There is no " + GetLanguageDisplayName(getuilangcode) + " language support in this software.");
 
@@ -151,6 +157,10 @@ namespace MyScreenSaver.Methods
             else if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.EnglishCodeGB_UK))
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.EnglishCodeGB_UK);
+            }
+            else if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.RussianCodeRU_RU))
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.RussianCodeRU_RU);
             }
             else
             {

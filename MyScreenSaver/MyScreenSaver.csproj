@@ -94,6 +94,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AllLanguageCodes.resx</DependentUpon>
     </Compile>
+    <Compile Include="Languages\Localization.ru-RU.Designer.cs">
+      <DependentUpon>Localization.ru-RU.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Languages\Localization.en-US.Designer.cs">
       <DependentUpon>Localization.en-US.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -141,6 +146,10 @@
     <EmbeddedResource Include="Languages\AllLanguageCodes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AllLanguageCodes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Localization.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ru-RU.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\Localization.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -95,13 +95,13 @@
             this.btnAddVideoExtension = new System.Windows.Forms.Button();
             this.radioBtnWMP = new System.Windows.Forms.RadioButton();
             this.grpBoxURLforVLC = new System.Windows.Forms.GroupBox();
+            this.lblLVC_URL = new System.Windows.Forms.Label();
             this.txtboxURLforVLC = new System.Windows.Forms.TextBox();
             this.listboxURLforVLC = new System.Windows.Forms.ListBox();
             this.btnAllRemoveURLforVLC = new System.Windows.Forms.Button();
+            this.btnEditURLforVLC = new System.Windows.Forms.Button();
             this.btnAddURLforVLC = new System.Windows.Forms.Button();
             this.btnRemoveURLforVLC = new System.Windows.Forms.Button();
-            this.lblLVC_URL = new System.Windows.Forms.Label();
-            this.btnEditURLforVLC = new System.Windows.Forms.Button();
             this.grpBoxPictureSlideShow.SuspendLayout();
             this.grpBoxMusicPlayer.SuspendLayout();
             this.grpBoxMusicDirList.SuspendLayout();
@@ -147,15 +147,16 @@
             this.lbLang.Size = new System.Drawing.Size(19, 13);
             this.lbLang.TabIndex = 2;
             this.lbLang.Text = "Dil";
-            this.lbLang.SizeChanged += new System.EventHandler(this.lbLang_SizeChanged);
             // 
             // listboxPictureDirs
             // 
+            this.listboxPictureDirs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listboxPictureDirs.FormattingEnabled = true;
             this.listboxPictureDirs.HorizontalScrollbar = true;
             this.listboxPictureDirs.Location = new System.Drawing.Point(6, 19);
             this.listboxPictureDirs.Name = "listboxPictureDirs";
-            this.listboxPictureDirs.Size = new System.Drawing.Size(491, 82);
+            this.listboxPictureDirs.Size = new System.Drawing.Size(545, 82);
             this.listboxPictureDirs.TabIndex = 34;
             // 
             // btnAdd
@@ -180,9 +181,13 @@
             // 
             // btnDefault
             // 
-            this.btnDefault.Location = new System.Drawing.Point(416, 107);
+            this.btnDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDefault.AutoSize = true;
+            this.btnDefault.Location = new System.Drawing.Point(422, 106);
             this.btnDefault.Name = "btnDefault";
-            this.btnDefault.Size = new System.Drawing.Size(75, 23);
+            this.btnDefault.Size = new System.Drawing.Size(129, 23);
             this.btnDefault.TabIndex = 38;
             this.btnDefault.Text = "Varsayılan";
             this.btnDefault.UseVisualStyleBackColor = true;
@@ -190,7 +195,9 @@
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(9, 803);
+            this.btnShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnShow.AutoSize = true;
+            this.btnShow.Location = new System.Drawing.Point(12, 803);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 23);
             this.btnShow.TabIndex = 67;
@@ -200,6 +207,7 @@
             // 
             // btnAllRemove
             // 
+            this.btnAllRemove.AutoSize = true;
             this.btnAllRemove.Location = new System.Drawing.Point(168, 107);
             this.btnAllRemove.Name = "btnAllRemove";
             this.btnAllRemove.Size = new System.Drawing.Size(96, 23);
@@ -227,6 +235,8 @@
             // 
             // chkBoxPictureAuto
             // 
+            this.chkBoxPictureAuto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chkBoxPictureAuto.AutoSize = true;
             this.chkBoxPictureAuto.Location = new System.Drawing.Point(272, 19);
             this.chkBoxPictureAuto.Name = "chkBoxPictureAuto";
@@ -238,7 +248,9 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(971, 803);
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.AutoSize = true;
+            this.btnOK.Location = new System.Drawing.Point(1105, 803);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 68;
@@ -248,11 +260,13 @@
             // 
             // listboxPictureExtensions
             // 
+            this.listboxPictureExtensions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listboxPictureExtensions.FormattingEnabled = true;
             this.listboxPictureExtensions.HorizontalScrollbar = true;
             this.listboxPictureExtensions.Location = new System.Drawing.Point(6, 19);
             this.listboxPictureExtensions.Name = "listboxPictureExtensions";
-            this.listboxPictureExtensions.Size = new System.Drawing.Size(481, 95);
+            this.listboxPictureExtensions.Size = new System.Drawing.Size(540, 95);
             this.listboxPictureExtensions.TabIndex = 40;
             // 
             // btnAddPictureExtension
@@ -274,6 +288,8 @@
             // 
             // grpBoxPictureSlideShow
             // 
+            this.grpBoxPictureSlideShow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBoxPictureSlideShow.Controls.Add(this.radioBtnVLC2);
             this.grpBoxPictureSlideShow.Controls.Add(this.radioBtnWMP2);
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxMusicPlayer);
@@ -283,7 +299,7 @@
             this.grpBoxPictureSlideShow.Controls.Add(this.grpBoxPictureExtension);
             this.grpBoxPictureSlideShow.Location = new System.Drawing.Point(612, 12);
             this.grpBoxPictureSlideShow.Name = "grpBoxPictureSlideShow";
-            this.grpBoxPictureSlideShow.Size = new System.Drawing.Size(514, 785);
+            this.grpBoxPictureSlideShow.Size = new System.Drawing.Size(568, 785);
             this.grpBoxPictureSlideShow.TabIndex = 32;
             this.grpBoxPictureSlideShow.TabStop = false;
             this.grpBoxPictureSlideShow.Text = "Slayt Gösterisi";
@@ -316,10 +332,12 @@
             // 
             // grpBoxMusicPlayer
             // 
+            this.grpBoxMusicPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBoxMusicPlayer.Controls.Add(this.grpBoxMusicDirList);
             this.grpBoxMusicPlayer.Location = new System.Drawing.Point(6, 396);
             this.grpBoxMusicPlayer.Name = "grpBoxMusicPlayer";
-            this.grpBoxMusicPlayer.Size = new System.Drawing.Size(502, 323);
+            this.grpBoxMusicPlayer.Size = new System.Drawing.Size(556, 323);
             this.grpBoxMusicPlayer.TabIndex = 50;
             this.grpBoxMusicPlayer.TabStop = false;
             this.grpBoxMusicPlayer.Text = "Müzik Oynatıcısı";
@@ -336,7 +354,7 @@
             this.grpBoxMusicDirList.Controls.Add(this.btnAllRemoveMusic);
             this.grpBoxMusicDirList.Location = new System.Drawing.Point(10, 19);
             this.grpBoxMusicDirList.Name = "grpBoxMusicDirList";
-            this.grpBoxMusicDirList.Size = new System.Drawing.Size(490, 294);
+            this.grpBoxMusicDirList.Size = new System.Drawing.Size(544, 294);
             this.grpBoxMusicDirList.TabIndex = 51;
             this.grpBoxMusicDirList.TabStop = false;
             this.grpBoxMusicDirList.Text = "Müzik Klasör Listesi";
@@ -353,7 +371,7 @@
             this.grpBoxMusicExtension.Controls.Add(this.btnAddMusicExtension);
             this.grpBoxMusicExtension.Location = new System.Drawing.Point(5, 136);
             this.grpBoxMusicExtension.Name = "grpBoxMusicExtension";
-            this.grpBoxMusicExtension.Size = new System.Drawing.Size(478, 146);
+            this.grpBoxMusicExtension.Size = new System.Drawing.Size(532, 146);
             this.grpBoxMusicExtension.TabIndex = 57;
             this.grpBoxMusicExtension.TabStop = false;
             this.grpBoxMusicExtension.Text = "Dosya Türleri";
@@ -367,15 +385,18 @@
             // 
             // listboxMusicExtensions
             // 
+            this.listboxMusicExtensions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listboxMusicExtensions.FormattingEnabled = true;
             this.listboxMusicExtensions.HorizontalScrollbar = true;
             this.listboxMusicExtensions.Location = new System.Drawing.Point(6, 19);
             this.listboxMusicExtensions.Name = "listboxMusicExtensions";
-            this.listboxMusicExtensions.Size = new System.Drawing.Size(466, 95);
+            this.listboxMusicExtensions.Size = new System.Drawing.Size(520, 95);
             this.listboxMusicExtensions.TabIndex = 58;
             // 
             // btnAllRemoveMusicExtension
             // 
+            this.btnAllRemoveMusicExtension.AutoSize = true;
             this.btnAllRemoveMusicExtension.Location = new System.Drawing.Point(274, 117);
             this.btnAllRemoveMusicExtension.Name = "btnAllRemoveMusicExtension";
             this.btnAllRemoveMusicExtension.Size = new System.Drawing.Size(90, 23);
@@ -386,9 +407,12 @@
             // 
             // btnMusicExtensionDefault
             // 
+            this.btnMusicExtensionDefault.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMusicExtensionDefault.AutoSize = true;
             this.btnMusicExtensionDefault.Location = new System.Drawing.Point(397, 117);
             this.btnMusicExtensionDefault.Name = "btnMusicExtensionDefault";
-            this.btnMusicExtensionDefault.Size = new System.Drawing.Size(75, 23);
+            this.btnMusicExtensionDefault.Size = new System.Drawing.Size(129, 23);
             this.btnMusicExtensionDefault.TabIndex = 63;
             this.btnMusicExtensionDefault.Text = "Varsayılan";
             this.btnMusicExtensionDefault.UseVisualStyleBackColor = true;
@@ -396,6 +420,7 @@
             // 
             // btnRemoveMusicExtension
             // 
+            this.btnRemoveMusicExtension.AutoSize = true;
             this.btnRemoveMusicExtension.Location = new System.Drawing.Point(193, 117);
             this.btnRemoveMusicExtension.Name = "btnRemoveMusicExtension";
             this.btnRemoveMusicExtension.Size = new System.Drawing.Size(75, 23);
@@ -406,6 +431,7 @@
             // 
             // btnAddMusicExtension
             // 
+            this.btnAddMusicExtension.AutoSize = true;
             this.btnAddMusicExtension.Location = new System.Drawing.Point(112, 118);
             this.btnAddMusicExtension.Name = "btnAddMusicExtension";
             this.btnAddMusicExtension.Size = new System.Drawing.Size(75, 23);
@@ -416,15 +442,18 @@
             // 
             // listboxMusicDirs
             // 
+            this.listboxMusicDirs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listboxMusicDirs.FormattingEnabled = true;
             this.listboxMusicDirs.HorizontalScrollbar = true;
             this.listboxMusicDirs.Location = new System.Drawing.Point(6, 19);
             this.listboxMusicDirs.Name = "listboxMusicDirs";
-            this.listboxMusicDirs.Size = new System.Drawing.Size(475, 82);
+            this.listboxMusicDirs.Size = new System.Drawing.Size(529, 82);
             this.listboxMusicDirs.TabIndex = 52;
             // 
             // btnAddMusic
             // 
+            this.btnAddMusic.AutoSize = true;
             this.btnAddMusic.Location = new System.Drawing.Point(6, 107);
             this.btnAddMusic.Name = "btnAddMusic";
             this.btnAddMusic.Size = new System.Drawing.Size(75, 23);
@@ -435,6 +464,7 @@
             // 
             // btnRemoveMusic
             // 
+            this.btnRemoveMusic.AutoSize = true;
             this.btnRemoveMusic.Location = new System.Drawing.Point(87, 106);
             this.btnRemoveMusic.Name = "btnRemoveMusic";
             this.btnRemoveMusic.Size = new System.Drawing.Size(75, 23);
@@ -445,9 +475,12 @@
             // 
             // btnDefaultMusic
             // 
-            this.btnDefaultMusic.Location = new System.Drawing.Point(406, 107);
+            this.btnDefaultMusic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDefaultMusic.AutoSize = true;
+            this.btnDefaultMusic.Location = new System.Drawing.Point(406, 106);
             this.btnDefaultMusic.Name = "btnDefaultMusic";
-            this.btnDefaultMusic.Size = new System.Drawing.Size(75, 23);
+            this.btnDefaultMusic.Size = new System.Drawing.Size(129, 23);
             this.btnDefaultMusic.TabIndex = 56;
             this.btnDefaultMusic.Text = "Varsayılan";
             this.btnDefaultMusic.UseVisualStyleBackColor = true;
@@ -455,6 +488,7 @@
             // 
             // btnAllRemoveMusic
             // 
+            this.btnAllRemoveMusic.AutoSize = true;
             this.btnAllRemoveMusic.Location = new System.Drawing.Point(168, 106);
             this.btnAllRemoveMusic.Name = "btnAllRemoveMusic";
             this.btnAllRemoveMusic.Size = new System.Drawing.Size(96, 23);
@@ -486,13 +520,15 @@
             this.grpBoxSlideShowAndTime.Controls.Add(this.chkBoxPictureAuto);
             this.grpBoxSlideShowAndTime.Location = new System.Drawing.Point(6, 322);
             this.grpBoxSlideShowAndTime.Name = "grpBoxSlideShowAndTime";
-            this.grpBoxSlideShowAndTime.Size = new System.Drawing.Size(500, 68);
+            this.grpBoxSlideShowAndTime.Size = new System.Drawing.Size(556, 78);
             this.grpBoxSlideShowAndTime.TabIndex = 46;
             this.grpBoxSlideShowAndTime.TabStop = false;
             this.grpBoxSlideShowAndTime.Text = "Süre";
             // 
             // chkBoxShowTime
             // 
+            this.chkBoxShowTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chkBoxShowTime.AutoSize = true;
             this.chkBoxShowTime.Location = new System.Drawing.Point(272, 42);
             this.chkBoxShowTime.Name = "chkBoxShowTime";
@@ -522,7 +558,7 @@
             this.grpBoxPictureDirList.Controls.Add(this.btnAllRemove);
             this.grpBoxPictureDirList.Location = new System.Drawing.Point(6, 19);
             this.grpBoxPictureDirList.Name = "grpBoxPictureDirList";
-            this.grpBoxPictureDirList.Size = new System.Drawing.Size(502, 135);
+            this.grpBoxPictureDirList.Size = new System.Drawing.Size(556, 135);
             this.grpBoxPictureDirList.TabIndex = 33;
             this.grpBoxPictureDirList.TabStop = false;
             this.grpBoxPictureDirList.Text = "Resim Klasör Listesi";
@@ -540,7 +576,7 @@
             this.grpBoxPictureExtension.Controls.Add(this.btnAddPictureExtension);
             this.grpBoxPictureExtension.Location = new System.Drawing.Point(6, 160);
             this.grpBoxPictureExtension.Name = "grpBoxPictureExtension";
-            this.grpBoxPictureExtension.Size = new System.Drawing.Size(502, 156);
+            this.grpBoxPictureExtension.Size = new System.Drawing.Size(556, 156);
             this.grpBoxPictureExtension.TabIndex = 39;
             this.grpBoxPictureExtension.TabStop = false;
             this.grpBoxPictureExtension.Text = "Dosya Türleri";
@@ -557,9 +593,12 @@
             // 
             // btnPictureExtensionDefault
             // 
-            this.btnPictureExtensionDefault.Location = new System.Drawing.Point(412, 117);
+            this.btnPictureExtensionDefault.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPictureExtensionDefault.AutoSize = true;
+            this.btnPictureExtensionDefault.Location = new System.Drawing.Point(418, 118);
             this.btnPictureExtensionDefault.Name = "btnPictureExtensionDefault";
-            this.btnPictureExtensionDefault.Size = new System.Drawing.Size(75, 23);
+            this.btnPictureExtensionDefault.Size = new System.Drawing.Size(129, 23);
             this.btnPictureExtensionDefault.TabIndex = 45;
             this.btnPictureExtensionDefault.Text = "Varsayılan";
             this.btnPictureExtensionDefault.UseVisualStyleBackColor = true;
@@ -577,6 +616,7 @@
             // 
             // grpBoxGeneralSettings
             // 
+            this.grpBoxGeneralSettings.AutoSize = true;
             this.grpBoxGeneralSettings.Controls.Add(this.btnYoutubeSt);
             this.grpBoxGeneralSettings.Controls.Add(this.btnOpenUpdateManager);
             this.grpBoxGeneralSettings.Controls.Add(this.chkBoxRememberRemoveFileList);
@@ -588,7 +628,7 @@
             this.grpBoxGeneralSettings.Controls.Add(this.lbLang);
             this.grpBoxGeneralSettings.Location = new System.Drawing.Point(12, 12);
             this.grpBoxGeneralSettings.Name = "grpBoxGeneralSettings";
-            this.grpBoxGeneralSettings.Size = new System.Drawing.Size(514, 195);
+            this.grpBoxGeneralSettings.Size = new System.Drawing.Size(514, 180);
             this.grpBoxGeneralSettings.TabIndex = 0;
             this.grpBoxGeneralSettings.TabStop = false;
             this.grpBoxGeneralSettings.Text = "Genel Ayarlar";
@@ -596,7 +636,7 @@
             // btnYoutubeSt
             // 
             this.btnYoutubeSt.AutoSize = true;
-            this.btnYoutubeSt.Location = new System.Drawing.Point(157, 160);
+            this.btnYoutubeSt.Location = new System.Drawing.Point(153, 138);
             this.btnYoutubeSt.Name = "btnYoutubeSt";
             this.btnYoutubeSt.Size = new System.Drawing.Size(111, 23);
             this.btnYoutubeSt.TabIndex = 8;
@@ -607,7 +647,7 @@
             // btnOpenUpdateManager
             // 
             this.btnOpenUpdateManager.AutoSize = true;
-            this.btnOpenUpdateManager.Location = new System.Drawing.Point(6, 160);
+            this.btnOpenUpdateManager.Location = new System.Drawing.Point(6, 138);
             this.btnOpenUpdateManager.Name = "btnOpenUpdateManager";
             this.btnOpenUpdateManager.Size = new System.Drawing.Size(145, 23);
             this.btnOpenUpdateManager.TabIndex = 7;
@@ -678,7 +718,9 @@
             // 
             // grpBoxVideoDirList
             // 
-            this.grpBoxVideoDirList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpBoxVideoDirList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBoxVideoDirList.Controls.Add(this.listboxVideoDirs);
             this.grpBoxVideoDirList.Controls.Add(this.btnAddVideo);
             this.grpBoxVideoDirList.Controls.Add(this.btnRemoveVideo);
@@ -693,6 +735,8 @@
             // 
             // listboxVideoDirs
             // 
+            this.listboxVideoDirs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listboxVideoDirs.FormattingEnabled = true;
             this.listboxVideoDirs.HorizontalScrollbar = true;
             this.listboxVideoDirs.Location = new System.Drawing.Point(6, 19);
@@ -702,6 +746,7 @@
             // 
             // btnAddVideo
             // 
+            this.btnAddVideo.AutoSize = true;
             this.btnAddVideo.Location = new System.Drawing.Point(6, 107);
             this.btnAddVideo.Name = "btnAddVideo";
             this.btnAddVideo.Size = new System.Drawing.Size(75, 23);
@@ -712,6 +757,7 @@
             // 
             // btnRemoveVideo
             // 
+            this.btnRemoveVideo.AutoSize = true;
             this.btnRemoveVideo.Location = new System.Drawing.Point(87, 107);
             this.btnRemoveVideo.Name = "btnRemoveVideo";
             this.btnRemoveVideo.Size = new System.Drawing.Size(75, 23);
@@ -722,7 +768,10 @@
             // 
             // btnDefaultVideo
             // 
-            this.btnDefaultVideo.Location = new System.Drawing.Point(416, 107);
+            this.btnDefaultVideo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDefaultVideo.AutoSize = true;
+            this.btnDefaultVideo.Location = new System.Drawing.Point(422, 107);
             this.btnDefaultVideo.Name = "btnDefaultVideo";
             this.btnDefaultVideo.Size = new System.Drawing.Size(75, 23);
             this.btnDefaultVideo.TabIndex = 17;
@@ -732,6 +781,7 @@
             // 
             // btnAllRemoveVideo
             // 
+            this.btnAllRemoveVideo.AutoSize = true;
             this.btnAllRemoveVideo.Location = new System.Drawing.Point(168, 107);
             this.btnAllRemoveVideo.Name = "btnAllRemoveVideo";
             this.btnAllRemoveVideo.Size = new System.Drawing.Size(96, 23);
@@ -742,6 +792,8 @@
             // 
             // radioBtnVLC
             // 
+            this.radioBtnVLC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.radioBtnVLC.AutoSize = true;
             this.radioBtnVLC.Location = new System.Drawing.Point(153, 21);
             this.radioBtnVLC.Name = "radioBtnVLC";
@@ -771,6 +823,8 @@
             // 
             // txtboxVideoExtension
             // 
+            this.txtboxVideoExtension.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtboxVideoExtension.Location = new System.Drawing.Point(6, 120);
             this.txtboxVideoExtension.Name = "txtboxVideoExtension";
             this.txtboxVideoExtension.Size = new System.Drawing.Size(100, 20);
@@ -778,15 +832,18 @@
             // 
             // listboxVideoExtensions
             // 
+            this.listboxVideoExtensions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listboxVideoExtensions.FormattingEnabled = true;
             this.listboxVideoExtensions.HorizontalScrollbar = true;
             this.listboxVideoExtensions.Location = new System.Drawing.Point(6, 19);
             this.listboxVideoExtensions.Name = "listboxVideoExtensions";
-            this.listboxVideoExtensions.Size = new System.Drawing.Size(481, 95);
+            this.listboxVideoExtensions.Size = new System.Drawing.Size(491, 95);
             this.listboxVideoExtensions.TabIndex = 19;
             // 
             // btnAllRemoveVideoExtension
             // 
+            this.btnAllRemoveVideoExtension.AutoSize = true;
             this.btnAllRemoveVideoExtension.Location = new System.Drawing.Point(274, 117);
             this.btnAllRemoveVideoExtension.Name = "btnAllRemoveVideoExtension";
             this.btnAllRemoveVideoExtension.Size = new System.Drawing.Size(90, 23);
@@ -797,7 +854,10 @@
             // 
             // btnVideoExtensionDefault
             // 
-            this.btnVideoExtensionDefault.Location = new System.Drawing.Point(412, 117);
+            this.btnVideoExtensionDefault.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVideoExtensionDefault.AutoSize = true;
+            this.btnVideoExtensionDefault.Location = new System.Drawing.Point(421, 117);
             this.btnVideoExtensionDefault.Name = "btnVideoExtensionDefault";
             this.btnVideoExtensionDefault.Size = new System.Drawing.Size(75, 23);
             this.btnVideoExtensionDefault.TabIndex = 24;
@@ -807,6 +867,7 @@
             // 
             // btnRemoveVideoExtension
             // 
+            this.btnRemoveVideoExtension.AutoSize = true;
             this.btnRemoveVideoExtension.Location = new System.Drawing.Point(193, 117);
             this.btnRemoveVideoExtension.Name = "btnRemoveVideoExtension";
             this.btnRemoveVideoExtension.Size = new System.Drawing.Size(75, 23);
@@ -817,6 +878,8 @@
             // 
             // btnAddVideoExtension
             // 
+            this.btnAddVideoExtension.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAddVideoExtension.AutoSize = true;
             this.btnAddVideoExtension.Location = new System.Drawing.Point(112, 118);
             this.btnAddVideoExtension.Name = "btnAddVideoExtension";
             this.btnAddVideoExtension.Size = new System.Drawing.Size(75, 23);
@@ -827,6 +890,8 @@
             // 
             // radioBtnWMP
             // 
+            this.radioBtnWMP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.radioBtnWMP.AutoSize = true;
             this.radioBtnWMP.Location = new System.Drawing.Point(9, 21);
             this.radioBtnWMP.Name = "radioBtnWMP";
@@ -854,8 +919,19 @@
             this.grpBoxURLforVLC.TabStop = false;
             this.grpBoxURLforVLC.Text = "VLC URL Listesi";
             // 
+            // lblLVC_URL
+            // 
+            this.lblLVC_URL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblLVC_URL.AutoSize = true;
+            this.lblLVC_URL.Location = new System.Drawing.Point(3, 167);
+            this.lblLVC_URL.Name = "lblLVC_URL";
+            this.lblLVC_URL.Size = new System.Drawing.Size(32, 13);
+            this.lblLVC_URL.TabIndex = 21;
+            this.lblLVC_URL.Text = "URL:";
+            // 
             // txtboxURLforVLC
             // 
+            this.txtboxURLforVLC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtboxURLforVLC.Location = new System.Drawing.Point(45, 161);
             this.txtboxURLforVLC.Name = "txtboxURLforVLC";
             this.txtboxURLforVLC.Size = new System.Drawing.Size(106, 20);
@@ -874,6 +950,10 @@
             // 
             // btnAllRemoveURLforVLC
             // 
+            this.btnAllRemoveURLforVLC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllRemoveURLforVLC.AutoSize = true;
             this.btnAllRemoveURLforVLC.Location = new System.Drawing.Point(413, 158);
             this.btnAllRemoveURLforVLC.Name = "btnAllRemoveURLforVLC";
             this.btnAllRemoveURLforVLC.Size = new System.Drawing.Size(90, 23);
@@ -882,8 +962,20 @@
             this.btnAllRemoveURLforVLC.UseVisualStyleBackColor = true;
             this.btnAllRemoveURLforVLC.Click += new System.EventHandler(this.btnAllRemoveURLforVLC_Click);
             // 
+            // btnEditURLforVLC
+            // 
+            this.btnEditURLforVLC.AutoSize = true;
+            this.btnEditURLforVLC.Location = new System.Drawing.Point(251, 158);
+            this.btnEditURLforVLC.Name = "btnEditURLforVLC";
+            this.btnEditURLforVLC.Size = new System.Drawing.Size(75, 23);
+            this.btnEditURLforVLC.TabIndex = 29;
+            this.btnEditURLforVLC.Text = "Düzenle";
+            this.btnEditURLforVLC.UseVisualStyleBackColor = true;
+            this.btnEditURLforVLC.Click += new System.EventHandler(this.btnEditURLforVLC_Click);
+            // 
             // btnAddURLforVLC
             // 
+            this.btnAddURLforVLC.AutoSize = true;
             this.btnAddURLforVLC.Location = new System.Drawing.Point(170, 158);
             this.btnAddURLforVLC.Name = "btnAddURLforVLC";
             this.btnAddURLforVLC.Size = new System.Drawing.Size(75, 23);
@@ -894,6 +986,7 @@
             // 
             // btnRemoveURLforVLC
             // 
+            this.btnRemoveURLforVLC.AutoSize = true;
             this.btnRemoveURLforVLC.Location = new System.Drawing.Point(332, 158);
             this.btnRemoveURLforVLC.Name = "btnRemoveURLforVLC";
             this.btnRemoveURLforVLC.Size = new System.Drawing.Size(75, 23);
@@ -902,31 +995,12 @@
             this.btnRemoveURLforVLC.UseVisualStyleBackColor = true;
             this.btnRemoveURLforVLC.Click += new System.EventHandler(this.btnRemoveURLforVLC_Click);
             // 
-            // lblLVC_URL
-            // 
-            this.lblLVC_URL.AutoSize = true;
-            this.lblLVC_URL.Location = new System.Drawing.Point(7, 168);
-            this.lblLVC_URL.Name = "lblLVC_URL";
-            this.lblLVC_URL.Size = new System.Drawing.Size(32, 13);
-            this.lblLVC_URL.TabIndex = 21;
-            this.lblLVC_URL.Text = "URL:";
-            // 
-            // btnEditURLforVLC
-            // 
-            this.btnEditURLforVLC.Location = new System.Drawing.Point(251, 158);
-            this.btnEditURLforVLC.Name = "btnEditURLforVLC";
-            this.btnEditURLforVLC.Size = new System.Drawing.Size(75, 23);
-            this.btnEditURLforVLC.TabIndex = 29;
-            this.btnEditURLforVLC.Text = "Düzenle";
-            this.btnEditURLforVLC.UseVisualStyleBackColor = true;
-            this.btnEditURLforVLC.Click += new System.EventHandler(this.btnEditURLforVLC_Click);
-            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1146, 832);
+            this.ClientSize = new System.Drawing.Size(1192, 832);
             this.Controls.Add(this.grpBoxURLforVLC);
             this.Controls.Add(this.grpBoxVideoSlideShow);
             this.Controls.Add(this.grpBoxGeneralSettings);
@@ -944,11 +1018,13 @@
             this.grpBoxPictureSlideShow.PerformLayout();
             this.grpBoxMusicPlayer.ResumeLayout(false);
             this.grpBoxMusicDirList.ResumeLayout(false);
+            this.grpBoxMusicDirList.PerformLayout();
             this.grpBoxMusicExtension.ResumeLayout(false);
             this.grpBoxMusicExtension.PerformLayout();
             this.grpBoxSlideShowAndTime.ResumeLayout(false);
             this.grpBoxSlideShowAndTime.PerformLayout();
             this.grpBoxPictureDirList.ResumeLayout(false);
+            this.grpBoxPictureDirList.PerformLayout();
             this.grpBoxPictureExtension.ResumeLayout(false);
             this.grpBoxPictureExtension.PerformLayout();
             this.grpBoxGeneralSettings.ResumeLayout(false);
@@ -956,11 +1032,13 @@
             this.grpBoxVideoSlideShow.ResumeLayout(false);
             this.grpBoxVideoSlideShow.PerformLayout();
             this.grpBoxVideoDirList.ResumeLayout(false);
+            this.grpBoxVideoDirList.PerformLayout();
             this.grpBoxVideoExtension.ResumeLayout(false);
             this.grpBoxVideoExtension.PerformLayout();
             this.grpBoxURLforVLC.ResumeLayout(false);
             this.grpBoxURLforVLC.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

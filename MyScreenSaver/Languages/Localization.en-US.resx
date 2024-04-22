@@ -163,7 +163,7 @@
     <value>Image Slideshow</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>Language:</value>
   </data>
   <data name="ListofImageFolders" xml:space="preserve">
     <value>List of Image Folders</value>
