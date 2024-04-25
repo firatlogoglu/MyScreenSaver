@@ -345,9 +345,13 @@ namespace MyScreenSaver
                 {
                     SettingsMethods.SetLanguage(AllLanguageCodes.RussianCodeRU_RU);
                 }
-                else if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.GermanCodeTR))
+                else if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.GermanCodeDE_DE))
                 {
-                    SettingsMethods.SetLanguage(AllLanguageCodes.GermanCodeTR);
+                    SettingsMethods.SetLanguage(AllLanguageCodes.GermanCodeDE_DE);
+                }
+                else if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.FranceCodeFR_FR))
+                {
+                    SettingsMethods.SetLanguage(AllLanguageCodes.FranceCodeFR_FR);
                 }
                 else
                 {

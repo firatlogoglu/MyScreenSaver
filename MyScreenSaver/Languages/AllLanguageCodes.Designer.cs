@@ -79,11 +79,20 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
+        ///   fr-FR benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string FranceCodeFR_FR {
+            get {
+                return ResourceManager.GetString("FranceCodeFR_FR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   de-DE benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
-        internal static string GermanCodeTR {
+        internal static string GermanCodeDE_DE {
             get {
-                return ResourceManager.GetString("GermanCodeTR", resourceCulture);
+                return ResourceManager.GetString("GermanCodeDE_DE", resourceCulture);
             }
         }
         
