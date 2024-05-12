@@ -97,6 +97,15 @@ namespace MyScreenSaver.Languages {
         }
         
         /// <summary>
+        ///   ja-JP benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string JapaneseCodeJA_JP {
+            get {
+                return ResourceManager.GetString("JapaneseCodeJA_JP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   ru-RU benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string RussianCodeRU_RU {

@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Çözüm Öğeleri", "Çöz
 		MyScreenSaver (Github).url = MyScreenSaver (Github).url
 		NEWVERSION = NEWVERSION
 		README.md = README.md
+		SHA256 = SHA256
 	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyScreenSaver.x86.Setup", "MyScreenSaver.Setup.x86\MyScreenSaver.Setup.x86.vdproj", "{9428BD99-516A-40B1-AC16-0C24CDD54E5B}"

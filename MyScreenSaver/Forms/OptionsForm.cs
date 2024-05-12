@@ -353,6 +353,10 @@ namespace MyScreenSaver
                 {
                     SettingsMethods.SetLanguage(AllLanguageCodes.FranceCodeFR_FR);
                 }
+                else if (cmbBoxLang.Text == SettingsMethods.GetLanguageDisplayName(AllLanguageCodes.JapaneseCodeJA_JP))
+                {
+                    SettingsMethods.SetLanguage(AllLanguageCodes.JapaneseCodeJA_JP);
+                }
                 else
                 {
                     SettingsMethods.SetLanguage(AllLanguageCodes.EnglishCodeGB_UK);
@@ -724,7 +728,7 @@ namespace MyScreenSaver
 
         private void btnOpenUpdateManager_Click(object sender, EventArgs e)
         {
-            UpdateManager.UpdateManagerForm updateManagerForm = new UpdateManager.UpdateManagerForm("https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/NEWVERSION", "https://github.com/firatlogoglu/MyScreenSaver/releases/");
+            UpdateManager.UpdateManagerForm updateManagerForm = new UpdateManager.UpdateManagerForm("https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/NEWVERSION", "https://github.com/firatlogoglu/MyScreenSaver/releases/", "https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/SHA256");
             updateManagerForm.ShowDialog();
         }
 

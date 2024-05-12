@@ -117,25 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EnglishCodeGB_UK" xml:space="preserve">
-    <value>en-GB</value>
+  <data name="Add" xml:space="preserve">
+    <value>追加</value>
   </data>
-  <data name="EnglishCodeUS" xml:space="preserve">
-    <value>en-US</value>
+  <data name="AllRemove" xml:space="preserve">
+    <value>すべて削除</value>
   </data>
-  <data name="FranceCodeFR_FR" xml:space="preserve">
-    <value>fr-FR</value>
+  <data name="Default" xml:space="preserve">
+    <value>デフォルト</value>
   </data>
-  <data name="GermanCodeDE_DE" xml:space="preserve">
-    <value>de-DE</value>
+  <data name="Delete_File_List" xml:space="preserve">
+    <value> リストからファイルを削除しますか？</value>
   </data>
-  <data name="JapaneseCodeJA_JP" xml:space="preserve">
-    <value>ja-JP</value>
+  <data name="Edit" xml:space="preserve">
+    <value>編集</value>
   </data>
-  <data name="RussianCodeRU_RU" xml:space="preserve">
-    <value>ru-RU</value>
+  <data name="Error" xml:space="preserve">
+    <value>エラー</value>
   </data>
-  <data name="TurkishCodeTR" xml:space="preserve">
-    <value>tr-TR</value>
+  <data name="ERROR_2" xml:space="preserve">
+    <value>エラー:</value>
+  </data>
+  <data name="ERROR_FILE" xml:space="preserve">
+    <value>\bエラー </value>
+  </data>
+  <data name="ERROR_NoMusic" xml:space="preserve">
+    <value>音楽なし。</value>
+  </data>
+  <data name="ERROR_NoPicture" xml:space="preserve">
+    <value>写真なし。</value>
+  </data>
+  <data name="ExitMouseDbClick" xml:space="preserve">
+    <value>マウスのダブルクリックで終了</value>
+  </data>
+  <data name="FileTypes" xml:space="preserve">
+    <value>ファイルの種類</value>
+  </data>
+  <data name="FixVLC" xml:space="preserve">
+    <value>VLCを修正する</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>一般設定</value>
+  </data>
+  <data name="ImageSlideshow" xml:space="preserve">
+    <value>画像スライドショー</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>言語:</value>
+  </data>
+  <data name="ListofImageFolders" xml:space="preserve">
+    <value>画像フォルダのリスト</value>
+  </data>
+  <data name="ListofMusicFolders" xml:space="preserve">
+    <value>音楽フォルダのリスト</value>
+  </data>
+  <data name="ListofVideoFolders" xml:space="preserve">
+    <value>ビデオフォルダのリスト</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="MusicPlayer" xml:space="preserve">
+    <value>音楽プレーヤー</value>
+  </data>
+  <data name="MusicPlayerEnabled" xml:space="preserve">
+    <value>The Music Player is Enabled</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OpenUpdateManager" xml:space="preserve">
+    <value>更新マネージャを開く</value>
+  </data>
+  <data name="PictureAuto" xml:space="preserve">
+    <value>Play images as a slideshow</value>
+  </data>
+  <data name="RememberRemoveFileList" xml:space="preserve">
+    <value>Remember the deletions from the entire list as "Yes"</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="RemoveFile" xml:space="preserve">
+    <value>ファイルの削除</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="ShowClockAndDate" xml:space="preserve">
+    <value>Show Clock And Date</value>
+  </data>
+  <data name="ShowTime" xml:space="preserve">
+    <value>Show Time</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time:</value>
+  </data>
+  <data name="TTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="VideoSlideshow" xml:space="preserve">
+    <value>ビデオスライドショー</value>
+  </data>
+  <data name="VLC" xml:space="preserve">
+    <value>VLC Media Player</value>
+  </data>
+  <data name="VLCURLList" xml:space="preserve">
+    <value>VLC URLリスト</value>
+  </data>
+  <data name="VLC_SupportedWebsites" xml:space="preserve">
+    <value>サポートされているWebサイト:</value>
+  </data>
+  <data name="WMP" xml:space="preserve">
+    <value>Windows Media Player</value>
   </data>
 </root>

@@ -170,7 +170,7 @@ namespace MyScreenSaver
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UpdateManager.UpdateManagerForm("https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/NEWVERSION", "https://github.com/firatlogoglu/MyScreenSaver/releases/latest"));
+            Application.Run(new UpdateManager.UpdateManagerForm("https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/NEWVERSION", "https://github.com/firatlogoglu/MyScreenSaver/releases/latest", "https://raw.githubusercontent.com/firatlogoglu/MyScreenSaver/master/SHA256"));
         }
     }
 }

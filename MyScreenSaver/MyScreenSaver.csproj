@@ -99,6 +99,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Languages\Localization.ja-JP.Designer.cs">
+      <DependentUpon>Localization.ja-JP.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Languages\Localization.fr-FR.Designer.cs">
       <DependentUpon>Localization.fr-FR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -160,6 +165,10 @@
     <EmbeddedResource Include="Languages\Localization.de-DE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.de-DE.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Localization.ja-JP.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ja-JP.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\Localization.fr-FR.resx">
       <Generator>ResXFileCodeGenerator</Generator>

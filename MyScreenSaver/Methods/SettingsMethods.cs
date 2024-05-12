@@ -74,26 +74,28 @@ namespace MyScreenSaver.Methods
 
         internal static string[] GetAllLanguageCodes()
         {
-            string[] alllangcodes = new string[6];
+            string[] alllangcodes = new string[7];
             alllangcodes[0] = AllLanguageCodes.TurkishCodeTR;
             alllangcodes[1] = AllLanguageCodes.EnglishCodeUS;
             alllangcodes[2] = AllLanguageCodes.EnglishCodeGB_UK;
             alllangcodes[3] = AllLanguageCodes.RussianCodeRU_RU;
             alllangcodes[4] = AllLanguageCodes.GermanCodeDE_DE;
             alllangcodes[5] = AllLanguageCodes.FranceCodeFR_FR;
+            alllangcodes[6] = AllLanguageCodes.JapaneseCodeJA_JP;
 
             return alllangcodes;
         }
 
         internal static string[] GetAllLanguageDisplayNames()
         {
-            string[] alllangcodes = new string[6];
+            string[] alllangcodes = new string[7];
             alllangcodes[0] = GetLanguageDisplayName(AllLanguageCodes.TurkishCodeTR);
             alllangcodes[1] = GetLanguageDisplayName(AllLanguageCodes.EnglishCodeUS);
             alllangcodes[2] = GetLanguageDisplayName(AllLanguageCodes.EnglishCodeGB_UK);
             alllangcodes[3] = GetLanguageDisplayName(AllLanguageCodes.RussianCodeRU_RU);
             alllangcodes[4] = GetLanguageDisplayName(AllLanguageCodes.GermanCodeDE_DE);
             alllangcodes[5] = GetLanguageDisplayName(AllLanguageCodes.FranceCodeFR_FR);
+            alllangcodes[6] = GetLanguageDisplayName(AllLanguageCodes.JapaneseCodeJA_JP);
 
             return alllangcodes;
         }
@@ -149,7 +151,12 @@ namespace MyScreenSaver.Methods
                 SetLanguage2(getuilangcode);
             }
 
-            if (AllLanguageCodes.EnglishCodeGB_UK != getuilangcode && AllLanguageCodes.EnglishCodeUS != getuilangcode && AllLanguageCodes.TurkishCodeTR != getuilangcode && AllLanguageCodes.RussianCodeRU_RU != getuilangcode && AllLanguageCodes.GermanCodeDE_DE != getuilangcode && AllLanguageCodes.FranceCodeFR_FR != getuilangcode)
+            if (AllLanguageCodes.JapaneseCodeJA_JP == getuilangcode)
+            {
+                SetLanguage2(getuilangcode);
+            }
+
+            if (AllLanguageCodes.EnglishCodeGB_UK != getuilangcode && AllLanguageCodes.EnglishCodeUS != getuilangcode && AllLanguageCodes.TurkishCodeTR != getuilangcode && AllLanguageCodes.RussianCodeRU_RU != getuilangcode && AllLanguageCodes.GermanCodeDE_DE != getuilangcode && AllLanguageCodes.FranceCodeFR_FR != getuilangcode && AllLanguageCodes.JapaneseCodeJA_JP != getuilangcode)
             {
                 MessageBox.Show("There is no " + GetLanguageDisplayName(getuilangcode) + " language support in this software.");
 
@@ -184,6 +191,10 @@ namespace MyScreenSaver.Methods
             else if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.FranceCodeFR_FR))
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.FranceCodeFR_FR);
+            }
+            else if (defaultLanguage == GetLanguageDisplayName(AllLanguageCodes.JapaneseCodeJA_JP))
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(AllLanguageCodes.JapaneseCodeJA_JP);
             }
             else
             {
